@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>插件版电磁炉接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>插件版电磁炉接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-06-15 14:04:27</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:29.184000</p>
+<p class='attribute'><strong>Status:</strong> Pass 13</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_addcommentByModel.commentaddnewTest: 添加一条评论</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentadd_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: https://sginductionplugapi.joyami.com/v1/recipecomment/addnewByModel
+0QaEeHc1Moi9osITCiA-KoOqW0U=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042668447,"message":"success","result":null,"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_articletopadvtopadvByModel.articletopadv1Test: 获取头部Banner</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_articletopadv_sysuccess111: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: https://sginductionplugapi.joyami.com/v1/article/topadvByModel
+XMs2cpF-sRJKshtuM79p4Sej-sc=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042670909,"message":"success","result":[{"id":112,"title":"百香果鸡爪","icon":"/6246d560fc2143a9803724c0740a5bf3.jpg","content":"","targetUrl":"12673","type":6100,"state":2200,"sort":6.9,"modifyTime":"2018-04-20T23:27:09.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15,"languageType":null},{"id":111,"title":"嫩牛五方","icon":"/d39bca0cd8a74b73abae2f8660bb3f9f.jpg","content":"","targetUrl":"12677","type":6100,"state":2200,"sort":6.8,"modifyTime":"2018-04-20T09:26:37.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15,"languageType":null},{"id":109,"title":"剁椒鱼头","icon":"/ba44728b21cf405c8f766550c6c95ab6.jpg","content":"","targetUrl":"10883","type":6100,"state":2200,"sort":6.7,"modifyTime":"2018-04-13T08:19:38.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15,"languageType":null}],"code":1}
+112
+百香果鸡爪
+111
+嫩牛五方
+109
+剁椒鱼头
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commentloadmore.commentloadmoreTest: 获取最新评论(分页)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentloadmore_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: https://sginductionplugapi.joyami.com/v1/recipecomment/loadmore
+F14c-_OnPwGP5d0ANcrrGAw3JS4=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042672062,"message":"success","result":[{"id":470,"userId":null,"contents":"赞","time":1529042668000,"commentTime":"2018-06-15T06:04:28.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":null,"headPic":null},{"id":439,"userId":1064,"contents":"这东西炒起来特出水","time":1524477371000,"commentTime":"2018-04-23T09:56:11.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"逗勇者的恶龙","headPic":"http://img.coo-k.com/headPic/030c55f2-6df9-4af1-a61a-2ce798103c49.jpg"},{"id":429,"userId":1064,"contents":"下酒菜","time":1524217455000,"commentTime":"2018-04-20T09:44:15.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"逗勇者的恶龙","headPic":"http://img.coo-k.com/headPic/030c55f2-6df9-4af1-a61a-2ce798103c49.jpg"}],"code":1}
+3
+470
+None
+439
+逗勇者的恶龙
+429
+逗勇者的恶龙
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commenttwo.commenttwoTest: 获取最新评论(2条)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commenttwo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: https://sginductionplugapi.joyami.com/v1/recipecomment/latesttwo
+hdiGkCp1pbHTyyk0RjZg28JtaIc=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042674118,"message":"success","result":[{"id":470,"userId":null,"contents":"赞","time":1529042668000,"commentTime":"2018-06-15T06:04:28.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":null,"headPic":null},{"id":439,"userId":1064,"contents":"这东西炒起来特出水","time":1524477371000,"commentTime":"2018-04-23T09:56:11.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"逗勇者的恶龙","headPic":"http://img.coo-k.com/headPic/030c55f2-6df9-4af1-a61a-2ce798103c49.jpg"}],"code":1}
+470
+439
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_createglobalByModel.createglobalByModelTest: 根据model创建一个自定义模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_createglobalByModel_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: https://sginductionplugapi.joyami.com/v1/recipe/collect/createglobalByModel
+anZ9xIsX7_BlLqu1cWVu8OqJquw=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042679864,"message":"success","result":{"id":null,"recipe":{"id":16511,"name":"áéíóúÁÉÍÓÚ","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":60,"firePower":26,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":true,"topRecipe":false,"cookBook":null,"cookCode":"030100a8a2a8a6a8aaa8aea8b23f3f3f000000407fe101000400000000000100000000000000008100d2c81a1414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000000000000000000000007920","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_editglobalByModel.editlobalByModelTest: 根据model编辑自定义模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_createglobalByModel_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: https://sginductionplugapi.joyami.com/v1/recipe/collect/editglobalByModel
+qXuMCOC14wie24XqJ1Ap2d9ul1E=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042681034,"message":"success","result":{"id":null,"recipe":{"id":13954,"name":"áéíóúÁÉÍ","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":20,"firePower":36,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":true,"topRecipe":false,"cookBook":null,"cookCode":"030100a8a2a8a6a8aaa8aea8b23f3f3f0000003682e100140400000000000100000000000000008014d2c8241414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000000000000000000000001e20","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeapiinfoByModel.recipeapiinfoTest: 获取食谱详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: https://sginductionplugapi.joyami.com/v1/recipe/web/apiinfoByModel/2534
+lNGqozliT3nE7bWroWUNlK27pY0=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042682221,"message":"success","result":null,"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipedefaults.recipedefaultsTest: 获取默认模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelist_success: 非必填参数不传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: https://sginductionplugapi.joyami.com/v1/recipe/defaults
+kspXsEpHVPPcPUHXa2v8GswPaVs=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042683925,"message":"success","result":[{"id":null,"recipe":{"id":1,"name":"火锅","icon":"/dedaf872e4964c1b95470edef4014aec.png","advIcon":"/static/upload/recipe/673/96135f7b023b40ae98709320757227a0.jpg","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/b5e20e59401f468d90b4a01a28145e1c.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":60,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":3,"categoryId":null},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030101bbf0b9f800000000000000000000000000011e01000400000000000100000000000000008900c882631414008000c8825a1414008000c8825a1414008000c8825a1414008000c8825a1414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c88246141400ffffc882461414000000000000000000000000000000000000008829","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":null,"recipe":{"id":2,"name":"蒸煮","icon":"/7d9710c0e67a40ec8be035875f6f2c05.png","advIcon":"/static/upload/recipe/673/96135f7b023b40ae98709320757227a0.jpg","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":60,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":3,"categoryId":null},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030102d5f4d6f300000000000000000000000000021e01000400000000000100000000000000008900c882501414008005c882461414008000c8825a1414008000c8825a1414008000c8825a1414008000c8823c1414008000c8823c1414008000c8823c1414008000c8823c1414008000c8823c1414008000c8823c1414008000c8823c1414008000c8823c1414008000c8823c141400ffffc8823c141400000000000000000000000000000000000000eb19","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":null,"recipe":{"id":3,"name":"汤粥","icon":"/58bab574e8a34c2e9e1cd1c9ef9419e0.png","advIcon":"/static/upload/recipe/673/96135f7b023b40ae98709320757227a0.jpg","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":120,"firePower":60,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":3,"categoryId":null},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030103ccc0d6e000000000000000000000000000031e02000400000000000100000000000000008a005a823c1414008000c88202141400800ac8822d060300800ac8821e0603008000c882001414008000c882001414008000c882001414008000c882001414008000c882001414008000c882001414008000c882001414008000c882001414008000c882001414008000c88200141400ffffc8820f060300000000000000000000000000000000000000069d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":null,"recipe":{"id":4,"name":"炒菜","icon":"/9627422d3a96488d9ddf8027de70a3db.png","advIcon":"/static/upload/recipe/673/96135f7b023b40ae98709320757227a0.jpg","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":60,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":3,"categoryId":null},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030104b3b4b2cb00000000000000000000000000041e0100040000000000010000000000000000801e64c7631414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a141400ffffdcc750141400000000000000000000000000000000aab4037ee4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":null,"recipe":{"id":5,"name":"煎炸","icon":"/2b2a9633ff6e49a888d89494a6b06d6e.png","advIcon":"/static/upload/recipe/673/96135f7b023b40ae98709320757227a0.jpg","content":"避免锅中和食材带有较多的水分，防止造成热油飞溅。油炸过程中人不要远离电磁炉！不要让儿童靠近！","mainIcon":"/70ddfbbbbec44deca33c44afeb6a6376.png","description":"使用较高的火力，在短时间内将食物用油烹饪至熟透，表面会稍成金黄色乃至微煳。","duration":60,"firePower":70,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:54.000+0000","usageCount":3,"categoryId":null},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030105bce5d5a800000000000000000000000000051e010004000000000001000000000000000089005ac7461414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc732141400ffffdcc732141400000000000000000000000000000000b4be032a3e","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"code":1}
+5
+火锅
+1
+蒸煮
+2
+汤粥
+3
+炒菜
+4
+煎炸
+5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipedetailByModel.recipedetailTest: 获取某个模式的详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: https://sginductionplugapi.joyami.com/v1/recipe/detailByModel
+fwPscot3N32Ln8V94TeUuc0501s=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042685163,"message":"success","result":{"id":null,"recipe":{"id":1,"name":"火锅","icon":"/dedaf872e4964c1b95470edef4014aec.png","advIcon":"/static/upload/recipe/673/96135f7b023b40ae98709320757227a0.jpg","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/b5e20e59401f468d90b4a01a28145e1c.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":60,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":3,"categoryId":null},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030101bbf0b9f800000000000000000000000000011e01000400000000000100000000000000008900c882631414008000c8825a1414008000c8825a1414008000c8825a1414008000c8825a1414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c882461414008000c88246141400ffffc882461414000000000000000000000000000000000000008829","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Hotpot"},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeinfoByModel.recipeinfoTest: 获取食谱详情（页面）</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: https://sginductionplugapi.joyami.com/v1/recipe/web/infoByMode/2683
+RNl4Fh5hGWvM7OFrCEB2kS0N4F4=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042686243,"message":"找不到页面","result":null,"code":404}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipelistByModel.recipelistByModelTest: 获取更多食谱</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',2)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistByModel_success: 非必填参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: https://sginductionplugapi.joyami.com/v1/recipe/listByModel
+KAU5eHUMWj3otrTG21RsImpTfpg=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042688523,"message":"success","result":[{"id":13841,"recipe":{"id":13841,"name":"红烧鸡爪","icon":"/a1a64378e15d421cb474f165f91b1ba2.jpg","advIcon":null,"content":"1、煮40分钟已经是酥烂入味了，如果想要有嚼劲的可以自己减少烹饪时长。\r\n2、辣度根据个人调节，喜欢吃辣的可以多放一些小米椒。\r\n3、冰糖必不可少，不要觉得会甜。适当的甜味能提鲜，而且冰糖还能增让食物看起来更光亮诱人。\r\n4、炖鸡爪可以用啤酒，煮出来会有麦芽的香味，还能去腥。","mainIcon":null,"description":"不论是下酒还是下饭，香香辣辣的鸡爪都很在行。烧鸡爪的汤汁简直是米饭杀手，拿来拌米饭再合适不过。","duration":40,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-25T02:06:16.000+0000","usageCount":4,"categoryId":5},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101baecc9d5bca6d7a600000000000000003611e100280400000000000100000000000000008003dcdc631414008003dcc75a1414008000dc8250141400801edc82141414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc821e141400ffffdcc73c141400000000000000000000000000000000000000f8ef","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13840,"recipe":{"id":13840,"name":"鲜肉小馄饨","icon":"/e2baf42813b94f8bae0128a5c256ae49.jpg","advIcon":null,"content":"1、猪肉末建议买持水性强的夹心肉。\r\n2、小馄饨皮不用自己擀，菜市场就能买到。\r\n3、包小馄饨不讲究，能包起来就行。\r\n4、倒入花椒水，第一是增加揉的持水性，第二是能去腥。但是别把花椒粒倒进去了。","mainIcon":null,"description":"国民早餐小吃，鲜肉小馄饨。薄薄的皮，包裹着鲜嫩的多汁的肉馅儿。简单朴质的的食材经过用心的烹饪，煮好后盛上一碗，飘着猪油花、紫菜和葱花，连稠带稀一碗下肚。总让人回味无穷。","duration":20,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-25T01:56:30.000+0000","usageCount":4,"categoryId":6},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101cfcac8e2d0a1e2c6e2bd0000000000003610e10014040000000000010000000000000000800ac8b9631414008000c8b95a1414008000c8b95a1414008000c8b95a1414008000c8b95a1414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b946141400ffffc8b9461414000000000000000000000000000000000000006f24","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13838,"recipe":{"id":13838,"name":"油焖茭白","icon":"/bfb4a2a9a77e4ceeaf88e83cff7217f5.jpg","advIcon":null,"content":"1、香料不要多放，多了就盖住了茭白本身的味道。\r\n2、放凉了可以当凉菜食用。","mainIcon":null,"description":"茭白口感鲜嫩，被称为“水中人参”，白白净净，通常都拿来炒肉。江浙区域的人们会用油焖的方法来做茭白。茭白诸多吃法中，油焖茭白，是简单却又勾人垂涎的一种。色泽红润不寡淡，鲜嫩糯香、柔滑适口，且冷热食用皆宜。","duration":20,"firePower":90,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-25T01:51:49.000+0000","usageCount":2,"categoryId":3},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030103d3cdeccbdcfab0d70000000000000000360ee300140400000000000100000000000000008006dcc75a1414008000dc8250141400800adc82281414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc8200141400ffffdc963c141400000000000000000000000000000000000000d4fe","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13794,"recipe":{"id":13794,"name":"椰汁煮青口","icon":"/2e4f3a2ef2484aae9f397a8fd382b2c3.jpg","advIcon":null,"content":"一般购买的青口贝都是熟的，解冻后冲洗干净即可。如果买到的是活的青口，要用刷子充分刷洗外壳。","mainIcon":null,"description":"青口贝是一种富含蛋白质、低脂肪、低热量的食材。用椰汁煮的方法源自于《十二道锋味》中谢霆锋做的香茅椰汁煮青口。由于香茅不好购买，所以在食材中又加入了奶油一起煮，让奶味更香浓。","duration":8,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-24T09:47:32.000+0000","usageCount":2,"categoryId":6},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101d2acd6add6f3c7e0bfda00000000000035e2e10008040000000000010000000000000000800163dc631414008001dcc71e1414008000dc82501414008000dc82141414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc821e141400ffffdcc73c14140000000000000000000000000000000000000098aa","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13793,"recipe":{"id":13793,"name":"咖喱乌冬面","icon":"/ad57e4f9ff914f25a39990c30b552acc.jpg","advIcon":null,"content":"如果觉得食材不够丰盛，可以自己添加喜好的食材。","mainIcon":null,"description":"日式咖喱辛辣不足，但是温和有余。用咖喱煮乌冬面，这样做出来的乌冬面，真是一绝。呲溜一口，好生满足。","duration":15,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-24T09:43:27.000+0000","usageCount":2,"categoryId":6},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101bfa7e0accedab6acc3e600000000000035e1e1000f040000000000010000000000000000800ac8b9631414008000c8b95a1414008000c8b95a1414008000c8b95a1414008000c8b95a1414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b946141400ffffc8b946141400000000000000000000000000000000000000013a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13413,"recipe":{"id":13413,"name":"香辣田螺","icon":"/9d1d040f689f419490085e7d7ec77cbe.jpg","advIcon":null,"content":"1、吃螺丝我本人喜欢用手抓着，先吸汤汁，然后呲溜一下吸出螺丝肉。有个小窍门，用筷子把螺丝肉往里面塞紧，然后就容易吸出来。\r\n2、螺丝必须购买活的，已死的螺丝是不能吃的。\r\n3、把螺丝放在清水中静养两到三天，在盆内滴上几滴豆油，这样做是为了使其吐净泥沙，食用的时候才没有泥土味，还可以让螺丝体内的重金属含量降低。","mainIcon":null,"description":"下酒菜中的战斗机——香辣田螺。吮指入味，哧溜哧溜吸吸着螺丝，吃完了再舔一下手指头！鲜辣过瘾，喝着啤酒吃着田螺别有一番风味。","duration":10,"firePower":90,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-20T10:03:01.000+0000","usageCount":3,"categoryId":3},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101cfe3c0b1ccefc2dd00000000000000003465e1000a0400000000000100000000000000008002dcdc5a1414008005dcc7321414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008002dc821e141400ffffdcc7501414000000000000000000000000000000000000002252","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13412,"recipe":{"id":13412,"name":"手撕杏鲍菇","icon":"/64381c0ea61642df9ab5f6b9f0086890.jpg","advIcon":null,"content":"1、喜欢辣一点的口味的话，可以切上两根小米椒一起拌。\r\n2、凉拌的口味自己把握，放醋、花椒油都可以。","mainIcon":null,"description":"夏季爽口凉拌手撕杏鲍菇，一学就会！","duration":15,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-20T09:59:22.000+0000","usageCount":2,"categoryId":8},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030102cad6cbbad0d3b1abb9bd0000000000003464e2000f0400000000000100000000000000008005c8b4501414008005c8b4461414008000c8b45a1414008000c8b45a1414008000c8b45a1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c141400ffffc8b43c1414000000000000000000000000000000000000007dec","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13410,"recipe":{"id":13410,"name":"油面筋酿肉","icon":"/c1138514e9b3465c9f4f3dc8a5b4d0b9.jpg","advIcon":null,"content":"1、包肉馅时要轻手，否则面筋易被捏碎了；\r\n2、老抽和生抽已经有咸味，所以要在最后尝一下味道再决定放不放盐。","mainIcon":null,"description":"不一样的肉丸子：油面筋酿肉。相比于红烧狮子头少了油炸的步骤，省时省力。绵软入味的肉面筋裹着多汁的肉丸，超级下饭。","duration":30,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-20T09:54:45.000+0000","usageCount":3,"categoryId":6},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101d3cdc3e6bdeec4f0c8e20000000000003462e1001e0400000000000100000000000000008008dcdc501414008012dcc71e1414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008002dc821e141400ffffdcc732141400000000000000000000000000000000000000abbf","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13375,"recipe":{"id":13375,"name":"辣炒蛏子","icon":"/82f7c0bad31b431da6adffec0f1bb4b1.jpg","advIcon":null,"content":"1、喜欢吃更辣一点的可以放一些小米椒。\r\n2、豆瓣酱和蚝油都是咸的，就不要放盐了。","mainIcon":null,"description":"蛏子口感肥美鲜嫩，入口有三文鱼般的肥和象拔蚌的韧。是不可多得的小海鲜，经过葱姜蒜和辣椒的炒制作，香辣甘爽，若是再配上一杯啤酒，那就美得很了。","duration":12,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-20T02:05:46.000+0000","usageCount":2,"categoryId":3},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030104c0b1b3b4f2c9d7d30000000000000000343fe4000c040000000000010000000000000000801e64c7631414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a141400ffffdcc750141400000000000000000000000000000000aab403c0c5","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":13227,"recipe":{"id":13227,"name":"避风塘濑尿虾","icon":"/72ea2d37dd5740439b94fdcd1e80e8f8.jpg","advIcon":null,"content":"1、如果觉得做成避风塘口味比较麻烦，可以油炸完成后撒上葱花和椒盐。做成椒盐皮皮虾。或者放黄飞鸿脆脆椒做成黄飞鸿皮皮虾。\r\n2、炒面包屑的时候要不停翻炒，避免炒糊了。\r\n3、热油和油炸的时候人不要离开锅，避免造成危险。","mainIcon":null,"description":"酥脆的皮皮虾配上蒜香面包糠，口感酥脆。海鲜的香味与蒜蓉的香味混于一体，香味四溢。","duration":18,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-04-18T09:33:36.000+0000","usageCount":2,"categoryId":1},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101b1dcb7e7ccc1e4fec4f2cfba0000000033abe100120400000000000100000000000000018008dcdc631414018004dcc7631414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008002dc821e141400ffffdcc7321414000000000000000000000000000000000000002b43","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"code":1}
+10
+红烧鸡爪
+13841
+鲜肉小馄饨
+13840
+油焖茭白
+13838
+椰汁煮青口
+13794
+咖喱乌冬面
+13793
+香辣田螺
+13413
+手撕杏鲍菇
+13412
+油面筋酿肉
+13410
+辣炒蛏子
+13375
+避风塘濑尿虾
+13227
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistByModel_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.2')" >
+        pass</a>
+
+    <div id='div_pt11.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.2: https://sginductionplugapi.joyami.com/v1/recipe/listByModel
+KAU5eHUMWj3otrTG21RsImpTfpg=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042691789,"message":"success","result":[{"id":1195,"recipe":{"id":1195,"name":"松饼","icon":"/119612cfe19743e0921adbdc6a904943.jpg","advIcon":null,"content":"煎松饼要小火慢慢的煎，不要心急把火力开的特别大。","mainIcon":null,"description":"做法简单且好吃，不管是搭配黄油还是蜂蜜，都是非常棒的选择哦~ ​","duration":30,"firePower":30,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-12T09:01:13.000+0000","usageCount":3,"categoryId":1},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":null,"cookCode":"030101cbc9b1fd00000000000000000000000004ab1e001e0400000000000100000000000000018014dcaa1e1414008000dc96501414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414018000dc963c141400ffffdc961e141400000000000000000000000000000000000000674d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"code":1}
+1
+松饼
+1195
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeofficialByModel.officialByModelTest: 获取更多食谱</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_officialByModel_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: https://sginductionplugapi.joyami.com/v1/recipe/officialByModel
+c3uLh1pzX6LuN-Z9baVxaW17GZs=
+D:\Python27\lib\site-packages\requests\packages\urllib3\connectionpool.py:821: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.org/en/latest/security.html
+  InsecureRequestWarning)
+{"serverTime":1529042694645,"message":"success","result":[{"id":3533,"recipe":{"id":3533,"name":"热牛奶","icon":"/c79a83c4edd8415688cf3ccf78173957.jpg","advIcon":"/a70709d8673640f99f343400f247b936.jpg","content":"建议热牛奶用专门的热奶锅，不要和炒锅汤锅混用。","mainIcon":"/e90b3c035b1949a0b80a5e4a459f8ce8.png","description":"电磁炉热牛奶会将温度控制在85℃以下，既保证了营养，还不会溢锅。","duration":10,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T09:49:27.000+0000","usageCount":null,"categoryId":null},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030101c8c8c5a3c4cc000000000000000000000dcd1e000a04000000000001000000000000000280053c46321414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc8200141400ffffdc3c02141400000000000000000000000000000000000000e58d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"milk"},{"id":3526,"recipe":{"id":3526,"name":"炸鱼","icon":"/e6874bd5129d40409619f5760221befc.jpg","advIcon":"/7df01b3867e14c338d994ffc605903d7.jpg","content":"油炸过程中人不要远离电磁炉！不要让儿童靠近！","mainIcon":"/1709d85fc46142df8ae2e587ea748762.png","description":"高温油炸小黄鱼，黄鱼洗净后外面裹上一层干面粉，油预热约8分钟后放入锅中。","duration":60,"firePower":90,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T09:47:07.000+0000","usageCount":null,"categoryId":null},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030105d5a8d3e30000000000000000000000000dc61e001e040000000000010000000000000000800ac8c75a1414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc732141400ffffdcc750141400000000000000000000000000000000aab403044e","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"fish"},{"id":3532,"recipe":{"id":3532,"name":"低温慢煮牛排","icon":"/d86c9a632de14813830b4369e60a579a.jpg","advIcon":"/e265d7e3ecaf4d43b638148b83527f03.jpg","content":"牛排以2厘米厚为准。","mainIcon":"/db8dc672ef7a46129bd5f0727bbbd676.png","description":"西冷、肉眼或菲力牛排腌制后放入耐高温料理袋中，抽真空60摄氏度水温，慢煮1小时。","duration":60,"firePower":60,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T09:44:52.000+0000","usageCount":null,"categoryId":null},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030101b5cdcec2c2fdd6f3c5a3c5c5000000000dcc1e0100040000000000010000000000000000800a463c3c1414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc8200141400ffffdc390a1414000000000000000000000000000000000000001f7a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"steak"}],"code":1}
+3
+热牛奶
+3533
+炸鱼
+3526
+低温慢煮牛排
+3532
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>13</td>
+    <td>13</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

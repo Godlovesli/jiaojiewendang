@@ -1,0 +1,2486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>插件版电压力锅接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>插件版电压力锅接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-08-24 15:57:21</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:03.913000</p>
+<p class='attribute'><strong>Status:</strong> Pass 53 Failure 3</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_articletopadv.articletopadv1Test: 获取头部Banner</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_articletopadv_sysuccess111: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: url http://pre-pressureplugapi.joyami.com/v1/article/topadv
+{"code":1,"message":"操作成功","result":[{"id":67,"title":"这个夏天全靠这碗","icon":"/df7c38b2914e461ba3f2a93cb2ccfe2e.jpg","content":"","targetUrl":"1829","type":6100,"state":2200,"sort":3.0,"modifyTime":"2017-12-27T17:00:58.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":73,"title":"卤牛肉和世界杯最配","icon":"/2f0d130ce3b448c1befc8f69dc8075c2.jpg","content":"","targetUrl":"1819","type":6100,"state":2200,"sort":2.9,"modifyTime":"2018-06-13T22:33:23.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":74,"title":"离骨头越近的肉越好吃","icon":"/ade77b7e59004b639a37de5dca02051f.jpg","content":"","targetUrl":"1824","type":6100,"state":2200,"sort":2.8,"modifyTime":"2018-06-13T22:34:05.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15}],"serverTime":1535097441420}
+67
+这个夏天全靠这碗
+73
+卤牛肉和世界杯最配
+74
+离骨头越近的肉越好吃
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_categorylist.categorylistTest: 获取食谱分类列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_categorylist_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/category/list
+{"code":1,"message":"操作成功","result":[{"id":7,"name":"焖炖","curveImage":"NULL","image":null,"state":2200},{"id":8,"name":"汤羹","curveImage":"NULL","image":null,"state":2200},{"id":9,"name":"煲粥","curveImage":"NULL","image":null,"state":2200},{"id":10,"name":"焖饭","curveImage":"NULL","image":null,"state":2200}],"serverTime":1535097441458}
+焖炖
+7
+汤羹
+8
+煲粥
+9
+焖饭
+10
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_collectedit.collecteditTest: 编辑自定义模式</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_collectedit_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        fail</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/edit
+{"code":-1,"message":"通用异常：null","result":null,"serverTime":1535097441686}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µçÑ¹Á¦¹ø\½Ó¿Ú´úÂë\DYLG_Interface\cj_interface\test_collectedit.py", line 27, in test_collectedit_success
+    self.assertEqual(js['code'], 1)
+AssertionError: -1 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commentadd.commentaddTest: 添加一条评论</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentadd_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/save
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097441815}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commentinfo.commentinfoTest: 获取评论详情(页面)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentinfo_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/web/info/1580
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"&gt;
+		&lt;title&gt;评论列表&lt;/title&gt;
+		&lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
+		&lt;style type="text/css"&gt;
+            *{box-sizing:border-box}html{-ms-touch-action:none}body,li,ul{padding:0;margin:0;border:0}body{font-size:9pt;font-family:ubuntu,helvetica,arial;overflow:hidden}#header{top:0;height:45px;line-height:45px;background:#f8f8f8;color:#eee;font-size:20px;text-align:center;font-weight:700}#footer,#header{position:absolute;z-index:2;left:0;width:100%;padding:0}#footer{bottom:0;height:3pc;background:#444;border-top:1px solid #444}#content{position:absolute;z-index:1;top:0;bottom:0;left:0;width:100%;overflow:hidden}.conter{display:block}.conter-padding{margin:0 10px}.conter-attribute{width:100%;height:60px;border-bottom:1px solid #ccc;border-top:1px solid #fff;padding-bottom:5px}.conten-left{float:left}.conten-right{display:block;overflow:hidden;height:45px;width:90pt;float:left;margin-left:20px}.conten-right-zia{font-size:15px;display:block;line-height:30px}.conten-right-zib{color:#a5a9b1;display:block;font-size:9pt;line-height:20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}div{display:block}.conten-icon img{width:18px;float:right;padding-top:11px}.headerr-img{background:url(/core/api/img/iconfont-sousuo.png) no-repeat;background-size:22px 24px;background-position-y:5px;background-position-x:2px;background-position:2px 5px;padding-left:25px;margin-bottom:8px;margin-top:5px;border:1px solid #ccc;border-radius:5px;border-bottom:1px solid #ccc;background-color:#fff;vertical-align:middle;box-sizing:border-box;height:34px;width:80%}a:visited{color:#000}#scroller{position:absolute;z-index:1;-webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;-o-text-size-adjust:none;text-size-adjust:none}#scroller ul{list-style:none;padding:0;margin:0;width:100%;text-align:left}#scroller li{padding:0 10px;border-top:1px solid #fff;background-color:#fff;font-size:14px}#pullDown,#pullUp{height:40px;line-height:40px;padding:5px 10px;font-weight:700;font-size:14px;color:#888;text-align:center}#pullDown .pullDownIcon,#pullUp .pullUpIcon{display:block;float:left;width:40px;height:35px;background:url(/core/api/img/pull-icon@2x.png) 0 0 no-repeat;background-size:40px 5pc;-webkit-transition-property:-webkit-transform;-webkit-transition-duration:.25s}#pullDown .pullDownIcon{-webkit-transform:rotate(0deg) translateZ(0)}#pullDown.flip .pullDownIcon,#pullUp .pullUpIcon{-webkit-transform:rotate(-180deg) translateZ(0)}#pullUp.flip .pullUpIcon{-webkit-transform:rotate(0deg) translateZ(0)}#pullDown.loading .pullDownIcon,#pullUp.loading .pullUpIcon{background-position:0 100%;-webkit-transform:rotate(0deg) translateZ(0);-webkit-transition-duration:0ms;-webkit-animation-name:loading;-webkit-animation-duration:2s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear}.-webkit-keyframes loading{0%{-webkit-transform:rotate(0deg)translateZ(0)}.to{-webkit-transform:rotate(360deg) translateZ(0)}}
+		&lt;/style&gt;
+	&lt;/head&gt;
+
+	&lt;body&gt;
+		&lt;input type="hidden" id="recipeId" value="1580"/&gt;
+		&lt;div id="content"&gt;
+			&lt;div id="scroller"&gt;
+				&lt;div id="pullDown" class="ub ub-pc c-gra"&gt;
+					&lt;div class="pullDownIcon"&gt;&lt;/div&gt;
+					&lt;div class="pullDownLabel"&gt;获取最新评论...&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;ul id="add"&gt;
+				&lt;/ul&gt;
+
+				&lt;div id="pullUp" class="ub ub-pc c-gra"&gt;
+					&lt;div class="pullUpIcon"&gt;&lt;/div&gt;
+					&lt;div class="pullUpLabel"&gt;获取最新评论...&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+		&lt;/div&gt;
+	&lt;/body&gt;
+
+    &lt;script type="text/javascript" src="/core/api/js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/core/api/js/iscroll-probe.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        function fmtDate(oTime){
+            var cTime = new Date().getTime()
+            if (oTime == null) {
+                return "";
+            }
+            else {
+                var millisecond = cTime - oTime;
+                var minute = 60 * 1000;
+                var hour = minute * 60;
+                var day = hour * 24;
+
+                if (millisecond &lt;= minute) {
+                    return "刚刚";
+                } else if (millisecond &gt; minute &amp;&amp; millisecond &lt;= hour) {
+                    var  minuteNum = millisecond / minute;
+                    return Math.round(minuteNum) + " 分钟前";
+                } else if (millisecond &gt; hour &amp;&amp; millisecond &lt;= day) {
+                    var hourNum = millisecond / hour;
+                    return Math.round(hourNum) + " 小时前";
+                } else {
+                    da = new Date(oTime);
+                    var year = da.getFullYear()+'-';
+                    var month = da.getMonth()+1+'-';
+                    var day = da.getDate();
+                    return year+month+day
+                }
+            }
+        }
+
+        var myScroll;
+        var pullDownEl, pullDownL;
+        var pullUpEl, pullUpL;
+        var loadingStep = 0; //加载状态0默认，1显示加载状态，2执行加载数据，只有当为0时才能再次加载，这是防止过快拉动刷新
+        var reciepid = 1580;
+        var Upcount = 1;
+        var lastpage = 0;
+        var pagedata;
+        function requestData(pageno, perpage, recipeid) //获取服务器数据
+        {
+            $.ajax({
+                type: "get",
+                url: "/v1/recipecomment/more?pageno=" + pageno + "&amp;perpage=" + perpage + "&amp;recipeid=" + recipeid,
+                cache: true,
+                async: false, //异步会有刷新不到数据的情况
+                success: function (result) {
+                    pagedata = "";
+                    if(result.result.length&lt;=0)
+					{
+                        if(pageno&lt;=1)
+                        {
+                            var nolist = "&lt;li&gt;"+
+                                    "&lt;div class='conter'&gt;"+
+                                    "&lt;div style='min-height: 50px;padding: 15px 10px 0px 0px;position: relative;padding-bottom: 5px;'&gt;"+
+                                    "&lt;div class='f-user-info' style='margin: 0px;padding: 0px;'&gt;"+
+                                    "&lt;div class='f-nick' style='width: 100%;white-space: nowrap;word-wrap: normal;overflow: hidden;text-overflow: ellipsis;font-size: 14px;line-height: 22px;margin-bottom: 8px;'&gt;&lt;a href='#' style='     display: block;float: left;width: 100px;color: #f57f0c;text-decoration: none;'&gt;"+"&lt;/a&gt;"+
+                                    "&lt;span href='#' style='color: #8C8C8C;font-size: 12px;float: right;margin-right: 10px;'&gt;"+"&lt;/span&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;div class='info-detail' style='margin: 0px;padding: 0px; text-align: center'&gt;&lt;span class=' ui-mr8 state' style='display: inline-block;vertical-align: top;color: #8C8C8C;line-height: 1.334;font-size: 15px;    padding-bottom: 8px;'&gt;"+"暂无相关评论，去发表个评论吧"+"&lt;/span&gt;&lt;/div&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;/li&gt;";
+                            $('#add').append(nolist);
+                        }
+                        loadingStep = -1;
+                        lastpage = -1;
+					}else
+					{
+                        $.each(result.result, function (index, item) {
+                            var owninfo = "";
+                            var ownpic= "/core/api/img/my.png";
+                            if(item.userName != null)
+                            {
+                                owninfo = item.userName;
+                            }else
+                            {
+                                owninfo = "压力锅用户";
+                            }
+                            if(item.headPic != null)
+                            {
+                                ownpic=item.headPic;
+                            }
+                            pagedata += "&lt;li&gt;"+
+                                    "&lt;div class='conter'&gt;"+
+                                    "&lt;div style='min-height: 50px;padding: 15px 10px 0px 60px;position: relative;padding-bottom: 5px;border-bottom: 1px solid #ccc;'&gt;"+
+                                    "&lt;div class='f-user-pto' style='position: absolute;left: 9px;top: 15px;'&gt;"+
+                                    "&lt;a href='' style='background: url("+ownpic+") no-repeat;position: relative;background-size: 100% 100%;display: block;border: 0px none;font-size: 0px;width: 40px;height: 40px;vertical-align: top;border-radius: 4px;'&gt;&lt;/a&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;div class='f-user-info' style='margin: 0px;padding: 0px;'&gt;"+
+                                    "&lt;div class='f-nick' style='width: 100%;white-space: nowrap;word-wrap: normal;overflow: hidden;text-overflow: ellipsis;font-size: 14px;line-height: 22px;margin-bottom: 8px;'&gt;&lt;a href='#' style='     display: block;float: left;width: 100px;color: #f57f0c;text-decoration: none;'&gt;"+owninfo+"&lt;/a&gt;"+
+                                    "&lt;span href='#' style='color: #8C8C8C;font-size: 12px;float: right;margin-right: 10px;'&gt;"+fmtDate(item.commentTime)+"&lt;/span&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;div class='info-detail' style='margin: 0px;padding: 0px;'&gt;&lt;span class=' ui-mr8 state' style='display: inline-block;vertical-align: top;color: #8C8C8C;line-height: 1.334;font-size: 12px;    padding-bottom: 8px;'&gt;"+item.contents+"&lt;/span&gt;&lt;/div&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;/div&gt;"+
+                                    "&lt;/li&gt;";
+                        });
+					}
+
+                    Upcount++;
+                }
+            });
+        }
+        function pullUpAction() { //上拉事件
+            var el, li, i;
+            el = $('#add');
+            requestData(Upcount, 18, reciepid);
+            el.append(pagedata);
+            pullUpEl.removeClass('loading');
+            pullUpL.html('上拉显示更多...');
+            pullUpEl['class'] = pullUpEl.attr('class');
+            pullUpEl.attr('class', '').hide();
+            myScroll.refresh();
+            loadingStep = 0;
+        }
+
+        function loaded() {
+            pullDownEl = $('#pullDown');
+            pullDownL = pullDownEl.find('.pullDownLabel');
+            pullDownEl['class'] = pullDownEl.attr('class');
+            pullDownEl.attr('class', '').hide();
+            pullUpEl = $('#pullUp');
+            pullUpL = pullUpEl.find('.pullUpLabel');
+            pullUpEl['class'] = pullUpEl.attr('class');
+            pullUpEl.attr('class', '').hide();
+            myScroll = new IScroll('#content', {
+                probeType: 2, //probeType：1对性能没有影响。在滚动事件被触发时，滚动轴是不是忙着做它的东西。probeType：2总执行滚动，除了势头，反弹过程中的事件。这类似于原生的onscroll事件。probeType：3发出的滚动事件与到的像素精度。注意，滚动被迫requestAnimationFrame（即：useTransition：假）。
+                scrollbars: true, //有滚动条
+                mouseWheel: true, //允许滑轮滚动
+                fadeScrollbars: true, //滚动时显示滚动条，默认影藏，并且是淡出淡入效果
+                bounce: true, //边界反弹
+                interactiveScrollbars: true, //滚动条可以拖动
+                shrinkScrollbars: 'scale', // 当滚动边界之外的滚动条是由少量的收缩。'clip' or 'scale'.
+                click: true, // 允许点击事件
+                keyBindings: true, //允许使用按键控制
+                momentum: true // 允许有惯性滑动
+            });
+            //滚动时
+            myScroll.on('scroll', function() {
+                        if (loadingStep == 0 &amp;&amp; !pullDownEl.attr('class').match('flip|loading') &amp;&amp; !pullUpEl.attr('class').match('flip|loading')) {
+                            if (this.y &lt; (this.maxScrollY + 400)) {
+                                if (this.maxScrollY != 0 &amp;&amp; this.y &lt; (this.maxScrollY + 400)) {
+                                    // 上拉刷新效果
+                                    pullUpEl.attr('class', pullUpEl['class'])
+                                    pullUpEl.show();
+                                    myScroll.refresh();
+                                    pullUpEl.addClass('flip');
+                                    pullUpL.html("拼命加载中...");
+                                    loadingStep = 1;
+                                }
+                                if (lastpage == -1) {
+                                    loadingStep = -1;
+                                }
+                            }
+                        } else {
+                            if (lastpage == -1) {
+                                pullUpEl.show();
+                                pullUpL.html("已经是最后一页");
+                                loadingStep = -1;
+                            }
+                        }
+                    }
+
+            );
+            //滚动完毕
+            myScroll.on('scrollEnd', function() {
+                if (loadingStep == 1) {
+                    if (pullUpEl.attr('class').match('flip|loading')) {
+                        pullUpEl.removeClass('flip').addClass('loading');
+                        pullUpL.html('Loading...');
+                        loadingStep = 2;
+                        pullUpAction();
+                    }
+                }else if (loadingStep == -1){
+                pullUpEl.removeClass('loading');
+                pullUpEl['class'] = pullUpEl.attr('class');
+                pullUpEl.attr('class', '').hide();
+                myScroll.refresh();
+                loadingStep = 0;
+            }
+            });
+        }
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, false);
+
+        function initlist() { //first init
+            requestData(Upcount, 18, reciepid);
+            $("#add").append(pagedata);
+            loaded();
+        }
+        $(document).ready(function() {
+            initlist(); //初始化iscokll
+        });
+
+    &lt;/script&gt;
+&lt;/html&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commentmore.commentmoreTest: 获取最新评论(分页)</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',3)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentmore_success: 只传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/more
+{"code":1,"message":"操作成功","result":[{"id":14,"userId":1,"contents":"good","time":"2018-07-31T05:34:07.000+0000","ip":"192.0.10.209","recipeId":1580,"parentId":1,"state":0,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1533015247000},{"id":16,"userId":1,"contents":"good","time":"2018-07-31T05:34:07.000+0000","ip":"192.0.10.209","recipeId":1580,"parentId":1,"state":0,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1533015247000},{"id":7,"userId":null,"contents":"good","time":"2018-06-22T08:47:31.000+0000","ip":null,"recipeId":1580,"parentId":null,"state":2200,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1529657251000}],"serverTime":1535097442065}
+14
+good
+REcc
+16
+good
+REcc
+7
+good
+REcc
+14
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentmore_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+        pass</a>
+
+    <div id='div_pt6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.2: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/more
+{"code":1,"message":"操作成功","result":[{"id":15,"userId":null,"contents":"good","time":"2018-08-24T04:06:00.000+0000","ip":null,"recipeId":1294,"parentId":null,"state":2200,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1535083560000}],"serverTime":1535097442089}
+15
+good
+REcc
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt6.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentmore_success2: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.3')" >
+        pass</a>
+
+    <div id='div_pt6.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.3: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/more
+{"code":1,"message":"操作成功","result":[],"serverTime":1535097442105}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commenttwo.commenttwoTest: 获取最新评论(2条)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commenttwo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/toptwo
+{"code":1,"message":"操作成功","result":[{"id":14,"userId":1,"contents":"good","time":"2018-07-31T05:34:07.000+0000","ip":"192.0.10.209","recipeId":1580,"parentId":1,"state":0,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1533015247000},{"id":16,"userId":1,"contents":"good","time":"2018-07-31T05:34:07.000+0000","ip":"192.0.10.209","recipeId":1580,"parentId":1,"state":0,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1533015247000}],"serverTime":1535097442126}
+good
+good
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_generateCookCod.generateCookCodeTest: 根据食材,做法,口感生成临时程序</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',3)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_generateCookCode_success: 所有参数都传，口感A</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/generateCookCode
+{"code":1,"message":"操作成功","result":"02010600000006e50028010000050080010105061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0006000005000e0c910c91080a00100e910a910a0f001210910c910c732000ff1e28323c0c00000c00000c0000000000000000000000df8a","serverTime":1535097442189}
+02010600000006e50028010000050080010105061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0006000005000e0c910c91080a00100e910a910a0f001210910c910c732000ff1e28323c0c00000c00000c0000000000000000000000df8a
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt8.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_generateCookCode_success1: 所有参数都传，口感B</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.2')" >
+        pass</a>
+
+    <div id='div_pt8.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/generateCookCode
+{"code":1,"message":"操作成功","result":"02010600000006e50028010000050080010105061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0006000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000e889","serverTime":1535097442216}
+02010600000006e50028010000050080010105061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0006000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000e889
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt8.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_generateCookCode_success2: 所有参数都传，口感C</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.3')" >
+        pass</a>
+
+    <div id='div_pt8.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.3: url http://pre-pressureplugapi.joyami.com/v1/recipe/generateCookCode
+{"code":1,"message":"操作成功","result":"02010600000006e50028010000050080010105061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0006000005000e0c910c91080a00100e910a910a0f001210910c910c732002ff1e28323c0c00000c00000c0000000000000000000000b18c","serverTime":1535097442239}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_hotword.recipehotwordTest: 热搜</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_hotword_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/hotword/list
+红烧肉
+绿豆莲子汤
+牛尾清汤
+酱牛骨头
+卤牛腱
+人参鸡汤
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_managereset.manageresetTest: 恢复默认设置</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_managereset_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/reset
+{"code":1,"message":"操作成功","result":[{"recipeId":1,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":2,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":3,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":4,"recipe":{"id":4,"name":"豆类蹄筋","icon":"/11b12fc1f5564c2a8be8f25d5ba45395.png","advIcon":"/6fb836751df04f00bd129e4bc997b19d.png","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010400000004e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000001d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":5,"recipe":{"id":5,"name":"快速煮饭","icon":"/86e86e83b85047678bc1904f94783cee.png","advIcon":"/4eeed93be547495f9e78f7e4b00e3f8f.png","content":"避免锅中和食材带有较多的水分，防止造成热油飞溅。油炸过程中人不要远离电磁炉！不要让儿童靠近！","mainIcon":"/6765c1f2ceec4c6fa31d7a55e700f94e.png","description":"使用较高的火力，在短时间内将食物用油烹饪至熟透，表面会稍成金黄色乃至微煳。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:54.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010500000005e4001e0019000a00800102050a1400000000040091823218000000012300913c7320000000010100915a7d003205c8010d0087666eff3205ff000a00ffff91ff3205ff00ffffff8273ff3205ff00000091827d0000000000000091827d00000000020a0091827d00ffff0000000091827d000000000700180c7d0c910c0a001a0a800c910c32001c0a860c910c732001ff1e323c460c00000c00000c00000000000000000000009f44","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":6,"recipe":{"id":6,"name":"杂粮米粥","icon":"/599a41e7e4ca4e28a2f14ce82c70beda.png","advIcon":"/05af17e729df43c891fc28664681ba16.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:02.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010600000006e50028010000050080010205061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000973a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":7,"recipe":{"id":7,"name":"浓香煲汤","icon":"/5067ed187eb24ccfbdf3aad4b1008339.png","advIcon":"/85430dffa88f4e2296e9ba840a08034a.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:13.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010700000007e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280019000019000019000000000000000000003706","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":8,"recipe":{"id":8,"name":"保温","icon":"/1bacb207b22d42aebec103a92131b870.png","advIcon":"/23999b0e49fb437aa2a5fb55dcc6a226.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:21.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010800000008070200000000000000010000000000000000000591827d00000000002500913c7d20000000000100915a7d003205c8000a0091647dff0a05c8000a0091ff7dff3205ff00000091827dff3205ff00000091827d00050fc800000091827d003205ff00000091826e0000000000001e91826e000505c80073120e780c780c00af18107d0e7d0e011918127d127d12732001ff1e141e280a0c0a0a0c0a0a0c0a00000000000000000035a2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":9,"recipe":{"id":9,"name":"开盖收汁","icon":"/e96b96003f6a42ddad404c185efbdbdf.png","advIcon":"/f90858bc306849edb6109760ff220b0b.png","content":"开盖收汁","mainIcon":"","description":"开盖收汁","duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-29T08:26:31.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"020109000000090802000100000500000003050c0000000000000091827d00000000000000913c7d20000000000000915a7d003205c8000000916578ff3205ff00000091ff73ff3205ff00ffff91827d203205a000000091827d103205a000000091827d0a3205a000000091826e0000000000000091826e000503c80073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280f00000f00000f0000000000000000000000a097","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442340}
+鲜炖鸡鸭
+焖炖牛羊
+精炖猪肉
+豆类蹄筋
+快速煮饭
+杂粮米粥
+浓香煲汤
+保温
+开盖收汁
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_managermy.managermyTest: 获取我的模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeslist_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/my
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":1929,"name":"ghjk","icon":null,"advIcon":"/ff21cf77406f481a8a703164420a5177.png","content":null,"mainIcon":null,"description":null,"duration":40,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-06-22T14:56:25.000+0000","usageCount":3,"categoryId":null,"practiceId":6,"ingredientId":1,"textureId":2,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":true,"cookBook":true,"cookCode":"02010600000789e50028010000050080010105061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0006000005000e0c910c91080a00100e910a910a0f001210910c910c732000ff1e28323c0c00000c00000c0000000000000000000000a791","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"无水焗","ingredient":"猪肉排骨","textures":["绵软","劲道","弹嫩","酥软"]},{"recipeId":null,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":1930,"name":"不好吧","icon":null,"advIcon":"/8030d9f2747d4853bc4583cf9016c653.png","content":null,"mainIcon":null,"description":null,"duration":50,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-06-22T14:57:05.000+0000","usageCount":3,"categoryId":null,"practiceId":5,"ingredientId":2,"textureId":3,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":true,"cookBook":true,"cookCode":"0201040000078ae300320100000a00800102050a1900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000600000073120e910c910c00af1810910c910c01191812910c910c732000ff1e2d3c4b280000280000280000000000000000000000d096","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"精煮饭","ingredient":"大米","textures":["绵软","劲道","弹嫩","软糯"]},{"recipeId":null,"recipe":{"id":6,"name":"杂粮米粥","icon":"/599a41e7e4ca4e28a2f14ce82c70beda.png","advIcon":"/05af17e729df43c891fc28664681ba16.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:02.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010600000006e50028010000050080010205061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000973a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":7,"name":"浓香煲汤","icon":"/5067ed187eb24ccfbdf3aad4b1008339.png","advIcon":"/85430dffa88f4e2296e9ba840a08034a.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:13.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010700000007e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280019000019000019000000000000000000003706","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":8,"name":"保温","icon":"/1bacb207b22d42aebec103a92131b870.png","advIcon":"/23999b0e49fb437aa2a5fb55dcc6a226.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:21.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010800000008070200000000000000010000000000000000000591827d00000000002500913c7d20000000000100915a7d003205c8000a0091647dff0a05c8000a0091ff7dff3205ff00000091827dff3205ff00000091827d00050fc800000091827d003205ff00000091826e0000000000001e91826e000505c80073120e780c780c00af18107d0e7d0e011918127d127d12732001ff1e141e280a0c0a0a0c0a0a0c0a00000000000000000035a2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":9,"name":"开盖收汁","icon":"/e96b96003f6a42ddad404c185efbdbdf.png","advIcon":"/f90858bc306849edb6109760ff220b0b.png","content":"开盖收汁","mainIcon":"","description":"开盖收汁","duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-29T08:26:31.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"020109000000090802000100000500000003050c0000000000000091827d00000000000000913c7d20000000000000915a7d003205c8000000916578ff3205ff00000091ff73ff3205ff00ffff91827d203205a000000091827d103205a000000091827d0a3205a000000091826e0000000000000091826e000503c80073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280f00000f00000f0000000000000000000000a097","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442378}
+鲜炖鸡鸭
+1
+焖炖牛羊
+2
+ghjk
+1929
+精炖猪肉
+3
+不好吧
+1930
+杂粮米粥
+6
+浓香煲汤
+7
+保温
+8
+开盖收汁
+9
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_managermylist.managermylistTest: 获取我的模式最近使用的集合</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipesmylist_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[],"serverTime":1535097442398}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_managerop.manageropTest: 设置收藏</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',2)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_managerop_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/op
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097442448}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_managerop_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.2')" >
+        pass</a>
+
+    <div id='div_pt13.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/op
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097442481}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_managersort.managersortTest: 我的模式,管理;分页获取[列表] 编辑</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_managersort_success: 我的模式,管理;分页获取[列表] 编辑</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/sort?deviceid=57357285
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097442531}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_procedure1.procedure1Test: 流程1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_procedure1_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        fail</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/op
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097442581}
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1829,"name":"绿豆莲子汤","icon":"/4828749b42114d46b6cc306536aed42b.jpg","advIcon":null,"content":"莲子和绿豆都不用浸泡。","mainIcon":null,"description":"炎热的夏天，还有什么是比一碗绿豆汤更能让人清凉的呢。加上莲子同煮，还可以安神静心。","duration":15,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T04:03:51.000+0000","usageCount":4,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010500000725e5000f0014000a0080010905021e00000000000591827d00000000012400914b7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0a00000a00000a000000000000000000000022a9","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":1808,"name":"人参鸡汤","icon":"/29e3f7bad66546e691f1bb9296dbdaed.jpg","advIcon":null,"content":"1、刚刚煮好的鸡汤非常的烫！特别是飘着一层鸡油，不要着急喝！\r\n2、鸡可以选择农家土鸡或者老母鸡，不要用童子鸡炖不出香味。\r\n3、花菇可以用香菇代替。\r\n","mainIcon":null,"description":"滋补人参鸡汤，农家散养的土鸡加上鲜人参、红枣、花菇和枸杞。整只鸡下锅炖，保留了鸡肉中的营养成分。炖好的鸡汤，汤呈金黄色，鸡肉轻松脱骨。","duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-12T10:11:39.000+0000","usageCount":4,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010600000710e60014001e000a0080010c05031400000000000591827d00000000012500914b7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff000500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000300120e910c910c08001810910e910e0f00181291109110732001ff1e1e2328000f00000f00000f00000000000000000000dab6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":4,"name":"豆类蹄筋","icon":"/11b12fc1f5564c2a8be8f25d5ba45395.png","advIcon":"/6fb836751df04f00bd129e4bc997b19d.png","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010400000004e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000001d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442616}
+绿豆莲子汤
+1829
+焖炖牛羊
+2
+鲜炖鸡鸭
+1
+人参鸡汤
+1808
+豆类蹄筋
+4
+精炖猪肉
+3
+[1829, 2, 1, 1808, 4, 3]
+False
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µçÑ¹Á¦¹ø\½Ó¿Ú´úÂë\DYLG_Interface\cj_interface\test_procedure1.py", line 50, in test_procedure1_success
+    self.assertIs(recipeid in ID,True)
+AssertionError: False is not True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure2.procedure2Test: 流程2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure2_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt16.1')" >
+        pass</a>
+
+    <div id='div_pt16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt16.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/op
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097442640}
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1829,"name":"绿豆莲子汤","icon":"/4828749b42114d46b6cc306536aed42b.jpg","advIcon":null,"content":"莲子和绿豆都不用浸泡。","mainIcon":null,"description":"炎热的夏天，还有什么是比一碗绿豆汤更能让人清凉的呢。加上莲子同煮，还可以安神静心。","duration":15,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T04:03:51.000+0000","usageCount":4,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010500000725e5000f0014000a0080010905021e00000000000591827d00000000012400914b7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0a00000a00000a000000000000000000000022a9","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":1808,"name":"人参鸡汤","icon":"/29e3f7bad66546e691f1bb9296dbdaed.jpg","advIcon":null,"content":"1、刚刚煮好的鸡汤非常的烫！特别是飘着一层鸡油，不要着急喝！\r\n2、鸡可以选择农家土鸡或者老母鸡，不要用童子鸡炖不出香味。\r\n3、花菇可以用香菇代替。\r\n","mainIcon":null,"description":"滋补人参鸡汤，农家散养的土鸡加上鲜人参、红枣、花菇和枸杞。整只鸡下锅炖，保留了鸡肉中的营养成分。炖好的鸡汤，汤呈金黄色，鸡肉轻松脱骨。","duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-12T10:11:39.000+0000","usageCount":4,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010600000710e60014001e000a0080010c05031400000000000591827d00000000012500914b7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff000500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000300120e910c910c08001810910e910e0f00181291109110732001ff1e1e2328000f00000f00000f00000000000000000000dab6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":4,"name":"豆类蹄筋","icon":"/11b12fc1f5564c2a8be8f25d5ba45395.png","advIcon":"/6fb836751df04f00bd129e4bc997b19d.png","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010400000004e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000001d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442674}
+绿豆莲子汤
+1829
+焖炖牛羊
+2
+鲜炖鸡鸭
+1
+人参鸡汤
+1808
+豆类蹄筋
+4
+精炖猪肉
+3
+[1829, 2, 1, 1808, 4, 3]
+False
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure3.procedure3Test: 流程3</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure3_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt17.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/reset
+{"code":1,"message":"操作成功","result":[{"recipeId":1,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":2,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":3,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":4,"recipe":{"id":4,"name":"豆类蹄筋","icon":"/11b12fc1f5564c2a8be8f25d5ba45395.png","advIcon":"/6fb836751df04f00bd129e4bc997b19d.png","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010400000004e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000001d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":5,"recipe":{"id":5,"name":"快速煮饭","icon":"/86e86e83b85047678bc1904f94783cee.png","advIcon":"/4eeed93be547495f9e78f7e4b00e3f8f.png","content":"避免锅中和食材带有较多的水分，防止造成热油飞溅。油炸过程中人不要远离电磁炉！不要让儿童靠近！","mainIcon":"/6765c1f2ceec4c6fa31d7a55e700f94e.png","description":"使用较高的火力，在短时间内将食物用油烹饪至熟透，表面会稍成金黄色乃至微煳。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:54.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010500000005e4001e0019000a00800102050a1400000000040091823218000000012300913c7320000000010100915a7d003205c8010d0087666eff3205ff000a00ffff91ff3205ff00ffffff8273ff3205ff00000091827d0000000000000091827d00000000020a0091827d00ffff0000000091827d000000000700180c7d0c910c0a001a0a800c910c32001c0a860c910c732001ff1e323c460c00000c00000c00000000000000000000009f44","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":6,"recipe":{"id":6,"name":"杂粮米粥","icon":"/599a41e7e4ca4e28a2f14ce82c70beda.png","advIcon":"/05af17e729df43c891fc28664681ba16.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:02.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010600000006e50028010000050080010205061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000973a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":7,"recipe":{"id":7,"name":"浓香煲汤","icon":"/5067ed187eb24ccfbdf3aad4b1008339.png","advIcon":"/85430dffa88f4e2296e9ba840a08034a.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:13.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010700000007e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280019000019000019000000000000000000003706","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":8,"recipe":{"id":8,"name":"保温","icon":"/1bacb207b22d42aebec103a92131b870.png","advIcon":"/23999b0e49fb437aa2a5fb55dcc6a226.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:21.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010800000008070200000000000000010000000000000000000591827d00000000002500913c7d20000000000100915a7d003205c8000a0091647dff0a05c8000a0091ff7dff3205ff00000091827dff3205ff00000091827d00050fc800000091827d003205ff00000091826e0000000000001e91826e000505c80073120e780c780c00af18107d0e7d0e011918127d127d12732001ff1e141e280a0c0a0a0c0a0a0c0a00000000000000000035a2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":9,"recipe":{"id":9,"name":"开盖收汁","icon":"/e96b96003f6a42ddad404c185efbdbdf.png","advIcon":"/f90858bc306849edb6109760ff220b0b.png","content":"开盖收汁","mainIcon":"","description":"开盖收汁","duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-29T08:26:31.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"020109000000090802000100000500000003050c0000000000000091827d00000000000000913c7d20000000000000915a7d003205c8000000916578ff3205ff00000091ff73ff3205ff00ffff91827d203205a000000091827d103205a000000091827d0a3205a000000091826e0000000000000091826e000503c80073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280f00000f00000f0000000000000000000000a097","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442731}
+鲜炖鸡鸭
+焖炖牛羊
+精炖猪肉
+豆类蹄筋
+快速煮饭
+杂粮米粥
+浓香煲汤
+保温
+开盖收汁
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[],"serverTime":1535097442749}
+[]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure4.procedure4Test: 流程4</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure4_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt18.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/reset
+{"code":1,"message":"操作成功","result":[{"recipeId":1,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":2,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":3,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":4,"recipe":{"id":4,"name":"豆类蹄筋","icon":"/11b12fc1f5564c2a8be8f25d5ba45395.png","advIcon":"/6fb836751df04f00bd129e4bc997b19d.png","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010400000004e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000001d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":5,"recipe":{"id":5,"name":"快速煮饭","icon":"/86e86e83b85047678bc1904f94783cee.png","advIcon":"/4eeed93be547495f9e78f7e4b00e3f8f.png","content":"避免锅中和食材带有较多的水分，防止造成热油飞溅。油炸过程中人不要远离电磁炉！不要让儿童靠近！","mainIcon":"/6765c1f2ceec4c6fa31d7a55e700f94e.png","description":"使用较高的火力，在短时间内将食物用油烹饪至熟透，表面会稍成金黄色乃至微煳。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:54.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010500000005e4001e0019000a00800102050a1400000000040091823218000000012300913c7320000000010100915a7d003205c8010d0087666eff3205ff000a00ffff91ff3205ff00ffffff8273ff3205ff00000091827d0000000000000091827d00000000020a0091827d00ffff0000000091827d000000000700180c7d0c910c0a001a0a800c910c32001c0a860c910c732001ff1e323c460c00000c00000c00000000000000000000009f44","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":6,"recipe":{"id":6,"name":"杂粮米粥","icon":"/599a41e7e4ca4e28a2f14ce82c70beda.png","advIcon":"/05af17e729df43c891fc28664681ba16.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:02.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010600000006e50028010000050080010205061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000973a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":7,"recipe":{"id":7,"name":"浓香煲汤","icon":"/5067ed187eb24ccfbdf3aad4b1008339.png","advIcon":"/85430dffa88f4e2296e9ba840a08034a.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:13.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010700000007e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280019000019000019000000000000000000003706","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":8,"recipe":{"id":8,"name":"保温","icon":"/1bacb207b22d42aebec103a92131b870.png","advIcon":"/23999b0e49fb437aa2a5fb55dcc6a226.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:21.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010800000008070200000000000000010000000000000000000591827d00000000002500913c7d20000000000100915a7d003205c8000a0091647dff0a05c8000a0091ff7dff3205ff00000091827dff3205ff00000091827d00050fc800000091827d003205ff00000091826e0000000000001e91826e000505c80073120e780c780c00af18107d0e7d0e011918127d127d12732001ff1e141e280a0c0a0a0c0a0a0c0a00000000000000000035a2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":9,"recipe":{"id":9,"name":"开盖收汁","icon":"/e96b96003f6a42ddad404c185efbdbdf.png","advIcon":"/f90858bc306849edb6109760ff220b0b.png","content":"开盖收汁","mainIcon":"","description":"开盖收汁","duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-29T08:26:31.000+0000","usageCount":null,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"020109000000090802000100000500000003050c0000000000000091827d00000000000000913c7d20000000000000915a7d003205c8000000916578ff3205ff00000091ff73ff3205ff00ffff91827d203205a000000091827d103205a000000091827d0a3205a000000091826e0000000000000091826e000503c80073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280f00000f00000f0000000000000000000000a097","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442806}
+鲜炖鸡鸭
+焖炖牛羊
+精炖猪肉
+豆类蹄筋
+快速煮饭
+杂粮米粥
+浓香煲汤
+保温
+开盖收汁
+[u'\u9c9c\u7096\u9e21\u9e2d', u'\u7116\u7096\u725b\u7f8a', u'\u7cbe\u7096\u732a\u8089', u'\u8c46\u7c7b\u8e44\u7b4b', u'\u5feb\u901f\u716e\u996d', u'\u6742\u7cae\u7c73\u7ca5', u'\u6d53\u9999\u7172\u6c64', u'\u4fdd\u6e29', u'\u5f00\u76d6\u6536\u6c41']
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/my
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1,"name":"鲜炖鸡鸭","icon":"/e046e5d341544c868237c0f5397191f6.png","advIcon":"/57566a4ab4074c5e8bc299ee80aad50b.png","content":"汤底一定要大火力烧开再涮食材，食材涮烫熟透再食用，防止引起消化道疾病。","mainIcon":"/782e723534334061a0123ec5260eff07.png","description":"水或汤烧开涮煮食物，大火力快速升温，不用久等。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:42.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010100000001e0001e0100000a0080010105081400000000000591827d00000000011f00913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e1e2832000a00000a00000a00000000000000000000a7d4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":2,"name":"焖炖牛羊","icon":"/83311497ebcc4f0aa16335b21809115a.png","advIcon":"/6f87a37a623940f580343a8fbd2f7d42.png","content":"注意蒸煮过程中所加汤、水要适量，防止溢锅或干锅。","mainIcon":"/1b3a05301e074b269a1759b3a4d7f8ac.png","description":"使汤、水持续沸腾，通过蒸、煮等相对较低温度的方式烹饪食材。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:45.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010200000002e100320100000a0080010105061400000000000591827d00000000012000913c7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff800a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01192012910c910c732001ff1e28323c001900001900001900000000000000000000f69d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":3,"name":"精炖猪肉","icon":"/d305df4287c0450ead17590c4ba07b44.png","advIcon":"/ba9f5ce0f9b84832818c7ed81030b1b6.png","content":"烹饪时间较长，注意多查看，防止溢锅或干锅。","mainIcon":"/5bd1346fbdd548ea84c255767456e644.png","description":"用中等火力对食材进行较长时间的慢煮，让食材的营养充分释放出来。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:49.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010300000003e200280100000a0080010105061400000000000591827d00000000012100913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff800a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e232832000f00000f00000f000000000000000000002c91","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":4,"name":"豆类蹄筋","icon":"/11b12fc1f5564c2a8be8f25d5ba45395.png","advIcon":"/6fb836751df04f00bd129e4bc997b19d.png","content":"建议先放油再打开电磁炉，尽量防止电磁炉干烧。","mainIcon":"/fedec832174941299e7f5140d01c32db.png","description":"大火力加热，升温迅速，让食材在极短的时间内灼烫至熟。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:51.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010400000004e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000001d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":5,"name":"快速煮饭","icon":"/86e86e83b85047678bc1904f94783cee.png","advIcon":"/4eeed93be547495f9e78f7e4b00e3f8f.png","content":"避免锅中和食材带有较多的水分，防止造成热油飞溅。油炸过程中人不要远离电磁炉！不要让儿童靠近！","mainIcon":"/6765c1f2ceec4c6fa31d7a55e700f94e.png","description":"使用较高的火力，在短时间内将食物用油烹饪至熟透，表面会稍成金黄色乃至微煳。","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T02:08:54.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010500000005e4001e0019000a00800102050a1400000000040091823218000000012300913c7320000000010100915a7d003205c8010d0087666eff3205ff000a00ffff91ff3205ff00ffffff8273ff3205ff00000091827d0000000000000091827d00000000020a0091827d00ffff0000000091827d000000000700180c7d0c910c0a001a0a800c910c32001c0a860c910c732001ff1e323c460c00000c00000c00000000000000000000009f44","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":6,"name":"杂粮米粥","icon":"/599a41e7e4ca4e28a2f14ce82c70beda.png","advIcon":"/05af17e729df43c891fc28664681ba16.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:02.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010600000006e50028010000050080010205061e00000000000591827d00000000012400913c7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0c00000c00000c0000000000000000000000973a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":7,"name":"浓香煲汤","icon":"/5067ed187eb24ccfbdf3aad4b1008339.png","advIcon":"/85430dffa88f4e2296e9ba840a08034a.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:13.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010700000007e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280019000019000019000000000000000000003706","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":8,"name":"保温","icon":"/1bacb207b22d42aebec103a92131b870.png","advIcon":"/23999b0e49fb437aa2a5fb55dcc6a226.png","content":"","mainIcon":null,"description":"","duration":null,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-14T09:30:21.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"02010800000008070200000000000000010000000000000000000591827d00000000002500913c7d20000000000100915a7d003205c8000a0091647dff0a05c8000a0091ff7dff3205ff00000091827dff3205ff00000091827d00050fc800000091827d003205ff00000091826e0000000000001e91826e000505c80073120e780c780c00af18107d0e7d0e011918127d127d12732001ff1e141e280a0c0a0a0c0a0a0c0a00000000000000000035a2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},{"recipeId":null,"recipe":{"id":9,"name":"开盖收汁","icon":"/e96b96003f6a42ddad404c185efbdbdf.png","advIcon":"/f90858bc306849edb6109760ff220b0b.png","content":"开盖收汁","mainIcon":"","description":"开盖收汁","duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-03-29T08:26:31.000+0000","usageCount":3,"categoryId":null,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"020109000000090802000100000500000003050c0000000000000091827d00000000000000913c7d20000000000000915a7d003205c8000000916578ff3205ff00000091ff73ff3205ff00ffff91827d203205a000000091827d103205a000000091827d0a3205a000000091826e0000000000000091826e000503c80073120e910c910c00af1810910e910e0119181291109110732001ff1e1e1e280f00000f00000f0000000000000000000000a097","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]}],"serverTime":1535097442838}
+鲜炖鸡鸭
+焖炖牛羊
+精炖猪肉
+豆类蹄筋
+快速煮饭
+杂粮米粥
+浓香煲汤
+保温
+开盖收汁
+[u'\u9c9c\u7096\u9e21\u9e2d', u'\u7116\u7096\u725b\u7f8a', u'\u7cbe\u7096\u732a\u8089', u'\u8c46\u7c7b\u8e44\u7b4b', u'\u5feb\u901f\u716e\u996d', u'\u6742\u7cae\u7c73\u7ca5', u'\u6d53\u9999\u7172\u6c64', u'\u4fdd\u6e29', u'\u5f00\u76d6\u6536\u6c41']
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure5.procedure5Test: 流程5</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure5_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1940,"name":"testtest","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":20,"firePower":0,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010700000794e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d0000000000000000000078a8","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},"serverTime":1535097442898}
+1940
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1940,"name":"testtest","icon":null,"advIcon":"/ff21cf77406f481a8a703164420a5177.png","content":null,"mainIcon":null,"description":null,"duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-08-24T07:57:22.000+0000","usageCount":3,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"02010700000794e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d0000000000000000000078a8","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"煲汤","ingredient":"猪肉排骨","textures":["绵软","劲道","弹嫩","嚼劲"]}],"serverTime":1535097442933}
+testtest
+1940
+[1940]
+True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure6.procedure6Test: 流程6</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure6_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1941,"name":"创建自定义模式","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":20,"firePower":0,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010700000795e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d00000000000000000000638d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},"serverTime":1535097442989}
+{u'message': u'\u64cd\u4f5c\u6210\u529f', u'code': 1, u'serverTime': 1535097442989L, u'result': {u'textures': None, u'favoriteRecipe': False, u'practice': None, u'cookCode': u'02010700000795e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d00000000000000000000638d', u'recipeId': None, u'customRecipe': False, u'recipe': {u'usageCount': None, u'mainIcon': None, u'textureId': 7, u'name': u'\u521b\u5efa\u81ea\u5b9a\u4e49\u6a21\u5f0f', u'description': None, u'customized': u'1', u'flag': u'1', u'publishTime': None, u'practiceId': 4, u'categoryId': None, u'content': None, u'state': 2100, u'ingredientId': 1, u'temperature': 0, u'firePower': 0, u'duration': 20, u'advIcon': None, u'collectorCount': None, u'id': 1941, u'icon': None}, u'topRecipe': False, u'officialRecipe': False, u'defaultRecipe': False, u'stepList': [], u'ingredientList': [], u'auxiliaryList': [], u'cookBook': False, u'categoryId': None, u'ingredient': None}}
+创建自定义模式
+1941
+url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/edit
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1941,"name":"编辑自定义aaa","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-08-24T07:57:22.000+0000","usageCount":3,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010700000795e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d00000000000000000000638d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},"serverTime":1535097443048}
+编辑自定义aaa
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1940,"name":"testtest","icon":null,"advIcon":"/ff21cf77406f481a8a703164420a5177.png","content":null,"mainIcon":null,"description":null,"duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-08-24T07:57:22.000+0000","usageCount":3,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"02010700000794e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d0000000000000000000078a8","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"煲汤","ingredient":"猪肉排骨","textures":["绵软","劲道","弹嫩","嚼劲"]},{"recipeId":null,"recipe":{"id":1941,"name":"编辑自定义aaa","icon":null,"advIcon":"/ff21cf77406f481a8a703164420a5177.png","content":null,"mainIcon":null,"description":null,"duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-08-24T07:57:22.000+0000","usageCount":3,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"02010700000795e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d00000000000000000000638d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"煲汤","ingredient":"猪肉排骨","textures":["绵软","劲道","弹嫩","嚼劲"]}],"serverTime":1535097443087}
+testtest
+1940
+编辑自定义aaa
+1941
+[u'testtest', u'\u7f16\u8f91\u81ea\u5b9a\u4e49aaa']
+True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure7.procedure7Test: 流程7</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure7_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+        pass</a>
+
+    <div id='div_pt21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt21.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1942,"name":"创建自定义模式","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":20,"firePower":0,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010700000796e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d000000000000000000004ee2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},"serverTime":1535097443148}
+1942
+url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/del
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097443214}
+url http://pre-pressureplugapi.joyami.com/v1/recipe/manager/mylist
+{"code":1,"message":"操作成功","result":[{"recipeId":null,"recipe":{"id":1940,"name":"testtest","icon":null,"advIcon":"/ff21cf77406f481a8a703164420a5177.png","content":null,"mainIcon":null,"description":null,"duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-08-24T07:57:22.000+0000","usageCount":3,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"02010700000794e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d0000000000000000000078a8","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"煲汤","ingredient":"猪肉排骨","textures":["绵软","劲道","弹嫩","嚼劲"]},{"recipeId":null,"recipe":{"id":1941,"name":"编辑自定义aaa","icon":null,"advIcon":"/ff21cf77406f481a8a703164420a5177.png","content":null,"mainIcon":null,"description":null,"duration":10,"firePower":0,"temperature":0,"collectorCount":0,"state":2100,"publishTime":"2018-08-24T07:57:22.000+0000","usageCount":3,"categoryId":null,"practiceId":4,"ingredientId":1,"textureId":7,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":true,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"02010700000795e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732002ff1e1e1e28002d00002d00002d00000000000000000000638d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":"煲汤","ingredient":"猪肉排骨","textures":["绵软","劲道","弹嫩","嚼劲"]}],"serverTime":1535097443246}
+testtest
+1940
+编辑自定义aaa
+1941
+[1940, 1941]
+True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_procedure8.procedure8Test: 流程8</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_procedure8_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: url http://pre-pressureplugapi.joyami.com/v1/recipecomment/add
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097443314}
+url http://pre-pressureplugapi.joyami.com/v1/recipecomment/toptwo
+{"code":1,"message":"操作成功","result":[{"id":17,"userId":null,"contents":"good","time":"2018-08-24T07:57:23.000+0000","ip":null,"recipeId":1294,"parentId":null,"state":2200,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1535097443000},{"id":15,"userId":null,"contents":"good","time":"2018-08-24T04:06:00.000+0000","ip":null,"recipeId":1294,"parentId":null,"state":2200,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1535083560000}],"serverTime":1535097443449}
+url http://pre-pressureplugapi.joyami.com/v1/recipecomment/more
+{"code":1,"message":"操作成功","result":[{"id":17,"userId":null,"contents":"good","time":"2018-08-24T07:57:23.000+0000","ip":null,"recipeId":1294,"parentId":null,"state":2200,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1535097443000},{"id":15,"userId":null,"contents":"good","time":"2018-08-24T04:06:00.000+0000","ip":null,"recipeId":1294,"parentId":null,"state":2200,"stars":0.0,"deviceId":57357285,"deleted":0,"userName":"REcc","headPic":null,"commentTime":1535083560000}],"serverTime":1535097443471}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeapiinfo.recipeapiinfoTest: 获取食谱详情</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',2)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/web/apiinfo/1830
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1830,"name":"红烧肉","icon":"/cd774e0b88a74722b318aa73a2ce148e.jpg","advIcon":null,"content":"1、肉要卖有肥有瘦的五花肉。\r\n2、香料不要放的太多，影响肉香。\r\n3、用压力锅做不用加水哦。","mainIcon":null,"description":"无论身处何地，一盘酥软入味、浓油赤酱的红烧肉，总能带来温馨，也许是这就是妈妈的味道。","duration":25,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T06:13:32.000+0000","usageCount":3,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010200000726e200190023000f0080010605011400000000000591827d00000000012100914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff000a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e232832000f00000f00000f0000000000000000000050e6","auxiliaryList":[{"id":717,"name":"五花肉 ","recipeId":1830,"quality":"500克"},{"id":718,"name":"料酒 ","recipeId":1830,"quality":"50克"},{"id":719,"name":"冰糖 ","recipeId":1830,"quality":"20克"},{"id":720,"name":"老抽 ","recipeId":1830,"quality":"15克"}],"ingredientList":[{"id":1123,"name":"生抽 ","recipeId":1830,"quality":"20克"},{"id":1124,"name":"生抽 ","recipeId":1830,"quality":"20克"},{"id":1125,"name":"蚝油 ","recipeId":1830,"quality":"20克"},{"id":1126,"name":"生姜 ","recipeId":1830,"quality":"20克"},{"id":1127,"name":"香葱 ","recipeId":1830,"quality":"20克"},{"id":1128,"name":"香叶 ","recipeId":1830,"quality":"2片"},{"id":1129,"name":"八角 ","recipeId":1830,"quality":"1枚"}],"stepList":[{"id":1952,"content":"准备好食材原料；","recipeId":1830,"iconPath":"/ce7630680b494ecebe0cf0dcd0955daa.jpg"},{"id":1953,"content":"五花肉要买这种三层肉，瘦中带肥；","recipeId":1830,"iconPath":"/95f874cadbb74c97ac53a3cf624c8982.jpg"},{"id":1954,"content":"切块；","recipeId":1830,"iconPath":"/69df45ae97574329abe82df2de1c4552.jpg"},{"id":1955,"content":"小葱洗净、生姜切片；","recipeId":1830,"iconPath":"/a75f3def387147c7a3396b56a7bf9816.jpg"},{"id":1956,"content":"猪肉焯水后洗净；","recipeId":1830,"iconPath":"/27514df75ed0475bbc5e16ef6b7f38dd.jpg"},{"id":1957,"content":"处理好的猪肉放入锅中，加入葱姜、香料、生抽、老抽、蚝油、冰糖和料酒；","recipeId":1830,"iconPath":"/139959c45fa64811b453adc2718dd5ec.jpg"},{"id":1958,"content":"盖上盖子，拧上压力阀，启动烹饪模式；","recipeId":1830,"iconPath":"/30172f9461234f5d9bc06546749e2150.jpg"},{"id":1959,"content":"泄压完成后开盖，取出香料；","recipeId":1830,"iconPath":"/a90c2c58e5154565b89c76a1ca6df82d.jpg"},{"id":1960,"content":"装盘；","recipeId":1830,"iconPath":"/018cc6a7a59648abbc8a24b227a8ce01.jpg"},{"id":1961,"content":"肥肉入口即化、瘦肉瘦而不柴；","recipeId":1830,"iconPath":"/e0d877e6e62a46179d17170165798a5f.jpg"},{"id":1962,"content":"开始享用吧。","recipeId":1830,"iconPath":"/662758cad38a4dfdb12277c0196cafe6.jpg"}],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},"serverTime":1535097443508}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt23.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.2')" >
+        pass</a>
+
+    <div id='div_pt23.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/web/apiinfo/1830
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1830,"name":"红烧肉","icon":"/cd774e0b88a74722b318aa73a2ce148e.jpg","advIcon":null,"content":"1、肉要卖有肥有瘦的五花肉。\r\n2、香料不要放的太多，影响肉香。\r\n3、用压力锅做不用加水哦。","mainIcon":null,"description":"无论身处何地，一盘酥软入味、浓油赤酱的红烧肉，总能带来温馨，也许是这就是妈妈的味道。","duration":25,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T06:13:32.000+0000","usageCount":3,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010200000726e200190023000f0080010605011400000000000591827d00000000012100914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff000a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e232832000f00000f00000f0000000000000000000050e6","auxiliaryList":[{"id":717,"name":"五花肉 ","recipeId":1830,"quality":"500克"},{"id":718,"name":"料酒 ","recipeId":1830,"quality":"50克"},{"id":719,"name":"冰糖 ","recipeId":1830,"quality":"20克"},{"id":720,"name":"老抽 ","recipeId":1830,"quality":"15克"}],"ingredientList":[{"id":1123,"name":"生抽 ","recipeId":1830,"quality":"20克"},{"id":1124,"name":"生抽 ","recipeId":1830,"quality":"20克"},{"id":1125,"name":"蚝油 ","recipeId":1830,"quality":"20克"},{"id":1126,"name":"生姜 ","recipeId":1830,"quality":"20克"},{"id":1127,"name":"香葱 ","recipeId":1830,"quality":"20克"},{"id":1128,"name":"香叶 ","recipeId":1830,"quality":"2片"},{"id":1129,"name":"八角 ","recipeId":1830,"quality":"1枚"}],"stepList":[{"id":1952,"content":"准备好食材原料；","recipeId":1830,"iconPath":"/ce7630680b494ecebe0cf0dcd0955daa.jpg"},{"id":1953,"content":"五花肉要买这种三层肉，瘦中带肥；","recipeId":1830,"iconPath":"/95f874cadbb74c97ac53a3cf624c8982.jpg"},{"id":1954,"content":"切块；","recipeId":1830,"iconPath":"/69df45ae97574329abe82df2de1c4552.jpg"},{"id":1955,"content":"小葱洗净、生姜切片；","recipeId":1830,"iconPath":"/a75f3def387147c7a3396b56a7bf9816.jpg"},{"id":1956,"content":"猪肉焯水后洗净；","recipeId":1830,"iconPath":"/27514df75ed0475bbc5e16ef6b7f38dd.jpg"},{"id":1957,"content":"处理好的猪肉放入锅中，加入葱姜、香料、生抽、老抽、蚝油、冰糖和料酒；","recipeId":1830,"iconPath":"/139959c45fa64811b453adc2718dd5ec.jpg"},{"id":1958,"content":"盖上盖子，拧上压力阀，启动烹饪模式；","recipeId":1830,"iconPath":"/30172f9461234f5d9bc06546749e2150.jpg"},{"id":1959,"content":"泄压完成后开盖，取出香料；","recipeId":1830,"iconPath":"/a90c2c58e5154565b89c76a1ca6df82d.jpg"},{"id":1960,"content":"装盘；","recipeId":1830,"iconPath":"/018cc6a7a59648abbc8a24b227a8ce01.jpg"},{"id":1961,"content":"肥肉入口即化、瘦肉瘦而不柴；","recipeId":1830,"iconPath":"/e0d877e6e62a46179d17170165798a5f.jpg"},{"id":1962,"content":"开始享用吧。","recipeId":1830,"iconPath":"/662758cad38a4dfdb12277c0196cafe6.jpg"}],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},"serverTime":1535097443547}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipecreate.recipecreateTest: 创建一个自定义模式</td>
+    <td>6</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',6)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecreate_didwc: deviceid未传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":-1,"message":"通用异常：Required Long parameter 'deviceid' is not present","result":null,"serverTime":1535097443572}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt24.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecreate_drwc: duration未传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.2')" >
+        pass</a>
+
+    <div id='div_pt24.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1943,"name":"testtest","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":null,"firePower":0,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"practiceId":4,"ingredientId":4,"textureId":4,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010700000797e600320100000500800103050c1400000000000591827d00000000012500913c7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff800500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000600000073120e910c910c00af1810910e910e0119181291109110732000ff1e1e1e280037000037000037000000000000000000000f4a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},"serverTime":1535097443631}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt24.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecreate_igwc: ingredientId未传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.3')" >
+        pass</a>
+
+    <div id='div_pt24.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.3: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":404,"message":"模式的口感,食材,做法不能为空","result":null,"serverTime":1535097443652}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt24.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecreate_pidwc: ingredientId未传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.4')" >
+        pass</a>
+
+    <div id='div_pt24.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.4: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":404,"message":"模式的口感,食材,做法不能为空","result":null,"serverTime":1535097443674}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt24.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecreate_success: 创建一个自定义模式</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.5')" >
+        pass</a>
+
+    <div id='div_pt24.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.5: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1944,"name":"糯米","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":40,"firePower":0,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"practiceId":1,"ingredientId":3,"textureId":6,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010400000798e300320100000a0080010005061900000000000591827d00000000012200913c7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600000091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000200000073120e910c910c00af1810910c910c01191812910c910c732001ff1e2d3c4b280000280000280000000000000000000000f8c1","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},"serverTime":1535097443723}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt24.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecreate_tidwc: ingredientId未传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.6')" >
+        pass</a>
+
+    <div id='div_pt24.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.6: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/create
+{"code":404,"message":"模式的口感,食材,做法不能为空","result":null,"serverTime":1535097443745}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipedel.recipecollectdelTest: 批量删除自定义</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c25',2)">Detail</a></td>
+</tr>
+
+<tr id='pt25.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecollectdel_success: 单个删除</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.1')" >
+        pass</a>
+
+    <div id='div_pt25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/del
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097443769}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt25.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecollectdel_success1: 批量删除</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.2')" >
+        pass</a>
+
+    <div id='div_pt25.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/collect/del
+{"code":1,"message":"操作成功","result":null,"serverTime":1535097443793}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_recipedetail.recipedetailTest: 获取某个模式的详情</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c26',2)">Detail</a></td>
+</tr>
+
+<tr id='pt26.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt26.1')" >
+        pass</a>
+
+    <div id='div_pt26.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt26.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt26.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/detail
+{"code":1,"message":"操作成功","result":{"recipeId":null,"recipe":{"id":1830,"name":"红烧肉","icon":"/cd774e0b88a74722b318aa73a2ce148e.jpg","advIcon":null,"content":"1、肉要卖有肥有瘦的五花肉。\r\n2、香料不要放的太多，影响肉香。\r\n3、用压力锅做不用加水哦。","mainIcon":null,"description":"无论身处何地，一盘酥软入味、浓油赤酱的红烧肉，总能带来温馨，也许是这就是妈妈的味道。","duration":25,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T06:13:32.000+0000","usageCount":3,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010200000726e200190023000f0080010605011400000000000591827d00000000012100914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff000a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e232832000f00000f00000f0000000000000000000050e6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":["软","中","硬","中"]},"serverTime":1535097443819}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft26.2' class='none'>
+    <td class='failCase'><div class='testcase'>test_recipeapiinfo_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft26.2')" >
+        fail</a>
+
+    <div id='div_ft26.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft26.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft26.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/detail
+{"code":0,"message":"未找到ID为:595 的模式","result":null,"serverTime":1535097443835}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µçÑ¹Á¦¹ø\½Ó¿Ú´úÂë\DYLG_Interface\cj_interface\test_recipedetail.py", line 40, in test_recipeapiinfo_success1
+    self.assertEqual(js['code'], 1)
+AssertionError: 0 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeingredient.recipeingredientTest: 选取食材</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c27',1)">Detail</a></td>
+</tr>
+
+<tr id='pt27.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeingredient_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt27.1')" >
+        pass</a>
+
+    <div id='div_pt27.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt27.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt27.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/ingredient/list
+{"code":1,"message":"操作成功","result":[{"id":1,"name":"猪肉排骨","icon":"/ff21cf77406f481a8a703164420a5177.png","midIcon":"/7bbbfa692100466b8e790774de252854.png","lastIcon":"/a6cefb52048b4392a33476d603f0a2d2.png","state":2200,"sort":13,"duration":null},{"id":2,"name":"大米","icon":"/8030d9f2747d4853bc4583cf9016c653.png","midIcon":"/68bf5cc41cc7474fb5aa3925b1efdd23.png","lastIcon":"/1b8ec48ecb1c4bc6a94d80d6f97a07f2.png","state":2200,"sort":13,"duration":null},{"id":3,"name":"黄豆","icon":"/b01999fb8b654d8488a4f8d6e07fbf43.png","midIcon":"/40ba0131f23a4dc3aa7081b98f15303e.png","lastIcon":"/ea9eb0cfb898420f90c78da9ab495907.png","state":2200,"sort":13,"duration":null},{"id":4,"name":"牛羊肉","icon":"/2cf52ade6f3c4b71af243177a9e1c422.png","midIcon":"/7b9dbe55a5d04620ba04a1432c5d0ac0.png","lastIcon":"/1da7afd2b56c444786494170a84ad7ef.png","state":2200,"sort":13,"duration":null},{"id":5,"name":"杂粮","icon":"/f842803c964d47c28b642d1eb4bca80e.png","midIcon":"/d73f8a40269849699e6a1a654e0ae78c.png","lastIcon":"/e98db331d68c449abfbf5a2f397fb4a0.png","state":2200,"sort":13,"duration":null},{"id":6,"name":"蹄筋","icon":"/bc971a1b95e94fc7954088a0691ff0e6.png","midIcon":"/c39cc6cc865248bab2b9bb14d76d5e4f.png","lastIcon":"/d8bd95723ece49fa97837e0cce33a29e.png","state":2200,"sort":13,"duration":null},{"id":7,"name":"鸡鸭禽","icon":"/9b5150544ca449cc905f6a90d730eab6.png","midIcon":"/764c4d9bacd9453f8e718401c96fe820.png","lastIcon":"/4d0a3c9993b54c0a9762be718bc6588a.png","state":2200,"sort":13,"duration":null}],"serverTime":1535097443848}
+7
+猪肉排骨
+1
+大米
+2
+黄豆
+3
+牛羊肉
+4
+杂粮
+5
+蹄筋
+6
+鸡鸭禽
+7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipelist.recipelistTest: 获取更多食谱</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c28',5)">Detail</a></td>
+</tr>
+
+<tr id='pt28.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeingredient_success: 不传参数，只获取第一页数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.1')" >
+        pass</a>
+
+    <div id='div_pt28.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/list
+{"code":1,"message":"操作成功","result":{"recipeVOList":[{"recipeId":null,"recipe":{"id":1931,"name":"八宝粥","icon":"/ea8f07ec6f564700840cc07f64f43a35.jpg","advIcon":null,"content":"八宝粥真好喝","mainIcon":null,"description":"八宝粥真好喝","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-25T03:07:52.000+0000","usageCount":4,"categoryId":9,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"0201050000078be5001e010000140080010605021e00000000000591827d00000000012400914b7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c190000190000190000000000000000000000a4c9","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1861,"name":"豉油鸡","icon":"/31ff2a334f1d492a9946080d98569b58.jpg","advIcon":null,"content":"好吃挡不住","mainIcon":null,"description":"广东名菜豉油鸡","duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-22T04:25:05.000+0000","usageCount":4,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010000000745e00014001e000f0080010105081400000000000591827d00000000011f00914b7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff000a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f002012910c910c732001ff1e1e2832000a00000a00000a0000000000000000000059f7","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1860,"name":"红烩牛肉","icon":"/c1afad4413da4423b90f98d41c15b8a9.jpg","advIcon":null,"content":"好吃看得见","mainIcon":null,"description":"红酒烩牛肉","duration":35,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-22T03:51:55.000+0000","usageCount":4,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010100000744e100230028001e0080010605011400000000000591827d00000000012000914b7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff000a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f002012910c910c732001ff1e28323c0019000019000019000000000000000000008210","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1840,"name":"炖牛蹄筋","icon":"/7e422b159a4941d4b9942894494ee447.jpg","advIcon":null,"content":"1、炖煮牛筋的时候不要加盐。\r\n2、炖煮好的牛筋，可以凉拌、炒菜、红烧。","mainIcon":null,"description":"相对于瘦肉或者五花肉，筋头巴脑更好吃！口感软弹、香浓。","duration":45,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-20T01:40:40.000+0000","usageCount":5,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010300000730e3002d010000280080010005061900000000000591827d00000000012200914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600050091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e2d3c4b2800002800002800000000000000000000007519","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1830,"name":"红烧肉","icon":"/cd774e0b88a74722b318aa73a2ce148e.jpg","advIcon":null,"content":"1、肉要卖有肥有瘦的五花肉。\r\n2、香料不要放的太多，影响肉香。\r\n3、用压力锅做不用加水哦。","mainIcon":null,"description":"无论身处何地，一盘酥软入味、浓油赤酱的红烧肉，总能带来温馨，也许是这就是妈妈的味道。","duration":25,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T06:13:32.000+0000","usageCount":3,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010200000726e200190023000f0080010605011400000000000591827d00000000012100914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff000a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e232832000f00000f00000f0000000000000000000050e6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null}],"articleList":[{"id":67,"title":"这个夏天全靠这碗","icon":"/df7c38b2914e461ba3f2a93cb2ccfe2e.jpg","content":"","targetUrl":"1829","type":6100,"state":2200,"sort":3.0,"modifyTime":"2017-12-27T17:00:58.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":73,"title":"卤牛肉和世界杯最配","icon":"/2f0d130ce3b448c1befc8f69dc8075c2.jpg","content":"","targetUrl":"1819","type":6100,"state":2200,"sort":2.9,"modifyTime":"2018-06-13T22:33:23.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":74,"title":"离骨头越近的肉越好吃","icon":"/ade77b7e59004b639a37de5dca02051f.jpg","content":"","targetUrl":"1824","type":6100,"state":2200,"sort":2.8,"modifyTime":"2018-06-13T22:34:05.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15}]},"serverTime":1535097443912}
+这个夏天全靠这碗
+67
+卤牛肉和世界杯最配
+73
+离骨头越近的肉越好吃
+74
+八宝粥
+1931
+豉油鸡
+1861
+红烩牛肉
+1860
+炖牛蹄筋
+1840
+红烧肉
+1830
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt28.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeingredient_success1: 传参数，只获取第一页数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.2')" >
+        pass</a>
+
+    <div id='div_pt28.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/list
+{"code":1,"message":"操作成功","result":{"recipeVOList":[{"recipeId":null,"recipe":{"id":1931,"name":"八宝粥","icon":"/ea8f07ec6f564700840cc07f64f43a35.jpg","advIcon":null,"content":"八宝粥真好喝","mainIcon":null,"description":"八宝粥真好喝","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-25T03:07:52.000+0000","usageCount":4,"categoryId":9,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"0201050000078be5001e010000140080010605021e00000000000591827d00000000012400914b7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c190000190000190000000000000000000000a4c9","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1861,"name":"豉油鸡","icon":"/31ff2a334f1d492a9946080d98569b58.jpg","advIcon":null,"content":"好吃挡不住","mainIcon":null,"description":"广东名菜豉油鸡","duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-22T04:25:05.000+0000","usageCount":4,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010000000745e00014001e000f0080010105081400000000000591827d00000000011f00914b7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff000a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f002012910c910c732001ff1e1e2832000a00000a00000a0000000000000000000059f7","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1860,"name":"红烩牛肉","icon":"/c1afad4413da4423b90f98d41c15b8a9.jpg","advIcon":null,"content":"好吃看得见","mainIcon":null,"description":"红酒烩牛肉","duration":35,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-22T03:51:55.000+0000","usageCount":4,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010100000744e100230028001e0080010605011400000000000591827d00000000012000914b7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff000a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f002012910c910c732001ff1e28323c0019000019000019000000000000000000008210","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1840,"name":"炖牛蹄筋","icon":"/7e422b159a4941d4b9942894494ee447.jpg","advIcon":null,"content":"1、炖煮牛筋的时候不要加盐。\r\n2、炖煮好的牛筋，可以凉拌、炒菜、红烧。","mainIcon":null,"description":"相对于瘦肉或者五花肉，筋头巴脑更好吃！口感软弹、香浓。","duration":45,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-20T01:40:40.000+0000","usageCount":5,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010300000730e3002d010000280080010005061900000000000591827d00000000012200914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff00ffff918273ff32050600050091827300050f00000000918273003205ff02140091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e2d3c4b2800002800002800000000000000000000007519","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1830,"name":"红烧肉","icon":"/cd774e0b88a74722b318aa73a2ce148e.jpg","advIcon":null,"content":"1、肉要卖有肥有瘦的五花肉。\r\n2、香料不要放的太多，影响肉香。\r\n3、用压力锅做不用加水哦。","mainIcon":null,"description":"无论身处何地，一盘酥软入味、浓油赤酱的红烧肉，总能带来温馨，也许是这就是妈妈的味道。","duration":25,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T06:13:32.000+0000","usageCount":3,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010200000726e200190023000f0080010605011400000000000591827d00000000012100914b7d20000000010100915a7d003205c8011e00916678ff3205ff000a0091ff73ff3205ff000a00918273ff3205ff80ffff9182730a0a0fc8800000918273ff3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f001812910c910c732001ff1e232832000f00000f00000f0000000000000000000050e6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null}],"articleList":[{"id":67,"title":"这个夏天全靠这碗","icon":"/df7c38b2914e461ba3f2a93cb2ccfe2e.jpg","content":"","targetUrl":"1829","type":6100,"state":2200,"sort":3.0,"modifyTime":"2017-12-27T17:00:58.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":73,"title":"卤牛肉和世界杯最配","icon":"/2f0d130ce3b448c1befc8f69dc8075c2.jpg","content":"","targetUrl":"1819","type":6100,"state":2200,"sort":2.9,"modifyTime":"2018-06-13T22:33:23.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":74,"title":"离骨头越近的肉越好吃","icon":"/ade77b7e59004b639a37de5dca02051f.jpg","content":"","targetUrl":"1824","type":6100,"state":2200,"sort":2.8,"modifyTime":"2018-06-13T22:34:05.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15}]},"serverTime":1535097443948}
+这个夏天全靠这碗
+67
+卤牛肉和世界杯最配
+73
+离骨头越近的肉越好吃
+74
+八宝粥
+1931
+豉油鸡
+1861
+红烩牛肉
+1860
+炖牛蹄筋
+1840
+红烧肉
+1830
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt28.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeingredient_success2: 获取非第一页数据</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.3')" >
+        pass</a>
+
+    <div id='div_pt28.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.3: url http://pre-pressureplugapi.joyami.com/v1/recipe/list
+{"code":1,"message":"操作成功","result":{"recipeVOList":[{"recipeId":null,"recipe":{"id":1829,"name":"绿豆莲子汤","icon":"/4828749b42114d46b6cc306536aed42b.jpg","advIcon":null,"content":"莲子和绿豆都不用浸泡。","mainIcon":null,"description":"炎热的夏天，还有什么是比一碗绿豆汤更能让人清凉的呢。加上莲子同煮，还可以安神静心。","duration":15,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T04:03:51.000+0000","usageCount":4,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010500000725e5000f0014000a0080010905021e00000000000591827d00000000012400914b7d20000000010100915a7d003205c8011e00916578ff030fc8000a0091ff73ff0332c800ffff918273ff32050000000091827300050f0000050091827300320500021e0091826e00ffff0000000091826e0000000005000e0c910c91080a00100e910a910a0f001210910c910c732001ff1e28323c0a00000a00000a000000000000000000000022a9","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1828,"name":"牛尾清汤","icon":"/6811731720cf46acade9b984a882c434.jpg","advIcon":null,"content":"大口吃就行","mainIcon":null,"description":"不用加水 入口即化的红烧肉 ","duration":50,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-15T02:53:29.000+0000","usageCount":3,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010600000724e60032011400280080010c05031400000000000591827d00000000012500914b7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff001900918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000300120e910c910c08001810910e910e0f00181291109110732001ff1e1e23280019000019000019000000000000000000008f28","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1824,"name":"酱牛骨头","icon":"/a5b7c2636dbb41f9989cdc54663a3040.jpg","advIcon":null,"content":"1、煮好牛骨的汤汁可以留下来用来煮面。\r\n2、香料可以买超市中的包装的香料包，实在不好买简单的几样也可以。\r\n3、牛肉用焯水，泡去血水即可。焯水后冲洗牛肉会让牛肉肉质收紧，影响口感。","mainIcon":null,"description":"人们常说靠近骨头的肉最好吃，牛肉也不例外。牛颈骨也就是牛脖子部位，整块整块的肉连在骨头上，肉中带着筋。经过高压锅炖煮，牛肉自然脱骨，软而不烂，十分入味。","duration":30,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-14T03:16:47.000+0000","usageCount":4,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010100000720e1001e0100001e0080010705021400000000000591827d00000000012000914b7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff000a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f002012910c910c732001ff1e28323c00140000140000140000000000000000000078e2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1819,"name":"卤牛腱","icon":"/465f7317d616423dbbe3ba6c0dc0f2a9.jpg","advIcon":null,"content":"1、煮好的牛腱子不要着急吃，放凉冷藏一会会更容易切成片。\r\n2、卤牛肉的汤汁不要扔掉了，留着煮面或者下次使用。装汤汁的容器要干净无水，包上保鲜膜后放到冰箱中冷冻。可以保存一个月。\r\n3、卤料包可以在超市中买现成的。","mainIcon":null,"description":"入味不柴、完整不碎的卤牛腱，用压力锅就可以轻松搞定。无论是当做凉盘还是做牛肉面都非常合适。","duration":40,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-14T01:25:08.000+0000","usageCount":5,"categoryId":7,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"0201010000071be100280100001e0080010705021400000000000591827d00000000012000914b7d20000000010100915a7d003205c8011e00916678ff3205ff00050091ff73ff3205ff000a00918273ff3205ff80ffff9182730a050fc88000009182730a3205ff020a0091827d00ffff0000000091827d000000000300120e910c910c08001810910c910c0f002012910c910c732001ff1e28323c001e00001e00001e00000000000000000000349c","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null},{"recipeId":null,"recipe":{"id":1808,"name":"人参鸡汤","icon":"/29e3f7bad66546e691f1bb9296dbdaed.jpg","advIcon":null,"content":"1、刚刚煮好的鸡汤非常的烫！特别是飘着一层鸡油，不要着急喝！\r\n2、鸡可以选择农家土鸡或者老母鸡，不要用童子鸡炖不出香味。\r\n3、花菇可以用香菇代替。\r\n","mainIcon":null,"description":"滋补人参鸡汤，农家散养的土鸡加上鲜人参、红枣、花菇和枸杞。整只鸡下锅炖，保留了鸡肉中的营养成分。炖好的鸡汤，汤呈金黄色，鸡肉轻松脱骨。","duration":20,"firePower":0,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-06-12T10:11:39.000+0000","usageCount":4,"categoryId":8,"practiceId":null,"ingredientId":null,"textureId":null,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"02010600000710e60014001e000a0080010c05031400000000000591827d00000000012500914b7d20000000010100915a7d003205c8011e00916578ff3205ff000a0091ff73ff3205ff000500918273ff3205ff80ffff9182730a050fc8800000918273ff3205ff020a0091826e00ffff0000000091826e000000000300120e910c910c08001810910e910e0f00181291109110732001ff1e1e2328000f00000f00000f00000000000000000000dab6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"practice":null,"ingredient":null,"textures":null}],"articleList":null},"serverTime":1535097443974}
+5
+绿豆莲子汤
+1829
+牛尾清汤
+1828
+酱牛骨头
+1824
+卤牛腱
+1819
+人参鸡汤
+1808
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt28.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeingredient_success3: 搜索关键字</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.4')" >
+        pass</a>
+
+    <div id='div_pt28.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.4: url http://pre-pressureplugapi.joyami.com/v1/recipe/list
+{"code":1,"message":"操作成功","result":{"recipeVOList":[],"articleList":[{"id":67,"title":"这个夏天全靠这碗","icon":"/df7c38b2914e461ba3f2a93cb2ccfe2e.jpg","content":"","targetUrl":"1829","type":6100,"state":2200,"sort":3.0,"modifyTime":"2017-12-27T17:00:58.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":73,"title":"卤牛肉和世界杯最配","icon":"/2f0d130ce3b448c1befc8f69dc8075c2.jpg","content":"","targetUrl":"1819","type":6100,"state":2200,"sort":2.9,"modifyTime":"2018-06-13T22:33:23.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":74,"title":"离骨头越近的肉越好吃","icon":"/ade77b7e59004b639a37de5dca02051f.jpg","content":"","targetUrl":"1824","type":6100,"state":2200,"sort":2.8,"modifyTime":"2018-06-13T22:34:05.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15}]},"serverTime":1535097444003}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt28.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeingredient_success4: 搜索关键字</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt28.5')" >
+        pass</a>
+
+    <div id='div_pt28.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt28.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt28.5: url http://pre-pressureplugapi.joyami.com/v1/recipe/list
+{"code":1,"message":"操作成功","result":{"recipeVOList":[],"articleList":[{"id":67,"title":"这个夏天全靠这碗","icon":"/df7c38b2914e461ba3f2a93cb2ccfe2e.jpg","content":"","targetUrl":"1829","type":6100,"state":2200,"sort":3.0,"modifyTime":"2017-12-27T17:00:58.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":73,"title":"卤牛肉和世界杯最配","icon":"/2f0d130ce3b448c1befc8f69dc8075c2.jpg","content":"","targetUrl":"1819","type":6100,"state":2200,"sort":2.9,"modifyTime":"2018-06-13T22:33:23.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15},{"id":74,"title":"离骨头越近的肉越好吃","icon":"/ade77b7e59004b639a37de5dca02051f.jpg","content":"","targetUrl":"1824","type":6100,"state":2200,"sort":2.8,"modifyTime":"2018-06-13T22:34:05.000+0000","targetType":6950,"deviceModelGroupid":1,"position":15}]},"serverTime":1535097444027}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeofficial.recipeofficialTest: 获取官方模式</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c29',3)">Detail</a></td>
+</tr>
+
+<tr id='pt29.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelist_success: 传所有参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt29.1')" >
+        pass</a>
+
+    <div id='div_pt29.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt29.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt29.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/official
+{"code":1,"message":"操作成功","result":[],"serverTime":1535097444045}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt29.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelist_success1: 非必填参数不传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt29.2')" >
+        pass</a>
+
+    <div id='div_pt29.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt29.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt29.2: url http://pre-pressureplugapi.joyami.com/v1/recipe/official
+{"code":1,"message":"操作成功","result":[],"serverTime":1535097444061}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt29.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelist_success2: 非第一页</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt29.3')" >
+        pass</a>
+
+    <div id='div_pt29.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt29.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt29.3: url http://pre-pressureplugapi.joyami.com/v1/recipe/official
+{"code":1,"message":"操作成功","result":[],"serverTime":1535097444077}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipepractice.recipepracticeTest: 选取做法</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c30',1)">Detail</a></td>
+</tr>
+
+<tr id='pt30.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipepractice_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt30.1')" >
+        pass</a>
+
+    <div id='div_pt30.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt30.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt30.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/practice/list
+{"code":1,"message":"操作成功","result":[{"id":6,"name":"无水焗","state":2200,"icon":"/6941cb21aacc46fd846f1e0816892c7f.png","midIcon":"/fb9a40d2eb10472e87fccd50dc8ae062.png","sort":6,"practiceType":"5","hasExhausted":null},{"id":4,"name":"煲汤","state":2200,"icon":"/c843d132740b4f11ac25440ec15304c9.png","midIcon":"/ac39a82be0534eddb1f7253ec6afad97.png","sort":4,"practiceType":"3","hasExhausted":null},{"id":2,"name":"红烧","state":2200,"icon":"/4cfe206ac7824b7c9381193483c12f8b.png","midIcon":"/fefcc3e61373417f8d3e3f805ab474cd.png","sort":2,"practiceType":"1","hasExhausted":null},{"id":1,"name":"焖炖","state":2200,"icon":"/88b2ebecf951496d8ecbd80d50fb2f5d.png","midIcon":"/23aacb9b643e41a3878a9400e3f5ee3e.png","sort":1,"practiceType":"0","hasExhausted":null}],"serverTime":1535097444101}
+4
+无水焗
+6
+煲汤
+4
+红烧
+2
+焖炖
+1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipetexture.recipepracticeTest: 选取口感</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c31',1)">Detail</a></td>
+</tr>
+
+<tr id='pt31.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipetexture_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt31.1')" >
+        pass</a>
+
+    <div id='div_pt31.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt31.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt31.1: url http://pre-pressureplugapi.joyami.com/v1/recipe/texture/list
+{"code":1,"message":"操作成功","result":[{"id":2,"name":"酥软","icon":"/89dad10d0d53418f849f87f4fb0b8afb.png","midIcon":"/9ab8d943df06440ba2908e38414594a7.png","state":2200,"sort":12,"textureType":"0"},{"id":6,"name":"适中","icon":"/d2e7d95da7a14ed28975c00071b81f7f.png","midIcon":"/14e500f1febe4981aa6d86b43e670e63.png","state":2200,"sort":8,"textureType":"1"},{"id":7,"name":"嚼劲","icon":"/b4a08d4535cb4fea82a9fa301e054039.png","midIcon":"/481c2eee66484a238d76a1ee79dec87b.png","state":2200,"sort":1,"textureType":"2"}],"serverTime":1535097444120}
+酥软
+2
+适中
+6
+嚼劲
+7
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_regdevice.regdeviceTest: 注册设备</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c32',3)">Detail</a></td>
+</tr>
+
+<tr id='pt32.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_regdevice_success: 注册设备,传城市名、经纬度后，海拔是否拿到(应拿到海拔值)</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt32.1')" >
+        pass</a>
+
+    <div id='div_pt32.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt32.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt32.1: url http://pre-pressureplugapi.joyami.com/v1/device/regdevice
+{"code":1,"message":"操作成功","result":{"id":430,"name":null,"mac":null,"deviceId":57357285,"ownerName":"REcc","ownerId":"442376660","userId":"442376660","online":null,"location":null,"deviceModel":2,"seriesNumber":null,"ip":null,"state":null,"registDateTime":null,"warrantyExpireDate":null,"latitude":31.185236,"longitude":121.598659,"elevation":13.0,"cityName":"上海市"},"serverTime":1535097444647}
+13.0
+13.0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt32.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_regdevice_success1: 注册设备,传经纬度后，海拔是否拿到(应拿到海拔值)</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt32.2')" >
+        pass</a>
+
+    <div id='div_pt32.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt32.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt32.2: url http://pre-pressureplugapi.joyami.com/v1/device/regdevice
+{"code":1,"message":"操作成功","result":{"id":430,"name":null,"mac":null,"deviceId":57357285,"ownerName":"REcc","ownerId":"442376660","userId":"442376660","online":null,"location":null,"deviceModel":2,"seriesNumber":null,"ip":null,"state":null,"registDateTime":null,"warrantyExpireDate":null,"latitude":31.185236,"longitude":121.598659,"elevation":13.0,"cityName":"上海市"},"serverTime":1535097444739}
+13.0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt32.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_regdevice_success2: 注册设备,传城市名后，海拔是否拿到(应拿到海拔值)</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt32.3')" >
+        pass</a>
+
+    <div id='div_pt32.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt32.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt32.3: url http://pre-pressureplugapi.joyami.com/v1/device/regdevice
+{"code":1,"message":"操作成功","result":{"id":430,"name":null,"mac":null,"deviceId":57357285,"ownerName":"REcc","ownerId":"442376660","userId":"442376660","online":null,"location":null,"deviceModel":2,"seriesNumber":null,"ip":null,"state":null,"registDateTime":null,"warrantyExpireDate":null,"latitude":null,"longitude":null,"elevation":13.0,"cityName":"上海市"},"serverTime":1535097444864}
+13.0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_regdevicenew.regdeviceTest: json格式注册设备</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c33',3)">Detail</a></td>
+</tr>
+
+<tr id='pt33.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_regdevice_success: 注册设备,传城市名、经纬度后，海拔是否拿到(应拿到海拔值)</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt33.1')" >
+        pass</a>
+
+    <div id='div_pt33.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt33.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt33.1: url http://pre-pressureplugapi.joyami.com/v1/device/regdevicenew
+{"code":1,"message":"操作成功","result":{"id":430,"name":null,"mac":null,"deviceId":57357285,"ownerName":"REcc","ownerId":"442376660","userId":"442376660","online":null,"location":null,"deviceModel":2,"seriesNumber":null,"ip":null,"state":null,"registDateTime":null,"warrantyExpireDate":null,"latitude":31.185236,"longitude":121.598659,"elevation":13.0,"cityName":"上海市"},"serverTime":1535097444964}
+13.0
+13.0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt33.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_regdevice_success1: 注册设备,传经纬度后，海拔是否拿到(应拿到海拔值)</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt33.2')" >
+        pass</a>
+
+    <div id='div_pt33.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt33.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt33.2: url http://pre-pressureplugapi.joyami.com/v1/device/regdevicenew
+{"code":1,"message":"操作成功","result":{"id":430,"name":null,"mac":null,"deviceId":57357285,"ownerName":"REcc","ownerId":"442376660","userId":"442376660","online":null,"location":null,"deviceModel":2,"seriesNumber":null,"ip":null,"state":null,"registDateTime":null,"warrantyExpireDate":null,"latitude":31.185236,"longitude":121.598659,"elevation":13.0,"cityName":"上海市"},"serverTime":1535097445047}
+13.0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt33.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_regdevice_success2: 注册设备,传城市名后，海拔是否拿到(应拿到海拔值)</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt33.3')" >
+        pass</a>
+
+    <div id='div_pt33.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt33.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt33.3: url http://pre-pressureplugapi.joyami.com/v1/device/regdevicenew
+{"code":1,"message":"操作成功","result":{"id":430,"name":null,"mac":null,"deviceId":57357285,"ownerName":"REcc","ownerId":"442376660","userId":"442376660","online":null,"location":null,"deviceModel":2,"seriesNumber":null,"ip":null,"state":null,"registDateTime":null,"warrantyExpireDate":null,"latitude":null,"longitude":null,"elevation":13.0,"cityName":"上海市"},"serverTime":1535097445172}
+13.0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>56</td>
+    <td>53</td>
+    <td>3</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

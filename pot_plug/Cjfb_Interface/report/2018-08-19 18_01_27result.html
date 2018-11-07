@@ -1,0 +1,1222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>饭煲接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>饭煲接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-08-19 18:01:27</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:23.903000</p>
+<p class='attribute'><strong>Status:</strong> Pass 26</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7articletopadvByModel.articletopadvByModelTest: 获取首页Banner</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_articletopadvByModel_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: http://10.0.10.100:17001/v7/article/topadvByModel
+{"model": "chunmi.cooker.k1pro1", "language": ""}
+url2 : http://10.0.10.100:17001/v7/article/topadvByModel?data=YL-1MOsV4BhvnWJ5TADcuQdlcvxQ7Cbgy52aeT6lDHaiQ2nVQQZ4sirSoa7yKFf3
+{"state":1,"message":"操作成功","result":[{"id":344,"icon":"/3b95bf970690472eb7ac2b064c5af7ea.jpg","url":"3352","targetType":{"id":6920,"name":"跳转到食谱详情","pid":18,"bundleId":16,"topPid":null,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":0}},{"id":342,"icon":"/0967f294face40e88a5769aee06db6fe.jpg","url":"3473","targetType":{"id":6920,"name":"跳转到食谱详情","pid":18,"bundleId":16,"topPid":null,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":0}}],"serverTimeMillis":1534672887448}
+344
+342
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7choosereset.v7resetTest: 重置</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7reset_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: http://10.0.10.100:17001/v7/recipe/choose/reset
+&lt;type 'str'&gt;
+{"state":1,"message":"重置成功","result":null,"serverTimeMillis":1534672887864}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7commentadd.v7commentaddTest: 添加评论</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7commentadd_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: http://10.0.10.100:17001/v7/recipe/comment/addNew
+{"device": 85465933, "recipeId": 3474, "contents": "\u8fd9\u4e2a\u98df\u8c31\u4e0d\u9519"}
+{"state":1,"message":"添加评论成功","result":null,"serverTimeMillis":1534672888272}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7commentlatesttwo.v7commentlatesttwoTest: 食谱详情页获取最新两条评论</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7commentadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: http://10.0.10.100:17001/v7/recipe/comment/latesttwo
+{"recipeId": 3474}
+url2 : http://10.0.10.100:17001/v7/recipe/comment/latesttwo?data=2PuG8uR2CVuvhRg_0kngOg%3D%3D
+{"state":1,"message":"操作成功","result":[{"id":null,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"刚刚"},{"id":null,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"4小时前"}],"serverTimeMillis":1534672888589}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7commentloadmore.v7commentloadmoreTest: 根据食谱ID获取评论列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7commentadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: http://10.0.10.100:17001/v7/recipe/comment/loadmore
+{"recipeId": 3474, "perpage": 10, "pageno": 1}
+url2 : http://10.0.10.100:17001/v7/recipe/comment/loadmore?data=KbFN_Uzn3Hg4hXz4eEIPgZE3_WZ-sXYYQvGn2bJwEpBee3cUga4bMEoRMjh7MJgH
+{"state":1,"message":"操作成功","result":[{"id":10100,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"刚刚"},{"id":10099,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"4小时前"},{"id":10098,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"5小时前"},{"id":10097,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"18小时前"},{"id":10096,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"18小时前"},{"id":10095,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"18小时前"},{"id":10094,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"18小时前"},{"id":10093,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"2018-08-15"},{"id":10092,"content":"这个食谱不错","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"2018-08-15"},{"id":10091,"content":"     ","username":"饭煲用户","customerid":-1,"icon":"http://ol34pv0hv.bkt.clouddn.com/12351394208848b893e1a30c05810f2f.png","date":"2018-08-14"}],"serverTimeMillis":1534672891943}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7deviceglobalregdeviceNew.deviceupdateCityTest: 注册设备</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_deviceupdateCity_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: http://10.0.10.100:17001/v7/device/global/regdeviceNew
+{"serverArea": "\u4f5b\u5c71\u5e02", "latitude": 113.11, "model": "chunmi.cooker.k1pro1", "deviceId": "1234", "longitude": 23.05}
+{"state":1,"message":"操作成功","result":{"eleDmDto":{"eledes":null,"dmodelid":22,"city":null}},"serverTimeMillis":1534672895074}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7deviceupdatecity.deviceupdateCityTest: 修改设备所在城市</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_deviceupdateCity_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: http://10.0.10.100:17001/v7/device/global/updateCity
+{"model": "chunmi.cooker.k1pro1", "cityName": "\u5e7f\u5dde", "deviceId": 85465933}
+{"state":1,"message":"操作成功","result":{"eledes":15.0,"dmodelid":22,"city":"广州市"},"serverTimeMillis":1534672895165}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7fileupload.uploadTest: 上传文件</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_upload_success: 上传文件成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: {"state":1,"message":"操作成功","result":"/529444e82fd4406284596d465b6e4849.jpg","serverTimeMillis":1534672896012}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7globalregdeviceNew.v7devicenewTest: 注册</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7regdeviceNew_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: http://10.0.10.100:17001/v7/device/global/regdeviceNew
+{"ownerName": "11", "mac": "F0:B4:29:BE:94:5C", "modelName": "chunmi.cooker.k1pro1", "deviceId": 85465933, "online": "1", "cityName": "shanghai", "model": "chunmi.cooker.k1pro1", "userId": "54644930", "ownerId": "54644930"}
+{"state":1,"message":"操作成功","result":{"eleDmDto":{"eledes":15.0,"dmodelid":22,"city":"广州"}},"serverTimeMillis":1534672896132}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipecategory.v7recipecategoryTest: 获取菜谱的类别</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecategory_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: http://10.0.10.100:17001/v7/recipe/category/get
+&lt;type 'str'&gt;
+{"state":1,"message":"操作成功","result":[{"id":1,"name":"粥1","curveImage":"/imgs/recipe/category/cv_zhou.bmp","image":"/imgs/recipe/category/zhou.png","cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":2,"name":"饭","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/fan.png","cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":256,"name":"蛋糕","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":257,"name":"酸奶","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":258,"name":"糖水","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":259,"name":"慢炖","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":260,"name":"蒸类","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":304,"name":"糖水","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":305,"name":"快手菜","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":306,"name":"慢炖1","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":307,"name":"创意菜","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":310,"name":"面食","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":315,"name":"汤","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},{"id":321,"name":"煮","curveImage":null,"image":null,"cookCode":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}}],"serverTimeMillis":1534672896188}
+粥1
+饭
+其他
+蛋糕
+酸奶
+糖水
+慢炖
+蒸类
+糖水
+快手菜
+慢炖1
+创意菜
+面食
+汤
+煮
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechooseadd.recipechooseaddTest: 添加收藏</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',2)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechooseadd_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: http://10.0.10.100:17001/v7/recipe/choose/add
+{"recipeId": "2732", "deviceId": 85465933}
+{"state":1,"message":"收藏成功","result":null,"serverTimeMillis":1534672896324}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechooseadd_success1: 已收藏的食谱</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.2')" >
+        pass</a>
+
+    <div id='div_pt11.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.2: http://10.0.10.100:17001/v7/recipe/choose/add
+{"recipeId": "2732", "deviceId": 85465933}
+{"state":-1,"message":"已收藏，无需再收藏","result":null,"serverTimeMillis":1534672897683}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechoosecancel.recipechoosecancelTest: 取消收藏</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosecancel_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: http://10.0.10.100:17001/v7/recipe/choose/cancel
+{"recipeChooses": [{"recipeId": 3473, "deviceId": 85465933}]}
+{"state":1,"message":"取消成功","result":null,"serverTimeMillis":1534672898925}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechooselist.v7recipechooseTest: 自选精选列表</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',2)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoose_success1: 精选列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: http://10.0.10.100:17001/v7/recipe/choose/list
+&lt;type 'str'&gt;
+{"state":1,"message":"操作成功","result":{"jxRecipes":[{"id":3462,"recipeId":11,"name":"热饭","iconPath":"/be0e781eea484c3c91b9acd00a238e69.png","icon":"/d3b9dca4b682420bae0b7afa33e63eaa.png","function":"K1S热饭","content":"K1S热饭","cookCode":"01050800000d8664001e0023001900800000000100aa000000000000000000000000000000000000000000000000000000000f5582736e140a20180000000000000000000000148273735a1408201800000000000000000000000982735a6e140020100a000000000808080869694b0a0000000087000000000000000000000000007272","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"11-9;","topRecipe":false},{"id":261,"recipeId":10,"name":"米饭 极速煮","iconPath":"/4f995ce978024333ad7a4fc260cc952c.png","icon":"/92b3e702f43a4638ab444820144db84f.png","function":"米饭 极速煮","content":"米饭 极速煮","cookCode":"01050800000105e1001e000000000c800200000100aa00000000000000006e10082b006e141278a0be55555555001428145a1005070708090909095a140614140e0e00050505050a14076e78200028035a2803505050500004040500000000001803020303030202020212120c0c12121218281e2d2d370000000000000000000000b4c1","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","recipeIdDmgIds":"10-1;9;","topRecipe":false},{"id":260,"recipeId":9,"name":"米饭 香甜煮","iconPath":"/304fe19237ad4d48822ab86402baad0d.png","icon":"/797495b7c5ba4353a79f94914d5e17f3.png","function":"米饭 香甜煮","content":"米饭 香甜煮","cookCode":"01050800000104e1010f000000000c800200000100aa00000000000000006e10082b126e1412698caa55555555001428145a1005070708090909095a14060d0d0d0f001e1e1e1e0a14066e782000280a5a280350505050000404050000000000180302030303020202020607070800121218281e2d2d3700000000000000000000009263","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"#ffffff","afterBgcolor":"#46a7e3","recipeIdDmgIds":"9-1;3;4;6;9;","topRecipe":false}]},"serverTimeMillis":1534672899867}
+热饭 False
+米饭 极速煮 False
+米饭 香甜煮 False
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoose_success2: 自选列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.2')" >
+        pass</a>
+
+    <div id='div_pt13.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.2: http://10.0.10.100:17001/v7/recipe/choose/list
+&lt;type 'str'&gt;
+{"state":1,"message":"操作成功","result":{"zxRecipes":[{"id":3454,"recipeId":1,"name":"精煮饭","iconPath":"/8a01b13104cd40c9a9eac67071456d4e.png","icon":"/9b9c2282f0cb4dba938e1d0a6639cd86.png","function":"K1S精煮饭","content":"K1S精煮饭","cookCode":"01050000000001e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a040404050000780000180001020202020404050607070800121218281e2d2d3700000000000000000000002032","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"#ffffff","afterBgcolor":"#46a7e3","recipeIdDmgIds":"1-9;","topRecipe":true},{"id":3455,"recipeId":2,"name":"快煮饭","iconPath":"/39f728a17d654e9594fd1f4757cf5018.png","icon":"/cbc47ba570f94f4f9ec92f209c8715cf.png","function":"K1S快煮","content":"K1S快煮","cookCode":"01050100000002e100280000000000800200000100aa00000000000000006e10082b056e1412698caa55555555001428145a10070707070c0e0e105a14060a0c0c0e00090909091e14046e78200028065a28035050505000040405000078000018030203030302040405070c0c0c00121218280f0f0f3200000000000000000000002566","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"#ffffff","afterBgcolor":"#37bfba","recipeIdDmgIds":"2-9;","topRecipe":true},{"id":3456,"recipeId":3,"name":"煮粥","iconPath":"/adb94bf257b74456a406396c27f605b4.png","icon":"/75efb829a66a4ed3ae8779d3b8aeaa1e.png","function":"K1S煮粥","content":"K1S煮粥","cookCode":"01050200000003e2011e040000280c800000000100aa0000000000000000145a46736e140f200000027382736e14002000001e735f736e140c200000017882736e1400200000f07d82735a3700200014000000000000000000000000000000000000000001507896040404045f624b085555555580192032046e000000000000000040d7","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"#ffffff","afterBgcolor":"#46c08d","recipeIdDmgIds":"3-9;","topRecipe":true},{"id":3457,"recipeId":4,"name":"保温","iconPath":"/3386ff1203fa4809af47a5dcc65854fd.png","icon":"/2b070547801d474d8010f5d75a801918.png","function":"K1S保温","content":"K1S保温","cookCode":"010503000000040c18000000000018801000000100aa00000000000000007891826e6e140020000000464b6e6e140a2000000000000000000000000000000000000000000000f08282446e14002008080000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000f639","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"#ffffff","afterBgcolor":"#9bb745","recipeIdDmgIds":"4-9;","topRecipe":true},{"id":3458,"recipeId":5,"name":"蒸煮","iconPath":"/c18677d9dfec4d79b0bef168b5fee6bc.png","icon":"/959f4d9fe9074766b6ab0d12acd0b522.png","function":"K1S蒸煮","content":"K1S蒸煮","cookCode":"0105040000000526001e0100000a18800000000100aa000000000000000000000000000000000000000000000000000000001e695f736e140f200000000000000000000000003c80736e5a0d081400000000000000000000000000000000000000000000015078960808080873694b0e545656568000000000000000000000000000f5ad","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":true,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"5-9;","topRecipe":true},{"id":3459,"recipeId":6,"name":"炖汤","iconPath":"/52b9027cad6d47029277edb545e0e291.png","icon":"/c9ff3718669b4c3bbbd40fd3d501e9d7.png","function":"K1S炖汤","content":"K1S炖汤","cookCode":"010505000000062501000400010018800400000100aa0000000000000000145a46736e140f200000027382736e14002000001e6969736e140c200000017882736e1400200000f07d82735a1000200000000000000000000000000000000000000000000001507896020202025f634b0854565656800000000000000000000000000054a3","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":true,"collectFlag":false,"detailFlag":false,"flag":"0","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"6-9;","topRecipe":true},{"id":3460,"recipeId":7,"name":"蛋糕","iconPath":"/96ad593a8ee94a5f862a6a4790446c51.png","icon":"/5cf75123517e41c1aeb7bc1a93d84891.png","function":"K1S蛋糕","content":"K1S蛋糕","cookCode":"010506000000078800320100002818801200000100aa0000000000000000000000000000000000000846822a6e14002018000f6e82736e140a201810000000000000000000003c8782716e1400200a100000000000000000000000000000000000000000000000000000000000003c0a0000000087000000000000000000000000000af8","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":true,"collectFlag":false,"detailFlag":true,"flag":"0","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"7-9;","topRecipe":true},{"id":3461,"recipeId":8,"name":"酸奶","iconPath":"/b072f4999b4f45f7880f41af834f01de.png","icon":"/21aac3afe634465db21f98e71d571766.png","function":"K1S酸奶","content":"K1S酸奶","cookCode":"010507000000080908000c00060018801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c00000000000000000000000000000000000000000200000000000000000000000000000049000000002900000000000000001720","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":true,"collectFlag":false,"detailFlag":true,"flag":"0","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"8-9;","topRecipe":true}],"jxRecipes":[{"id":3462,"recipeId":11,"name":"热饭","iconPath":"/be0e781eea484c3c91b9acd00a238e69.png","icon":"/d3b9dca4b682420bae0b7afa33e63eaa.png","function":"K1S热饭","content":"K1S热饭","cookCode":"01050800000d8664001e0023001900800000000100aa000000000000000000000000000000000000000000000000000000000f5582736e140a20180000000000000000000000148273735a1408201800000000000000000000000982735a6e140020100a000000000808080869694b0a0000000087000000000000000000000000007272","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":true,"detailFlag":false,"flag":"0","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"11-9;","topRecipe":false},{"id":261,"recipeId":10,"name":"米饭 极速煮","iconPath":"/4f995ce978024333ad7a4fc260cc952c.png","icon":"/92b3e702f43a4638ab444820144db84f.png","function":"米饭 极速煮","content":"米饭 极速煮","cookCode":"01050800000105e1001e000000000c800200000100aa00000000000000006e10082b006e141278a0be55555555001428145a1005070708090909095a140614140e0e00050505050a14076e78200028035a2803505050500004040500000000001803020303030202020212120c0c12121218281e2d2d370000000000000000000000b4c1","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":true,"detailFlag":false,"flag":"0","recipeIdDmgIds":"10-1;9;","topRecipe":false},{"id":260,"recipeId":9,"name":"米饭 香甜煮","iconPath":"/304fe19237ad4d48822ab86402baad0d.png","icon":"/797495b7c5ba4353a79f94914d5e17f3.png","function":"米饭 香甜煮","content":"米饭 香甜煮","cookCode":"01050800000104e1010f000000000c800200000100aa00000000000000006e10082b126e1412698caa55555555001428145a1005070708090909095a14060d0d0d0f001e1e1e1e0a14066e782000280a5a280350505050000404050000000000180302030303020202020607070800121218281e2d2d3700000000000000000000009263","currentUser":false,"isSysgeneratedId":false,"recipeOptionFlag":false,"collectFlag":true,"detailFlag":false,"flag":"0","beforeBgcolor":"#ffffff","afterBgcolor":"#46a7e3","recipeIdDmgIds":"9-1;3;4;6;9;","topRecipe":false}]},"serverTimeMillis":1534672903703}
+精煮饭 True
+快煮饭 True
+煮粥 True
+保温 True
+蒸煮 True
+炖汤 True
+蛋糕 True
+酸奶 True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechooseminelist.v7recipechoosemineTest: 我的收藏</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosemine_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: http://10.0.10.100:17001/v7/recipe/choose/mine/list
+&lt;type 'str'&gt;
+{"state":1,"message":"操作成功","result":[],"serverTimeMillis":1534672905758}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechoosereset.recipechooseresetTest: 排序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosereset_success: 重置成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
+
+    <div id='div_pt15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt15.1: http://10.0.10.100:17001/v7/recipe/choose/reset
+&lt;type 'str'&gt;
+{"state":1,"message":"重置成功","result":null,"serverTimeMillis":1534672905935}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechoosesort.recipechoosesortTest: 排序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosesort_success: 排序成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt16.1')" >
+        pass</a>
+
+    <div id='div_pt16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt16.1: http://10.0.10.100:17001/v7/recipe/choose/sort
+{"recipeChooses": [{"recipeId": ""}, {"recipeId": 2732}], "model": "chunmi.cooker.k1pro1", "deviceId": 85465933, "recipeOptions": [{"recipeId": ""}, {"recipeId": 2732}, {"recipeId": 2718}, {"recipeId": 2719}, {"recipeId": 2720}, {"recipeId": 2721}]}
+{"state":1,"message":"排序成功","result":null,"serverTimeMillis":1534672906710}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipedetail.v7recipedetailTest: 食谱详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipedetail_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt17.1: http://10.0.10.100:17001/v7/recipe/3483/detail
+{"model": "chunmi.cooker.k1pro1", "language": ""}
+url2 : http://10.0.10.100:17001/v7/recipe/3483/detail?data=osCcfssRcjljxbkMR90h6Z25b4Guk0PWXLQrzOarvUQ76kmPPGeqyTrJCjrjMRzo
+{"state":1,"message":"操作成功","result":{"id":3483,"recipeId":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","content":"没有啊","cookCode":"01050800000d9be1001e000000000c800200000100aa00000000000000006e10082b006e141278a0be55555555001428145a1005070708090909095a140614140e0e00050505050a14076e78200028035a2803505050500004040500000000001803020303030202020212120c0c12121218281e2d2d3700000000000000000000005965","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"duration":30,"usagecount":5,"flag":"1","steps":[{"id":50517,"name":"","iconPath":"/4973e11044344f71a1241af097f14f67.jpg","content":"生菜洗净，入开水中烫熟","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":50518,"name":"","iconPath":"/453f29ba51004c95a87bcb3ae70b64e0.png","content":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":50519,"name":"","iconPath":"/48c70417f49248c793c1855c905b0104.jpg","content":"10g淀粉加10g水混合成淀粉水，待用。\r\n锅里倒入少许油，炒香蒜末和姜末，倒入郫县豆瓣酱小火炒出红油，加300ml水，煮开后关小火下入肉片","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":50520,"name":"","iconPath":"/64c18606bc814371ace5290a13bf4da2.png","content":"取一个大碗，底部铺上生菜，倒入肉片。撒上辣椒粉、花椒粉、芝麻、葱花，淋入一勺滚烫的热油。","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}}],"auxiliaries":[{"id":49043,"name":"里脊","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":49044,"name":"生菜","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":49045,"name":"生抽","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":49046,"name":"辣椒碎","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":49047,"name":"花椒碎","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}}],"ingredients":[{"id":49691,"name":"蛋清","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}},{"id":49692,"name":"油","quality":"适量","recipe":{"id":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","content":"没有啊","duration":30,"minDuration":null,"maxDuration":null,"function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":0,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-08-15T06:52:15.000+0000","downloadcount":0,"usagecount":5,"cookNum":0,"updateTime":"2018-08-15T06:52:24.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"}}],"beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},"serverTimeMillis":1534672906796}
+&lt;type 'dict'&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipequery.v7recipequeryTest: 更多食谱，根据食谱类别和关键字进行查询</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipequery_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt18.1: http://10.0.10.100:17001/v7/recipe/people/query
+{"model": "chunmi.cooker.k1pro1", "perpage": 50, "pageno": 1, "language": "", "deviceId": "57384129"}
+url2 : http://10.0.10.100:17001/v7/recipe/people/query?data=w_WewQDcKN4zAQ1uzbDTtX2ZTKlnObffABck8ytxSv4HM9oToAXeF44RFFBZUXSSPFrZIAH6TMaGYsbnAiJ2kIKPvgs07MP8s2Jkka24oo8%3D
+{"state":1,"message":"操作成功","result":[{"id":3491,"recipeId":3491,"name":"食谱2","iconPath":"/872e63a423d441a2b3030831b0809587.jpg","function":"东方饭店","content":"点点点","cookCode":"01050000000da3e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d370000000000000000000000abf0","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":true,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},{"id":3490,"recipeId":3490,"name":"食谱1","iconPath":"/ca2dbfb685854fa88d1f8a5581f4d3ca.jpg","function":"事实是","content":"试试","cookCode":"01050000000da2e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d370000000000000000000000f93f","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},{"id":3483,"recipeId":3483,"name":"水煮肉片","iconPath":"/3d016215051941929938417bd352c647.jpg","function":"猪里脊切片。肉片中放入少许盐搅拌均匀打入一颗蛋清，然后放入淀粉继续拌匀，抓至肉片吸收蛋清和淀粉，最后倒入少许油腌制片刻。","content":"没有啊","cookCode":"01050800000d9be1001e000000000c800200000100aa00000000000000006e10082b006e141278a0be55555555001428145a1005070708090909095a140614140e0e00050505050a14076e78200028035a2803505050500004040500000000001803020303030202020212120c0c12121218281e2d2d3700000000000000000000005965","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":true,"collectFlag":true,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},{"id":3481,"recipeId":3481,"name":"松茸焖饭","iconPath":"/b3db60b00ebf481f8cd68d7c5d626f12.jpg@2o_50sh_1pr_1l_660w_90q_1wh","function":"在西湖边的国宾馆紫薇厅吃到，惊为天人，日思夜想，在这个松茸丰收的季节，赶紧的，松茸焖饭做起来。","content":"","cookCode":"01050000000d99e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d3700000000000000000000003cab","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},{"id":3474,"recipeId":3474,"name":"大酱汤","iconPath":"/e1479ecc204e4c57969de9f93607ac19.jpg","function":"非常简单的一道菜1111","content":"在放蛤蜊的水中滴几滴油，蛤蜊更容易吐净沙子 1111","cookCode":"01050700000d920908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c00000000000000000000000000000000000000000200000000000000000000000000000049000000002900000000000000002a15","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},{"id":3473,"recipeId":3473,"name":"白菜炖粉条","iconPath":"/233829fd448f4ab78612af78b4d867f9.jpg","function":"吃腻了大鱼大肉，充斥着味素、添加剂的快餐，忽然很怀念这道妈妈味的白菜炖粉条。淳朴的食材与调味，配上一碗热腾腾的白米饭，久违的家的味道。","content":"1.五花肉片需煸炒至焦黄再炖，可使口感清爽不油腻。\r\n2.因为白菜本身出水，煸炒之后可加入泡香菇水或少量水炖煮即可。","cookCode":"01050400000d9126001e0100000a00800000000100aa000000000000000000000000000000000000000000000000000000001e695f736e140f200000000000000000000000003c80736e5a0d081400000000000000000000000000000000000000000000015078960808080873694b0e5456565680000000000000000000000000008021","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false},{"id":3471,"recipeId":3471,"name":"古早味瓜仔肉","iconPath":"/ebcf1580fefc4bf480893338242c1dae.jpg","function":"白飯不夠啦！超級下飯，簡單又不容易失敗的瓜仔肉，大人小朋友都愛！","content":"醬油不需要太多，一點點提味就好，脆瓜汁可以留下拌入絞肉，讓肉汁更鮮甜喔！","cookCode":"01050100000d8fe10028000000000c800200000100aa00000000000000006e10082b056e1412698caa55555555001428145a10070707070c0e0e105a14060a0c0c0e00090909091e14046e78200028065a28035050505000040405000078000018030203030302040405070c0c0c00121218280f0f0f320000000000000000000000617c","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","topRecipe":false},{"id":3357,"recipeId":3357,"name":"海鲜疙瘩汤","iconPath":"/8a74f95b46fb4d78b1c63c785d82fd86.jpg","function":"鲜美浓郁，面疙瘩加上海鲜让人一次能吃下两大碗。","content":"","cookCode":"01050700000d1d0908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000e2a8","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","recipeIdDmgIds":"0","topRecipe":false},{"id":3353,"recipeId":3353,"name":"照烧龙利鱼","iconPath":"/8b6f120a5d914d25877e3e803ed0b5a4.jpg","function":"好好吃啊","content":"1、照烧酱汁可以多熬一些存着备用，但是如果多熬，就先不加油。取出食用时再加油然后倒入酱汁。\r\n2、煎鱼是反面一定要小心，龙利鱼很容易碎。\r\n3、因为用平底锅煎用的油会少些，如果用多的油炸那自然更美味，不过要注意火候不要炸太老。","cookCode":"01050700000d190908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000b9b5","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","recipeIdDmgIds":"0","topRecipe":false},{"id":3352,"recipeId":3352,"name":"秦椒炒腊肉","iconPath":"/f202fce681b242fbb26be3874c580998.jpg","function":"冬季腊肉季节，用腊肉和辣椒炒一盘，真的太过瘾了，绝对的饭扫光1111111111","content":"我也不知道是什么","cookCode":"01050700000d180908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000eb7a","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","recipeIdDmgIds":"0","topRecipe":false},{"id":3351,"recipeId":3351,"name":"绿茶蛋糕","iconPath":"/c5f5af4787114d92b387998bde3ec1bf.jpg","function":"好吃的","content":"小贴士","cookCode":"01050700000d170908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000f10c","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","recipeIdDmgIds":"0","topRecipe":false},{"id":3321,"recipeId":3321,"name":"彩色玫瑰花馒头","iconPath":"/9071feb01dee441580b1c7276cffdc82.jpg","function":"口感与颜值并存的彩色玫瑰花馒头。","content":"食材的颜色可以根据个人的口味爱好改变，比如用紫薯、红薯、菠菜汁等。","cookCode":"01050700000cf90908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000c716","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","recipeIdDmgIds":"0","topRecipe":false}],"serverTimeMillis":1534672906964}
+{u'state': 1, u'serverTimeMillis': 1534672906964L, u'message': u'\u64cd\u4f5c\u6210\u529f', u'result': [{u'function': u'\u4e1c\u65b9\u996d\u5e97', u'cookCode': u'01050000000da3e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d370000000000000000000000abf0', u'name': u'\u98df\u8c312', u'recipeId': 3491, u'recipeIdDmgIds': u'', u'currentUser': False, u'content': u'\u70b9\u70b9\u70b9', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'beforeBgcolor': u'', u'topRecipe': False, u'iconPath': u'/872e63a423d441a2b3030831b0809587.jpg', u'collectFlag': True, u'afterBgcolor': u'', u'id': 3491, u'recipeOptionFlag': False}, {u'function': u'\u4e8b\u5b9e\u662f', u'cookCode': u'01050000000da2e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d370000000000000000000000f93f', u'name': u'\u98df\u8c311', u'recipeId': 3490, u'recipeIdDmgIds': u'', u'currentUser': False, u'content': u'\u8bd5\u8bd5', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'beforeBgcolor': u'', u'topRecipe': False, u'iconPath': u'/ca2dbfb685854fa88d1f8a5581f4d3ca.jpg', u'collectFlag': False, u'afterBgcolor': u'', u'id': 3490, u'recipeOptionFlag': False}, {u'function': u'\u732a\u91cc\u810a\u5207\u7247\u3002\u8089\u7247\u4e2d\u653e\u5165\u5c11\u8bb8\u76d0\u6405\u62cc\u5747\u5300\u6253\u5165\u4e00\u9897\u86cb\u6e05\uff0c\u7136\u540e\u653e\u5165\u6dc0\u7c89\u7ee7\u7eed\u62cc\u5300\uff0c\u6293\u81f3\u8089\u7247\u5438\u6536\u86cb\u6e05\u548c\u6dc0\u7c89\uff0c\u6700\u540e\u5012\u5165\u5c11\u8bb8\u6cb9\u814c\u5236\u7247\u523b\u3002', u'cookCode': u'01050800000d9be1001e000000000c800200000100aa00000000000000006e10082b006e141278a0be55555555001428145a1005070708090909095a140614140e0e00050505050a14076e78200028035a2803505050500004040500000000001803020303030202020212120c0c12121218281e2d2d3700000000000000000000005965', u'name': u'\u6c34\u716e\u8089\u7247', u'recipeId': 3483, u'recipeIdDmgIds': u'', u'currentUser': False, u'content': u'\u6ca1\u6709\u554a', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'beforeBgcolor': u'', u'topRecipe': False, u'iconPath': u'/3d016215051941929938417bd352c647.jpg', u'collectFlag': True, u'afterBgcolor': u'', u'id': 3483, u'recipeOptionFlag': True}, {u'function': u'\u5728\u897f\u6e56\u8fb9\u7684\u56fd\u5bbe\u9986\u7d2b\u8587\u5385\u5403\u5230\uff0c\u60ca\u4e3a\u5929\u4eba\uff0c\u65e5\u601d\u591c\u60f3\uff0c\u5728\u8fd9\u4e2a\u677e\u8338\u4e30\u6536\u7684\u5b63\u8282\uff0c\u8d76\u7d27\u7684\uff0c\u677e\u8338\u7116\u996d\u505a\u8d77\u6765\u3002', u'cookCode': u'01050000000d99e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d3700000000000000000000003cab', u'name': u'\u677e\u8338\u7116\u996d', u'recipeId': 3481, u'recipeIdDmgIds': u'', u'currentUser': False, u'content': u'', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'beforeBgcolor': u'', u'topRecipe': False, u'iconPath': u'/b3db60b00ebf481f8cd68d7c5d626f12.jpg@2o_50sh_1pr_1l_660w_90q_1wh', u'collectFlag': False, u'afterBgcolor': u'', u'id': 3481, u'recipeOptionFlag': False}, {u'function': u'\u975e\u5e38\u7b80\u5355\u7684\u4e00\u9053\u83dc1111', u'cookCode': u'01050700000d920908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c00000000000000000000000000000000000000000200000000000000000000000000000049000000002900000000000000002a15', u'name': u'\u5927\u9171\u6c64', u'recipeId': 3474, u'recipeIdDmgIds': u'', u'currentUser': False, u'content': u'\u5728\u653e\u86e4\u870a\u7684\u6c34\u4e2d\u6ef4\u51e0\u6ef4\u6cb9\uff0c\u86e4\u870a\u66f4\u5bb9\u6613\u5410\u51c0\u6c99\u5b50 1111', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'beforeBgcolor': u'', u'topRecipe': False, u'iconPath': u'/e1479ecc204e4c57969de9f93607ac19.jpg', u'collectFlag': False, u'afterBgcolor': u'', u'id': 3474, u'recipeOptionFlag': False}, {u'function': u'\u5403\u817b\u4e86\u5927\u9c7c\u5927\u8089\uff0c\u5145\u65a5\u7740\u5473\u7d20\u3001\u6dfb\u52a0\u5242\u7684\u5feb\u9910\uff0c\u5ffd\u7136\u5f88\u6000\u5ff5\u8fd9\u9053\u5988\u5988\u5473\u7684\u767d\u83dc\u7096\u7c89\u6761\u3002\u6df3\u6734\u7684\u98df\u6750\u4e0e\u8c03\u5473\uff0c\u914d\u4e0a\u4e00\u7897\u70ed\u817e\u817e\u7684\u767d\u7c73\u996d\uff0c\u4e45\u8fdd\u7684\u5bb6\u7684\u5473\u9053\u3002', u'cookCode': u'01050400000d9126001e0100000a00800000000100aa000000000000000000000000000000000000000000000000000000001e695f736e140f200000000000000000000000003c80736e5a0d081400000000000000000000000000000000000000000000015078960808080873694b0e5456565680000000000000000000000000008021', u'name': u'\u767d\u83dc\u7096\u7c89\u6761', u'recipeId': 3473, u'recipeIdDmgIds': u'', u'currentUser': False, u'content': u'1.\u4e94\u82b1\u8089\u7247\u9700\u7178\u7092\u81f3\u7126\u9ec4\u518d\u7096\uff0c\u53ef\u4f7f\u53e3\u611f\u6e05\u723d\u4e0d\u6cb9\u817b\u3002\r\n2.\u56e0\u4e3a\u767d\u83dc\u672c\u8eab\u51fa\u6c34\uff0c\u7178\u7092\u4e4b\u540e\u53ef\u52a0\u5165\u6ce1\u9999\u83c7\u6c34\u6216\u5c11\u91cf\u6c34\u7096\u716e\u5373\u53ef\u3002', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'beforeBgcolor': u'', u'topRecipe': False, u'iconPath': u'/233829fd448f4ab78612af78b4d867f9.jpg', u'collectFlag': False, u'afterBgcolor': u'', u'id': 3473, u'recipeOptionFlag': False}, {u'function': u'\u767d\u98ef\u4e0d\u5920\u5566\uff01\u8d85\u7d1a\u4e0b\u98ef\uff0c\u7c21\u55ae\u53c8\u4e0d\u5bb9\u6613\u5931\u6557\u7684\u74dc\u4ed4\u8089\uff0c\u5927\u4eba\u5c0f\u670b\u53cb\u90fd\u611b\uff01', u'cookCode': u'01050100000d8fe10028000000000c800200000100aa00000000000000006e10082b056e1412698caa55555555001428145a10070707070c0e0e105a14060a0c0c0e00090909091e14046e78200028065a28035050505000040405000078000018030203030302040405070c0c0c00121218280f0f0f320000000000000000000000617c', u'name': u'\u53e4\u65e9\u5473\u74dc\u4ed4\u8089', u'recipeId': 3471, u'topRecipe': False, u'currentUser': False, u'content': u'\u91ac\u6cb9\u4e0d\u9700\u8981\u592a\u591a\uff0c\u4e00\u9ede\u9ede\u63d0\u5473\u5c31\u597d\uff0c\u8106\u74dc\u6c41\u53ef\u4ee5\u7559\u4e0b\u62cc\u5165\u7d5e\u8089\uff0c\u8b93\u8089\u6c41\u66f4\u9bae\u751c\u5594\uff01', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'iconPath': u'/ebcf1580fefc4bf480893338242c1dae.jpg', u'collectFlag': False, u'id': 3471, u'recipeOptionFlag': False}, {u'function': u'\u9c9c\u7f8e\u6d53\u90c1\uff0c\u9762\u7599\u7629\u52a0\u4e0a\u6d77\u9c9c\u8ba9\u4eba\u4e00\u6b21\u80fd\u5403\u4e0b\u4e24\u5927\u7897\u3002', u'cookCode': u'01050700000d1d0908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000e2a8', u'name': u'\u6d77\u9c9c\u7599\u7629\u6c64', u'recipeId': 3357, u'recipeIdDmgIds': u'0', u'currentUser': False, u'content': u'', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'topRecipe': False, u'iconPath': u'/8a74f95b46fb4d78b1c63c785d82fd86.jpg', u'collectFlag': False, u'id': 3357, u'recipeOptionFlag': False}, {u'function': u'\u597d\u597d\u5403\u554a', u'cookCode': u'01050700000d190908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000b9b5', u'name': u'\u7167\u70e7\u9f99\u5229\u9c7c', u'recipeId': 3353, u'recipeIdDmgIds': u'0', u'currentUser': False, u'content': u'1\u3001\u7167\u70e7\u9171\u6c41\u53ef\u4ee5\u591a\u71ac\u4e00\u4e9b\u5b58\u7740\u5907\u7528\uff0c\u4f46\u662f\u5982\u679c\u591a\u71ac\uff0c\u5c31\u5148\u4e0d\u52a0\u6cb9\u3002\u53d6\u51fa\u98df\u7528\u65f6\u518d\u52a0\u6cb9\u7136\u540e\u5012\u5165\u9171\u6c41\u3002\r\n2\u3001\u714e\u9c7c\u662f\u53cd\u9762\u4e00\u5b9a\u8981\u5c0f\u5fc3\uff0c\u9f99\u5229\u9c7c\u5f88\u5bb9\u6613\u788e\u3002\r\n3\u3001\u56e0\u4e3a\u7528\u5e73\u5e95\u9505\u714e\u7528\u7684\u6cb9\u4f1a\u5c11\u4e9b\uff0c\u5982\u679c\u7528\u591a\u7684\u6cb9\u70b8\u90a3\u81ea\u7136\u66f4\u7f8e\u5473\uff0c\u4e0d\u8fc7\u8981\u6ce8\u610f\u706b\u5019\u4e0d\u8981\u70b8\u592a\u8001\u3002', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'topRecipe': False, u'iconPath': u'/8b6f120a5d914d25877e3e803ed0b5a4.jpg', u'collectFlag': False, u'id': 3353, u'recipeOptionFlag': False}, {u'function': u'\u51ac\u5b63\u814a\u8089\u5b63\u8282\uff0c\u7528\u814a\u8089\u548c\u8fa3\u6912\u7092\u4e00\u76d8\uff0c\u771f\u7684\u592a\u8fc7\u763e\u4e86\uff0c\u7edd\u5bf9\u7684\u996d\u626b\u51491111111111', u'cookCode': u'01050700000d180908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000eb7a', u'name': u'\u79e6\u6912\u7092\u814a\u8089', u'recipeId': 3352, u'recipeIdDmgIds': u'0', u'currentUser': False, u'content': u'\u6211\u4e5f\u4e0d\u77e5\u9053\u662f\u4ec0\u4e48', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'topRecipe': False, u'iconPath': u'/f202fce681b242fbb26be3874c580998.jpg', u'collectFlag': False, u'id': 3352, u'recipeOptionFlag': False}, {u'function': u'\u597d\u5403\u7684', u'cookCode': u'01050700000d170908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000f10c', u'name': u'\u7eff\u8336\u86cb\u7cd5', u'recipeId': 3351, u'recipeIdDmgIds': u'0', u'currentUser': False, u'content': u'\u5c0f\u8d34\u58eb', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'topRecipe': False, u'iconPath': u'/c5f5af4787114d92b387998bde3ec1bf.jpg', u'collectFlag': False, u'id': 3351, u'recipeOptionFlag': False}, {u'function': u'\u53e3\u611f\u4e0e\u989c\u503c\u5e76\u5b58\u7684\u5f69\u8272\u73ab\u7470\u82b1\u9992\u5934\u3002', u'cookCode': u'01050700000cf90908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c0000000000000000000000000000000000000000020000000000000000000000000000004900000000290000000000000000c716', u'name': u'\u5f69\u8272\u73ab\u7470\u82b1\u9992\u5934', u'recipeId': 3321, u'recipeIdDmgIds': u'0', u'currentUser': False, u'content': u'\u98df\u6750\u7684\u989c\u8272\u53ef\u4ee5\u6839\u636e\u4e2a\u4eba\u7684\u53e3\u5473\u7231\u597d\u6539\u53d8\uff0c\u6bd4\u5982\u7528\u7d2b\u85af\u3001\u7ea2\u85af\u3001\u83e0\u83dc\u6c41\u7b49\u3002', u'isSysgeneratedId': True, u'flag': u'1', u'detailFlag': True, u'topRecipe': False, u'iconPath': u'/9071feb01dee441580b1c7276cffdc82.jpg', u'collectFlag': False, u'id': 3321, u'recipeOptionFlag': False}]}
+12
+食谱2 True
+食谱1 False
+水煮肉片 True
+松茸焖饭 False
+大酱汤 False
+白菜炖粉条 False
+古早味瓜仔肉 False
+海鲜疙瘩汤 False
+照烧龙利鱼 False
+秦椒炒腊肉 False
+绿茶蛋糕 False
+彩色玫瑰花馒头 False
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V7riceadd.riceaddTest: 添加米</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_riceadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1: http://10.0.10.100:17001/v7/rice/addNew
+{"barCode": "2018080268", "deviceId": 85465933, "language": "", "brand": "brand788", "ppties": "testsx0787", "pic": "/b2197884207041d7b24f1c73db4cde68.jpg", "id": "", "name": "wjy4"}
+{"state":1,"message":"操作成功","result":{"barCode":"2018080268","name":"wjy4","brand":"brand788","ppties":"testsx0787","id":24461,"pic":"/b2197884207041d7b24f1c73db4cde68.jpg","price":0.0,"scantimes":0,"defaultRice":false},"serverTimeMillis":1534672907168}
+wjy4
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricebarcode.v7ricebarcodeTest: 扫描条形码添加米种</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricebarcode_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1: http://10.0.10.100:17001/v7/rice/barcode
+{"barCode": 2018080268, "deviceId": 85465933, "language": ""}
+url2 : http://10.0.10.100:17001/v7/rice/barcode?data=oBKD7SreAF5tudkbUF0jLtdMospen4H9kCCMXtECbpsqipe9Kjj5qYVsyh3oivBS
+{"state":1,"message":"操作成功","result":{"barCode":"2018080268","name":"wjy4","brand":"brand788","ppties":"testsx0787","id":24461,"pic":"/b2197884207041d7b24f1c73db4cde68.jpg","price":0.0,"scantimes":0,"defaultRice":false},"serverTimeMillis":1534672907869}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricecookscriptfind.ricecookscriptfindTest: 查找米烹饪程序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecookscriptfind_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+        pass</a>
+
+    <div id='div_pt21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt21.1: http://10.0.10.100:17001/v7/rice/cookscript/find
+&lt;type 'str'&gt;
+{"state":1,"message":"操作成功","result":{"id":461,"name":"K1S饭煲-精煮-甜度适中-硬度中-粘度适中-海拔0-200","content":"","state":null,"publishTime":"2018-08-15T10:44:52.000+0000","deviceModel":{"id":1,"name":"chunmi.cooker.press1","modelPicPath":null,"powerRating":800,"description":"米家压力IH电饭煲","state":{"id":1702,"name":"上线","pid":17,"bundleId":null,"topPid":17,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":1},"address":"上海","registDateTime":null,"volume":"3","buyUrl":"http://m.mi.com/#/product/view?product_id=3488","group":{"id":1,"name":"米家压力IH电饭煲","createTime":null,"description":"米家压力IH电饭煲","state":{"id":2500,"name":"内测","pid":2,"bundleId":2500,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"scriptLength":228,"canCap":false,"source":1},"devicemodelGroupid":1},"dmg":null,"eleLevel":{"id":3000,"name":"海拔0-200","pid":3,"bundleId":3000,"topPid":3,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":3},"rice":{"barCode":"1","name":"东北米","id":1,"description":"东北米","pic":"/static/upload/rice/1/default_mi.jpg","price":0.0,"scantimes":0,"defaultRice":true,"sort":4},"cookStyle":{"id":1100,"name":"精煮","pid":1,"bundleId":1100,"topPid":1,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":1},"taste":{"id":4111,"name":"甜度适中-硬度中-粘度适中","pid":4,"bundleId":4111,"topPid":4,"level":2,"pinyin":"4","status":2200,"tagScore":null,"sort":4},"cookscript":{"id":49687,"cookcode":"01050000000001e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d3700000000000000000000009a3b","cookprofile":null}},"serverTimeMillis":1534672907998}
+{u'state': 1, u'serverTimeMillis': 1534672907998L, u'message': u'\u64cd\u4f5c\u6210\u529f', u'result': {u'name': u'K1S\u996d\u7172-\u7cbe\u716e-\u751c\u5ea6\u9002\u4e2d-\u786c\u5ea6\u4e2d-\u7c98\u5ea6\u9002\u4e2d-\u6d77\u62d40-200', u'deviceModel': {u'group': {u'description': u'\u7c73\u5bb6\u538b\u529bIH\u7535\u996d\u7172', u'createTime': None, u'canCap': False, u'source': 1, u'state': {u'status': 2200, u'sort': 2, u'name': u'\u5185\u6d4b', u'level': 2, u'pinyin': None, u'pid': 2, u'tagScore': None, u'topPid': 2, u'id': 2500, u'bundleId': 2500}, u'scriptLength': 228, u'id': 1, u'name': u'\u7c73\u5bb6\u538b\u529bIH\u7535\u996d\u7172'}, u'description': u'\u7c73\u5bb6\u538b\u529bIH\u7535\u996d\u7172', u'registDateTime': None, u'buyUrl': u'http://m.mi.com/#/product/view?product_id=3488', u'powerRating': 800, u'volume': u'3', u'state': {u'status': 2200, u'sort': 1, u'name': u'\u4e0a\u7ebf', u'level': 2, u'pinyin': None, u'pid': 17, u'tagScore': None, u'topPid': 17, u'id': 1702, u'bundleId': None}, u'devicemodelGroupid': 1, u'address': u'\u4e0a\u6d77', u'modelPicPath': None, u'id': 1, u'name': u'chunmi.cooker.press1'}, u'dmg': None, u'taste': {u'status': 2200, u'sort': 4, u'name': u'\u751c\u5ea6\u9002\u4e2d-\u786c\u5ea6\u4e2d-\u7c98\u5ea6\u9002\u4e2d', u'level': 2, u'pinyin': u'4', u'pid': 4, u'tagScore': None, u'topPid': 4, u'id': 4111, u'bundleId': 4111}, u'cookStyle': {u'status': 2200, u'sort': 1, u'name': u'\u7cbe\u716e', u'level': 2, u'pinyin': None, u'pid': 1, u'tagScore': None, u'topPid': 1, u'id': 1100, u'bundleId': 1100}, u'publishTime': u'2018-08-15T10:44:52.000+0000', u'cookscript': {u'cookprofile': None, u'cookcode': u'01050000000001e10100000000000c800200000100aa00000000000000006e10082b126e1412698caa555555550014280a6e0c02050506050505055a14040a0c0c0d00040505060a0f086e782000280a5a28036468686a000404050000780000180001020202020404050607070800121218281e2d2d3700000000000000000000009a3b', u'id': 49687}, u'content': u'', u'state': None, u'eleLevel': {u'status': 2200, u'sort': 3, u'name': u'\u6d77\u62d40-200', u'level': 2, u'pinyin': None, u'pid': 3, u'tagScore': None, u'topPid': 3, u'id': 3000, u'bundleId': 3000}, u'rice': {u'sort': 4, u'pic': u'/static/upload/rice/1/default_mi.jpg', u'description': u'\u4e1c\u5317\u7c73', u'price': 0.0, u'barCode': u'1', u'defaultRice': True, u'scantimes': 0, u'id': 1, u'name': u'\u4e1c\u5317\u7c73'}, u'id': 461}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricedel.ricecollectdelTest: 删除用户添加的米种</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecollectdel_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: http://10.0.10.100:17001/v7/rice/del
+{"rices": [{"id": "24461"}], "deviceId": 85465933}
+{"state":1,"message":"删除成功","result":null,"serverTimeMillis":1534672908577}
+&lt;type 'dict'&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricelist.v7ricelistTest: 米种列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricelist_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1: http://10.0.10.100:17001/v7/rice/list
+{"pageno": 1, "perpage": 100, "deviceid": 85465933, "language": ""}
+url2 : http://10.0.10.100:17001/v7/rice/list?data=clmecaZXv-s0v1WFuL9wW5cYyzEWSeqs95wW1s4rhQR-yGVd3ytU2_poJLrIfo2UBul6j-zJdr2xdSskyoi2OA%3D%3D
+{"state":1,"message":"操作成功","result":[{"barCode":"2018080218","name":"wjy3","brand":"brand788","ppties":"testsx0787","id":24459,"pic":"/b2197884207041d7b24f1c73db4cde68.jpg","price":0.0,"scantimes":0,"defaultRice":false},{"name":"光明米业崇明农场","brand":"","id":24460,"pic":"/static/upload/rice/2715/6ef8b0862eae4137b42a17c2067c7986.jpg","price":0.0,"scantimes":0,"defaultRice":false},{"name":"周三","brand":"看看咯","id":24451,"pic":"/84b94019b3624c8cbeb117f03fca4982.jpg","price":0.0,"scantimes":0,"defaultRice":false},{"barCode":"201658922336","manufacture":"","name":"test ric","brand":"fghffghg","specification":"55","area":"上海","id":24238,"description":"","pic":"/51ece793c2fe47bd8397d276fdc9572a.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"8","name":"江浙米","id":8,"description":"江浙米","pic":"/static/upload/rice/8/default_mi8.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"1497946076","manufacture":"好厂商","name":"东北大米","brand":"好品牌","specification":"30kg","area":"长沙","id":24301,"description":"这是一种好米","pic":"/9da736e5b4c64e29b49688f1868c441c.JPG","price":30.0,"scantimes":0,"defaultRice":true},{"barCode":"20170608888","manufacture":"打的","name":"多语言默认米","brand":"升水","specification":"55","area":"升水","id":24281,"description":"升水","pic":"/2c6a3a2de863452aa90e11aa0eff4d13.jpg","price":99.0,"scantimes":0,"defaultRice":true},{"barCode":"7","name":"湖南米","id":7,"description":"湖南米","pic":"/static/upload/rice/7/default_mi7.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"5","name":"泰国香米","id":5,"description":"泰国香米","pic":"/static/upload/rice/5/default_mi5.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"6","name":"秋田小町","id":6,"description":"秋田小町","pic":"/static/upload/rice/6/default_mi6.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"4","name":"珍珠米","id":4,"description":"珍珠米","pic":"/static/upload/rice/4/default_mi4.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"2","name":"丝苗米","id":2,"description":"丝苗米","pic":"/static/upload/rice/2/default_mi2.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"3","name":"糯米","id":3,"description":"糯米","pic":"/static/upload/rice/3/default_mi3.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"1","name":"东北米","id":1,"description":"东北米","pic":"/static/upload/rice/1/default_mi.jpg","price":0.0,"scantimes":0,"defaultRice":true},{"barCode":"7410236985","manufacture":"啊啊1","name":"哈哈哈1","brand":"试试1","specification":"25kg","area":"上海市1","id":24329,"description":"试试1","pic":"/83aab2f9188144578730eed0c8669749.JPG","price":99.0,"scantimes":0,"defaultRice":true}],"serverTimeMillis":1534672910770}
+15
+wjy3
+光明米业崇明农场
+周三
+test ric
+江浙米
+东北大米
+多语言默认米
+湖南米
+泰国香米
+秋田小町
+珍珠米
+丝苗米
+糯米
+东北米
+哈哈哈1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricericeIdinfo.v7ricelistTest: 米种详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_riceinfo_success: 查看米详情，传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: http://10.0.10.100:17001/v7/rice/1/info
+&lt;type 'str'&gt;
+{"state":1,"message":"操作成功","result":{"barCode":"1","name":"东北米","id":1,"description":"东北米","pic":"/static/upload/rice/1/default_mi.jpg","price":0.0,"scantimes":0,"defaultRice":true},"serverTimeMillis":1534672910881}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>26</td>
+    <td>26</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

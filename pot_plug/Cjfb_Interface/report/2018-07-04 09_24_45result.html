@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>饭煲接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>饭煲接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-07-04 09:24:45</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.319000</p>
+<p class='attribute'><strong>Status:</strong> Pass 6</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipecookscriptfind.recipecookscriptfindTest: 获取食谱烹饪程序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecookscriptfind_success: 获取食谱烹饪程序</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: http://10.0.10.100:17001/v6/recipecookscript/find
+{"state":1,"message":"获取菜谱烹饪程序成功","content":null,"result":[{"id":48962,"name":null,"content":null,"state":{"id":2100,"name":"审核等待","pid":2,"bundleId":2100,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2017-12-15T16:04:52.000+0000","deviceModel":null,"dmg":{"id":6,"name":"米家IH电饭煲  台湾版","createTime":null,"description":"台湾版110V电压","state":{"id":2500,"name":"内测","pid":2,"bundleId":2500,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"scriptLength":242,"canCap":true,"source":1},"eleLevel":{"id":3000,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0},"recipe":{"id":256,"name":"蛋糕","iconPath":"/static/upload/recipe/256/1b8c5ac0385e47669d9a3ee64bba419e.jpg","content":"1.底部有稍微焦糊状态属于正常情况。\r\n2.面粉要过筛，防止有结块的面团。\r\n3.两种面糊拌在一起的时候一定不可以转圈搅拌，不然泡沫会散掉。上下左右前    后拌拌就可以了。\r\n4.此配方操作难度稍难，购买蛋糕预拌粉制作蛋糕，可省去大量步骤，具体操作流程查看所购买预拌粉详细说明。","duration":60,"minDuration":10,"maxDuration":120,"function":"蛋糕界的鼻祖，无需太多装饰，仅仅加上一颗草莓就可以担当起整个蛋糕的颜值！少女心、小清新和绅士范儿......只要一个配方就可以搞定。","avgRate":0.0,"rateCount":0,"category":{"id":256,"name":"蛋糕","curveImage":null,"image":null,"cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":null,"cookscript":null,"utrition":null,"collectorCount":64,"commentorCount":137,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2017-07-26T22:17:23.000+0000","downloadcount":0,"usagecount":3,"cookNum":6,"updateTime":"2017-12-15T16:05:33.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0},"cookscript":{"id":49017,"cookcode":"01008801000200000a000012000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c00086278780600001e8278626e041000826e00690fff96626e0469100082826e0069100069005a000000000000004ee7","cookprofile":null},"isUserRecipe":null,"isSystemrRecipe":null}],"serverTimeMillis":1530667485519}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipelistrecipe.literrecipeTest: 获取用户收藏菜谱</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistrecipe1_success: 获取食谱详情信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: http://10.0.10.100:17001/v6/literecipe/recipebydevice
+{"state":1,"message":"获取菜谱列表成功","content":null,"result":[{"id":null,"type":null,"name":"ケーキ","iconPath":"/static/upload/recipe/256/1b8c5ac0385e47669d9a3ee64bba419e.jpg","recipeId":256,"rateCount":0,"collectorCount":64,"content":" ","date":"2018-07-04T01:24:45.599+0000","state":null,"cookCode":"01008801000200000a000012000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c00086278780600001e8278626e041000826e00690fff96626e0469100082826e0069100069005a000000000000004ee7","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1},{"id":null,"type":null,"name":"ヨーグルト","iconPath":"/static/upload/recipe/257/1a3d8ce4ca70404eb1c52ccfa73161bf.jpg","recipeId":257,"rateCount":0,"collectorCount":23,"content":"","date":"2018-07-04T01:24:45.602+0000","state":null,"cookCode":"0101090c000200000a000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a0f260300915573000000008278736e001000756e0028050075826e002810ff75266e0228100069005a00000000000000a5bd","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1},{"id":null,"type":null,"name":"蒸す／煮込み","iconPath":null,"recipeId":259,"rateCount":2200,"collectorCount":3,"content":"","date":"2018-07-04T01:24:45.604+0000","state":null,"cookCode":"0103e6001e0100000a010540000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c00089155730e0000008278736e001000756e00690a0075826e006910ff756e6e0869100069005a000000000000005762","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1},{"id":null,"type":null,"name":"保温","iconPath":"","recipeId":4,"rateCount":0,"collectorCount":6,"content":"保温","date":"2018-07-04T01:24:45.606+0000","state":null,"cookCode":"00040c180018000001000045000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a0082001e914e730801001e82ff736e0610ff756e02690a0f75826e0169101e75826e0169100069005a000000000000001ba2","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1},{"id":null,"type":null,"name":"再加熱","iconPath":null,"recipeId":258,"rateCount":2200,"collectorCount":8,"content":"","date":"2018-07-04T01:24:45.609+0000","state":null,"cookCode":"010224001e00230019010540000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c000f91416e080000008278736e001000756e00690f0c75506e0669100082826e0869100069025004000000000000f5c6","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1},{"id":null,"type":null,"name":"ヨルト","iconPath":"/static/indenpendent/recipe/1615/6f0c92d9a95442fe930f775ca99a2efe.jpg","recipeId":1615,"rateCount":0,"collectorCount":8,"content":"ヨルト","date":"2018-07-04T01:24:45.611+0000","state":null,"cookCode":"064fe2011e040001000080000190550f0601001100000000000001b8550f0601001400000000000001e0560f06000016000000000000ffff570f0600001800000000000000280a0082001e914e730e01001e82ff736e0610ff756e02690a1e75826e0269100f75826e0269100069005a000000000000005c07","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1},{"id":null,"type":null,"name":"白米 熟成炊き","iconPath":null,"recipeId":260,"rateCount":0,"collectorCount":8,"content":"","date":"2018-07-04T01:24:45.613+0000","state":null,"cookCode":"0104e1010a0000000000800200a00069030102780000085a020000eb006b040102780000085a0400012d006e0501027d0000065a0400ffff00700601027d0000065a0400052d0a0f3c0a1e91ff820e01ff05ff78826eff10ff786e02690f1eff826eff691400ff826eff69100069ff5aff00000000000060af","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":true,"source":1}],"serverTimeMillis":1530667485588}
+ケーキ
+ヨーグルト
+蒸す／煮込み
+保温
+再加熱
+ヨルト
+白米 熟成炊き
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6articletopadv.articletopadvTest: 获取banner（6100首页,6200列表）</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_articletopadv_sysuccess: 传所有参数,获取6100列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: http://10.0.10.100:17001/v6/article/topadv
+{"state":1,"message":"banner数据获取成功","content":null,"result":[{"id":337,"title":"256","icon":"/273c405c2ff84cbdb084f65d625ff957.png","content":"","url":"256","sort":2.6,"type":{"id":6100,"name":"饭煲烹饪Banner","pid":6,"bundleId":6100,"topPid":6,"level":2,"pinyin":"portal_banner_ad","status":2200,"tagScore":null,"sort":6},"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"targetType":{"id":6910,"name":"跳转到承接页","pid":18,"bundleId":16,"topPid":null,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":0},"modifyDate":"2018-06-22T14:52:23.000+0000","devicemodelid":null,"devicemodelgroupid":6}],"serverTimeMillis":1530667485632}
+1
+337
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6Highesttemperature.recipelistrecipeTest: 获取食谱详情信息</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Highesttemperature_success: 计算最高食谱温度</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: http://10.0.10.100:17001/v6/recipe/caculateHighesttemperature
+{"state":1,"message":"获取最高温度成功","content":null,"result":["105"],"serverTimeMillis":1530667485662}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6ricecookscriptfind.ricecookscriptfindTest: 查找米烹饪程序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecookscriptfind_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: http://10.0.10.100:17001/v6/ricecookscript/find
+{"state":1,"message":"查找米菜谱信息成功!","content":null,"result":[{"id":438,"name":"米家IH电饭煲  台湾版-精煮-甜度适中-硬度中-粘度适中-海拔0-200","content":"","state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2017-11-13T07:47:27.000+0000","deviceModel":{"id":1,"name":"chunmi.cooker.press1","modelPicPath":null,"powerRating":800,"description":"米家压力IH电饭煲","state":{"id":1702,"name":"上线","pid":17,"bundleId":null,"topPid":17,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":1},"address":"上海","registDateTime":null,"volume":"3","buyUrl":"http://m.mi.com/#/product/view?product_id=3488","group":{"id":1,"name":"米家压力IH电饭煲","createTime":null,"description":"米家压力IH电饭煲","state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"scriptLength":228,"canCap":false,"source":1}},"dmg":{"id":6,"name":"米家IH电饭煲  台湾版","createTime":null,"description":"台湾版110V电压","state":null,"scriptLength":242,"canCap":true,"source":1},"eleLevel":{"id":3000,"name":"海拔0-200","pid":3,"bundleId":3000,"topPid":3,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":3},"rice":{"barCode":"1","manufacture":null,"name":"东北米","brand":null,"specification":null,"ppties":null,"area":null,"id":1,"riceType":{"id":1,"name":"东北米","state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},"description":"东北米","pic":"/static/upload/rice/1/default_mi.jpg","tempic":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"price":0.0,"scantimes":0,"defaultRice":true,"sort":4},"cookStyle":{"id":1100,"name":"精煮","pid":1,"bundleId":1100,"topPid":1,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":1},"taste":{"id":4111,"name":"甜度适中-硬度中-粘度适中","pid":4,"bundleId":4111,"topPid":4,"level":2,"pinyin":"4","status":2200,"tagScore":null,"sort":4},"cookscript":{"id":48721,"cookcode":"0001e1010000000000008002007300690301036900000b5a020000af006b0501036c00000c5a04000119006e0701046f00000c5a0401ffff00700801047100000c5a0401052d0a123c0a1e91ff820e01ff05ff78826eff10ff786e02690f0fff826eff691000ff826eff69100069ff55ff0000000000007c76","cookprofile":null}}],"serverTimeMillis":1530667485669}
+{u'content': None, u'state': 1, u'serverTimeMillis': 1530667485669L, u'message': u'\u67e5\u627e\u7c73\u83dc\u8c31\u4fe1\u606f\u6210\u529f!', u'result': [{u'name': u'\u7c73\u5bb6IH\u7535\u996d\u7172  \u53f0\u6e7e\u7248-\u7cbe\u716e-\u751c\u5ea6\u9002\u4e2d-\u786c\u5ea6\u4e2d-\u7c98\u5ea6\u9002\u4e2d-\u6d77\u62d40-200', u'deviceModel': {u'group': {u'description': u'\u7c73\u5bb6\u538b\u529bIH\u7535\u996d\u7172', u'createTime': None, u'canCap': False, u'source': 1, u'state': {u'status': 2200, u'sort': 2, u'name': u'\u5ba1\u6838\u901a\u8fc7', u'level': 2, u'pinyin': None, u'pid': 2, u'tagScore': None, u'topPid': 2, u'id': 2200, u'bundleId': 2200}, u'scriptLength': 228, u'id': 1, u'name': u'\u7c73\u5bb6\u538b\u529bIH\u7535\u996d\u7172'}, u'description': u'\u7c73\u5bb6\u538b\u529bIH\u7535\u996d\u7172', u'registDateTime': None, u'buyUrl': u'http://m.mi.com/#/product/view?product_id=3488', u'powerRating': 800, u'volume': u'3', u'state': {u'status': 2200, u'sort': 1, u'name': u'\u4e0a\u7ebf', u'level': 2, u'pinyin': None, u'pid': 17, u'tagScore': None, u'topPid': 17, u'id': 1702, u'bundleId': None}, u'address': u'\u4e0a\u6d77', u'modelPicPath': None, u'id': 1, u'name': u'chunmi.cooker.press1'}, u'dmg': {u'description': u'\u53f0\u6e7e\u7248110V\u7535\u538b', u'createTime': None, u'canCap': True, u'source': 1, u'state': None, u'scriptLength': 242, u'id': 6, u'name': u'\u7c73\u5bb6IH\u7535\u996d\u7172  \u53f0\u6e7e\u7248'}, u'taste': {u'status': 2200, u'sort': 4, u'name': u'\u751c\u5ea6\u9002\u4e2d-\u786c\u5ea6\u4e2d-\u7c98\u5ea6\u9002\u4e2d', u'level': 2, u'pinyin': u'4', u'pid': 4, u'tagScore': None, u'topPid': 4, u'id': 4111, u'bundleId': 4111}, u'cookStyle': {u'status': 2200, u'sort': 1, u'name': u'\u7cbe\u716e', u'level': 2, u'pinyin': None, u'pid': 1, u'tagScore': None, u'topPid': 1, u'id': 1100, u'bundleId': 1100}, u'publishTime': u'2017-11-13T07:47:27.000+0000', u'cookscript': {u'cookprofile': None, u'cookcode': u'0001e1010000000000008002007300690301036900000b5a020000af006b0501036c00000c5a04000119006e0701046f00000c5a0401ffff00700801047100000c5a0401052d0a123c0a1e91ff820e01ff05ff78826eff10ff786e02690f0fff826eff691000ff826eff69100069ff55ff0000000000007c76', u'id': 48721}, u'content': u'', u'state': {u'status': 2200, u'sort': 2, u'name': u'\u5ba1\u6838\u901a\u8fc7', u'level': 2, u'pinyin': None, u'pid': 2, u'tagScore': None, u'topPid': 2, u'id': 2200, u'bundleId': 2200}, u'eleLevel': {u'status': 2200, u'sort': 3, u'name': u'\u6d77\u62d40-200', u'level': 2, u'pinyin': None, u'pid': 3, u'tagScore': None, u'topPid': 3, u'id': 3000, u'bundleId': 3000}, u'rice': {u'manufacture': None, u'sort': 4, u'pic': u'/static/upload/rice/1/default_mi.jpg', u'name': u'\u4e1c\u5317\u7c73', u'riceType': {u'state': {u'status': 2200, u'sort': 2, u'name': u'\u5ba1\u6838\u901a\u8fc7', u'level': 2, u'pinyin': None, u'pid': 2, u'tagScore': None, u'topPid': 2, u'id': 2200, u'bundleId': 2200}, u'id': 1, u'name': u'\u4e1c\u5317\u7c73'}, u'area': None, u'tempic': None, u'brand': None, u'barCode': u'1', u'id': 1, u'price': 0.0, u'state': {u'status': 2200, u'sort': 2, u'name': u'\u5ba1\u6838\u901a\u8fc7', u'level': 2, u'pinyin': None, u'pid': 2, u'tagScore': None, u'topPid': 2, u'id': 2200, u'bundleId': 2200}, u'defaultRice': True, u'scantimes': 0, u'ppties': None, u'specification': None, u'description': u'\u4e1c\u5317\u7c73'}, u'id': 438}]}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6riceid.riceidTest: 根据ID获取米详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_riceid_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: http://10.0.10.100:17001/v6/rice/id
+{"state":1,"message":"获取米详情成功!","content":null,"result":[{"barCode":"1","manufacture":null,"name":"東北米","brand":null,"specification":null,"ppties":null,"area":null,"id":1,"riceType":{"id":1,"name":"东北米","state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2}},"description":"東北米","pic":"/static/upload/rice/1/default_mi.jpg","tempic":null,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"price":0.0,"scantimes":0,"defaultRice":true,"sort":null}],"serverTimeMillis":1530667485728}
+1
+東北米
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>6</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

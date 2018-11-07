@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>饭煲接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>饭煲接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-08-29 17:41:11</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:12.300000</p>
+<p class='attribute'><strong>Status:</strong> Pass 11</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_defaultrecipes.defaultRecipesTest: 获取用户收藏菜谱</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_defaultRecipes_success: 获取默认食谱</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: https://rumipotplugapi.joyami.com/v6/literecipe/defaultRecipes
+&lt;type 'str'&gt;
+{"state":1,"message":"获取菜谱列表成功","content":null,"result":[{"id":null,"type":null,"name":"Keep warm","iconPath":"","recipeId":4,"rateCount":null,"collectorCount":null,"content":"Keep warm","date":"2018-08-29T09:41:11.469+0000","state":null,"cookCode":"00040c180018000001000045000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a0082001e914e730801001e82ff736e0610ff756e02690a0f75826e0169101e75826e0169100069005a000000000000001ba2","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Warm up rice","iconPath":"","recipeId":258,"rateCount":null,"collectorCount":null,"content":"Warm up rice","date":"2018-08-29T09:41:11.470+0000","state":null,"cookCode":"010264001e00230019010540000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c001e9155730e0000008278736e001000756e00690a0075826e006910ff756e6e0869100069005a00000000000000cca7","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Steaming","iconPath":"","recipeId":259,"rateCount":null,"collectorCount":null,"content":"","date":"2018-08-29T09:41:11.470+0000","state":null,"cookCode":"010366001e0100000a010540000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c001e9155730e0000008278736e001000756e00690a0075826e006910ff756e6e0869100069005a00000000000000f462","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Tasty Rice","iconPath":null,"recipeId":260,"rateCount":null,"collectorCount":null,"content":"Tasty Rice","date":"2018-08-29T09:41:11.470+0000","state":null,"cookCode":"0104e1010a0000000000800200a00069030102780000085a020000eb006b040102780000085a0400012d006e0501027d0000065a0400ffff00700601027d0000065a0400052d0a0f3c0a1e91ff820e01ff05ff78826eff10ff786e02690f1eff826eff691400ff826eff69100069ff5aff00000000000060af","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Yogurt","iconPath":"/174ad4bb07044c7b9447e3326fb3ad43.jpg","recipeId":257,"rateCount":null,"collectorCount":null,"content":"1. The proportion of milk to different bacteria used to make yogurt may vary, so please refer to the specific instructions.\r\n2. The fermentation time can be longer or shorter according to the temperature and the amount of yogurt that is going to be made.\r\n","date":"2018-08-29T09:41:11.470+0000","state":null,"cookCode":"0101090c000200000a000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a0f270300915573000000008278736e001000756e0028050075826e002810ff75276e0228100069005a00000000000000c07b","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Cake","iconPath":"/3e71bf4c5ce04b3b8e742795ed807236.jpg","recipeId":256,"rateCount":null,"collectorCount":null,"content":"1. It is normal if the bottom of the cake is slightly burnt.\r\n2. The flour must be sifted to prevent flour clumps.\r\n3. After mixing the two kinds of paste, do not stir them in circles. Otherwise, the bubbles will disappear. Stirring it forward, backward, left and right will be okay.\r\n","date":"2018-08-29T09:41:11.470+0000","state":null,"cookCode":"01008801000200000a000012000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a003c00089178320600001e8278666e041000826e00690fff96666e0469100082826e0069100069005a000000000000008e9d","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":null,"tags":null,"commentNum":null,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1}],"pageModel":null,"serverTimeMillis":1535535671453}
+4 Keep warm
+258 Warm up rice
+259 Steaming
+260 Tasty Rice
+257 Yogurt
+256 Cake
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipecookscriptfind.recipecookscriptfindTest: 获取食谱烹饪程序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecookscriptfindByModel_success: 获取食谱烹饪程序</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: https://rumipotplugapi.joyami.com/v6/recipecookscript/findByModel
+&lt;type 'str'&gt;
+{"state":1,"message":"获取菜谱烹饪程序成功","content":null,"result":[{"id":47261,"name":null,"content":null,"state":{"id":2100,"name":"审核等待","pid":2,"bundleId":2100,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2018-06-24T15:52:00.000+0000","deviceModel":null,"dmg":{"id":3,"name":"米家IH电饭煲","createTime":null,"description":"米家IH电饭煲","state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"scriptLength":242,"canCap":true,"source":1},"eleLevel":{"id":3000,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0},"recipe":{"id":4,"name":"保温","iconPath":"","content":"保温","duration":50,"minDuration":10,"maxDuration":60,"function":"none","avgRate":0.0,"rateCount":0,"category":{"id":3,"name":"其他","curveImage":"/imgs/recipe/category/cv_fan.bmp","image":"/imgs/recipe/category/cv_fan.bmp","cookCode":null,"state":{"id":2100,"name":null,"pid":null,"bundleId":null,"topPid":null,"level":null,"pinyin":null,"status":null,"tagScore":null,"sort":0}},"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":0,"commentorCount":1,"score":0.0,"state":{"id":2200,"name":"审核通过","pid":2,"bundleId":2200,"topPid":2,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":2},"publishTime":"2017-11-03T10:02:32.000+0000","downloadcount":0,"usagecount":4,"cookNum":249,"updateTime":"2018-06-24T15:52:09.000+0000","updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":"1"},"cookscript":{"id":47279,"cookcode":"00040c180018000001000045000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a0082001e914e730801001e82ff736e0610ff756e02690a0f75826e0169101e75826e0169100069005a000000000000001ba2","cookprofile":null},"isUserRecipe":null,"isSystemrRecipe":null}],"pageModel":null,"serverTimeMillis":1535535672409}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6articletopadvByModel.articletopadvTest: 获取banner（6100首页,6200列表）</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_topadvByModel_sysuccess: 传所有参数,获取6100列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: https://rumipotplugapi.joyami.com/v6/article/topadvByModel
+&lt;type 'str'&gt;
+{"state":1,"message":"banner数据获取成功","content":null,"result":[{"id":409,"icon":"/ad957ddd7de74d0f88340da9e761cbf4.jpg","url":"1676","targetType":{"id":6920,"name":"跳转到食谱详情","pid":18,"bundleId":16,"topPid":null,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":0}},{"id":415,"icon":"/261d4cbadd2e488abe21b6b05b4021a6.jpg","url":"535","targetType":{"id":6920,"name":"跳转到食谱详情","pid":18,"bundleId":16,"topPid":null,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":0}},{"id":412,"icon":"/450b13c9aba24ab6a161732759b66c6d.jpg","url":"1967","targetType":{"id":6920,"name":"跳转到食谱详情","pid":18,"bundleId":16,"topPid":null,"level":2,"pinyin":null,"status":2200,"tagScore":null,"sort":0}}],"pageModel":null,"serverTimeMillis":1535535673525}
+3
+409
+415
+412
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6queryget.recipequerygetTest: 大家都在搜接口</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipequeryget_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: https://rumipotplugapi.joyami.com/v6/recipe/people/query/getByModel
+{"state":1,"message":"success","content":null,"result":[{"id":null,"content":"tom","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"hhbh","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"ddfc","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"dddx","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"莉莉","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"银耳","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"吭叽吭叽","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"默默","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null},{"id":null,"content":"金科路哦噢","queryDate":null,"deviceId":null,"dmodelid":null,"languageType":null}],"pageModel":null,"serverTimeMillis":1535535674613}
+tom
+hhbh
+ddfc
+dddx
+莉莉
+银耳
+吭叽吭叽
+默默
+金科路哦噢
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipeCommentadd.recipeCommentaddTest: 食谱评论</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',2)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeCommentadd_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: https://rumipotplugapi.joyami.com/v6/recipeComment/addRecipeComment
+&lt;type 'str'&gt;
+{"state":1,"message":"发表成功!","content":null,"result":[{"id":19249,"contents":"good111","recipe":{"id":1967,"name":null,"iconPath":null,"content":null,"duration":null,"minDuration":null,"maxDuration":null,"function":null,"avgRate":null,"rateCount":null,"category":null,"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":null,"commentorCount":null,"score":null,"state":null,"publishTime":null,"downloadcount":null,"usagecount":null,"cookNum":null,"updateTime":null,"updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":null},"stars":0.0}],"pageModel":null,"serverTimeMillis":1535535675829}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeCommentadd_success1: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: https://rumipotplugapi.joyami.com/v6/recipeComment/addRecipeComment
+&lt;type 'str'&gt;
+{"state":1,"message":"发表成功!","content":null,"result":[{"id":19250,"contents":"good","recipe":{"id":256,"name":null,"iconPath":null,"content":null,"duration":null,"minDuration":null,"maxDuration":null,"function":null,"avgRate":null,"rateCount":null,"category":null,"recipeSteps":null,"auxiliary":null,"ingredient":null,"recipeTags":null,"nutritions":[],"cookscript":[],"utrition":[],"cookCode":null,"collectorCount":null,"commentorCount":null,"score":null,"state":null,"publishTime":null,"downloadcount":null,"usagecount":null,"cookNum":null,"updateTime":null,"updateDate":null,"fromTable":null,"deviceId":null,"sysId":0,"flag":null},"stars":0.0}],"pageModel":null,"serverTimeMillis":1535535677052}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipeCommentadd.recipeCommentpagegetTest: 食谱评论页</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistdata_success11: 食谱列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: https://rumipotplugapi.joyami.com/v6/recipeComment/listdata?recipeId=1967&amp;language=en_US
+&lt;urllib2.Request instance at 0x0000000003A143C8&gt;
+&lt;addinfourl at 60902856L whose fp = &lt;socket._fileobject object at 0x00000000036E99A8&gt;&gt;
+{u'totalPage': 0, u'perpage': 10, u'pageno': 1, u'list': [{u'username': u'User', u'customerid': -1, u'content': u'good111', u'date': u'just now', u'id': 19249, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u597d\u5403', u'date': u'just now', u'id': 19248, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u4e0d\u9519', u'date': u'just now', u'id': 19247, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'good111', u'date': u'just now', u'id': 19241, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'good', u'date': u'just now', u'id': 19240, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'good', u'date': u'just now', u'id': 19239, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u4e0d\u9519  \u4e00\u4f1a\u8bd5\u8bd5', u'date': u'2018-03-25', u'id': 19118, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\xf1\xf1\xf1\xf1', u'date': u'2018-02-01', u'id': 18715, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u6211\u4e5f\u4e0d\u77e5\u9053\u554a', u'date': u'2018-01-29', u'id': 18677, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'we need Chinese..', u'date': u'2018-01-23', u'id': 18601, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}], u'offset': 0, u'objectBean': None, u'total': 0}
+good111
+好吃
+不错
+good111
+good
+good
+不错  一会试试
+ññññ
+我也不知道啊
+we need Chinese..
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipedetail.recipedetailTest: 食谱详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecookscriptfind_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: https://rumipotplugapi.joyami.com/v6/recipe/detailByModel
+&lt;type 'str'&gt;
+{"state":1,"message":"获取菜谱详情成功!","content":null,"result":[{"id":1967,"name":"Singaporean Bak Kut Teh","function":"Bak Kut Teh is a comforting hawker dish consisting of pork rib soup served with white rice and Chinese tea. For Singaporeans, Bak Kut Teh is a food from childhood, which they grew up eating and loving.","content":"For a more flavorsome stock, turn off the heat and let the soup cool down for a few hours to half a day. Bring it back to a boil when you want to serve it. ","cookCode":"07afe2011e011e011e008000019055140601001400000000000001b855140601001400000000000001e0561406000019000000000000ffff57140600001c00000000000000280a0082001e914e730e01001e82ff736e0610ff756e02690a1e75826e0269100f75826e0269100069005a00000000000000b1bd","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"topRecipe":false}],"pageModel":null,"serverTimeMillis":1535535679221}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipehit.recipehintTest: 食谱关键字匹配</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipehint_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: https://rumipotplugapi.joyami.com/v6/recipe/hint/getByModel
+{"state":1,"message":null,"content":null,"result":[{"id":1677,"name":"Tom Kha Gai"},{"id":1676,"name":"Tom Yum Kung"}],"pageModel":null,"serverTimeMillis":1535535680212}
+1677
+Tom Kha Gai
+1676
+Tom Yum Kung
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipesearchdata.recipesearchdataByModelTest: 食谱列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipesearchdata_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: https://rumipotplugapi.joyami.com/v6/recipe/searchdataByModel
+{"state":0,"message":null,"content":null,"result":[{"id":null,"type":null,"name":"Khao Niao Mamuang","iconPath":"/93d61e64233b4b00ac5db35d32682bed.jpg","recipeId":535,"rateCount":0,"collectorCount":42,"content":"This luscious dessert is a form of rice pudding that is paired with mangoes at the peak of their ripeness. Sweet and rich, khao niao mamuang is a favorite way to finish any Thai meal.","date":"2018-08-29T09:41:21.454+0000","state":null,"cookCode":"0217e101000200000a00800200a00069030103730000085a020000eb006b040103740000095a0400012d006e0501037400000a5a0401ffff00700601047600000c5a0401052d0a0f3c0a1e91ff820e01ff05ff78826eff10ff786e02690f0dff826eff691000ff826eff69100069ff5aff000000000000921f","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":"2017-11-03","tags":null,"commentNum":21,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Tom Yum Kung","iconPath":"/f68e7f405b4a4c88a0d55dbb4dd25f7d.jpg","recipeId":1676,"rateCount":0,"collectorCount":100,"content":"Tom yum kung is the simple and popular Thai hot and sour soup, familiar to many types of soup on Thai restaurant menus. It is sometimes known as tom yum koong or tom yum goong.","date":"2018-08-29T09:41:21.461+0000","state":null,"cookCode":"068ce2010001000032008000019055140601001400000000000001b855140601001400000000000001e0561406000019000000000000ffff57140600001c00000000000000280a0082001e914e730e01001e82ff736e0610ff756e02690a1e75826e0269100f75826e0269100069005a0014000000000012a6","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":1,"updateTime":"2017-06-22","tags":null,"commentNum":23,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Tom Kha Gai","iconPath":"/f6f65aad1fbd4544af3c626c00b466a9.jpg","recipeId":1677,"rateCount":0,"collectorCount":78,"content":"Tom kha gai is a famous dish in Bangkok that enjoys equal popularity with tom yum kung. The soup is made with coconut milk, and chicken, galangal with a strong flavor, lemongrass and kaffir lime leaves are added to make the soup more flavorsome. The soup is a little sour, but it tastes delicious and refreshing.","date":"2018-08-29T09:41:21.466+0000","state":null,"cookCode":"068de2010001000032008000019055140601001400000000000001b855140601001400000000000001e0561406000019000000000000ffff57140600001c00000000000000280a0082001e914e730e01001e82ff736e0610ff756e02690a1e75826e0269100f75826e0269100069005a00140000000000d2ad","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":2,"updateTime":"2017-06-23","tags":null,"commentNum":12,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1},{"id":null,"type":null,"name":"Singaporean Bak Kut Teh","iconPath":"/bd2389f394ca41f19ee62db47d9823d6.jpg","recipeId":1967,"rateCount":0,"collectorCount":67,"content":"Bak Kut Teh is a comforting hawker dish consisting of pork rib soup served with white rice and Chinese tea. For Singaporeans, Bak Kut Teh is a food from childhood, which they grew up eating and loving.","date":"2018-08-29T09:41:21.471+0000","state":null,"cookCode":"07afe2011e011e011e008000019055140601001400000000000001b855140601001400000000000001e0561406000019000000000000ffff57140600001c00000000000000280a0082001e914e730e01001e82ff736e0610ff756e02690a1e75826e0269100f75826e0269100069005a00000000000000b1bd","startshowtime":null,"endshowtime":null,"deviceModel":null,"advpage":null,"score":0.0,"sort":null,"cookNum":0,"updateTime":"2017-06-23","tags":null,"commentNum":29,"deviceModels":[],"comments":[],"defaultRecipe":null,"source":1}],"pageModel":null,"serverTimeMillis":1535535681318}
+535
+Khao Niao Mamuang
+1676
+Tom Yum Kung
+1677
+Tom Kha Gai
+1967
+Singaporean Bak Kut Teh
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipeweblist.recipeweblistTest: 食谱列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeweblist_success: 食谱列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: https://rumipotplugapi.joyami.com/v6/recipe/web/listByModelName
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /&gt;
+    &lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
+    &lt;title&gt;Recipe list&lt;/title&gt;
+    &lt;link rel="shortcut icon" href="/core/api/img/favicon.ico" type="image/x-icon" /&gt;
+    &lt;link rel="stylesheet" href="/core/api/css/recipe/searchrecipe.css" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type="hidden" id="isClear" value="0"/&gt;
+&lt;input type="hidden" id="newQuery" value=""/&gt;
+&lt;input type="hidden" id="dmodelid" value="3"/&gt;
+&lt;input type="hidden" id="languageInfo" value="english"/&gt;
+&lt;input type="hidden" id="wanming_load" value="Loading..."/&gt;
+&lt;input type="hidden" id="initSearchContent" value="Search foods or recipes"/&gt;
+&lt;input type="hidden" id="songshou_xianshi" value="Release..."/&gt;
+&lt;input type="hidden" id="last_page" value="Reach the bottom"/&gt;
+&lt;div id="header"&gt;
+	&lt;div style="float: left;"&gt;
+		&lt;i id="search_back"&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div style="float: left;padding-left: 14px;    width: 70%;"&gt;
+		&lt;input type="text" id="search_recipe" style="font-size:14px;" class="headerr-img search_content_input" value="Search foods or recipes"&gt;
+		&lt;i id="search_clear"&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div style="float: right;""&gt;
+		&lt;span id="search_btn" class="search_btn_type_search" style="font-size:16px;color:#5e5e5e;line-height: 51px;"&gt;Search&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="content" style="top:45px;"&gt;
+    &lt;div id="scroller"&gt;
+        &lt;div id="pullDown" class="ub ub-pc c-gra" style="display:none;"&gt;
+            &lt;div class="pullDown-center"&gt;
+                &lt;div class="pullDownIcon"&gt;&lt;/div&gt;
+                &lt;div class="pullDownLabel"&gt;Loading latest recipes &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui_list_1 space_box_home get_num"&gt;
+			&lt;ul id="add"&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+        &lt;div id="pullUp" class="ub ub-pc c-gra" style="display:none;"&gt;
+            &lt;div class="pullUp-center"&gt;
+                  &lt;div class="pullUpIcon"&gt;&lt;/div&gt;
+                  &lt;div class="pullUpLabel"&gt;Pull up...&lt;/div&gt;
+              &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+		&lt;/div&gt;
+        &lt;div id="search_speedy"&gt;
+        	&lt;br/&gt;
+        	&lt;div class="search_speedy_hot_title"&gt;Hot search&lt;/div&gt;
+        	&lt;div class="people" style="width:100%;height:150px;"&gt;
+        	
+        	&lt;/div&gt;
+        	&lt;br/&gt;
+        	&lt;div  class="search_speedy_now_title"&gt;Historical search&lt;/div&gt;
+			&lt;div class="lately" style="width:100%;"&gt;
+				
+			&lt;/div&gt;
+			&lt;div id="search_clear_cookie"&gt;&lt;span style="line-height: 40px;color:#5e5e5e"&gt;Clear search records&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;div id="search_hint_list"  style="margin-top:0px;"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script type="text/javascript" src="/core/api/js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/iscroll-probe.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/jquery.cookie.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/v6/recipe.list.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/v6/recipe.list.operate.js"&gt;&lt;/script&gt;
+&lt;/html&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>11</td>
+    <td>11</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

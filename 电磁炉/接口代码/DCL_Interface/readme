@@ -1,0 +1,9 @@
+运行环境：python2.7
+cj_interface：大陆服的接口
+cj_interface_new：新加坡服的接口（包含食谱，K-V存储）
+cj_interface_new_RU：欧洲、俄罗斯服的接口（不包含食谱，K-V存储）
+dlb_interface：食谱评论-知吾煮(针对提交评论)
+packs：依赖的包的文件
+report：运行run_test后产生的报告
+电磁炉接口.xlsx：电磁炉相关接口整理及注意点
+接口文档地址：http://10.0.10.100:17011/swagger-ui.html

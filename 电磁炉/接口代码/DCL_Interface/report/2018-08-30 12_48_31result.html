@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>插件版电磁炉接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>插件版电磁炉接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-08-30 12:48:31</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:04.137000</p>
+<p class='attribute'><strong>Status:</strong> Pass 6 Failure 6</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_addcommentByModel.commentaddnewTest: 添加一条评论</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_commentadd_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: https://inductionplugapi.joyami.com/v1/recipecomment/addnewByModel
+('sign', '0QaEeHc1Moi9osITCiA-KoOqW0U=')
+{"code":1,"message":"操作成功","result":null,"serverTime":1535604509838}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µç´ÅÂ¯\½Ó¿Ú´úÂë\DCL_Interface\cj_interface_new\test_addcommentByModel.py", line 27, in test_commentadd_success
+    self.assertEqual(js['message'], 'success')
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != 'success'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_articletopadvtopadvByModel.articletopadv1Test: 获取头部Banner</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_articletopadv_sysuccess111: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        fail</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: https://inductionplugapi.joyami.com/v1/article/topadvByModel
+('sign', 'XMs2cpF-sRJKshtuM79p4Sej-sc=')
+{"code":-1,"message":"获取Banner失败，不存在【chunmi.ihcooker.eg1】的设备组","result":null,"serverTime":1535604510065}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µç´ÅÂ¯\½Ó¿Ú´úÂë\DCL_Interface\cj_interface_new\test_articletopadvtopadvByModel.py", line 26, in test_articletopadv_sysuccess111
+    self.assertEqual(js['code'],1)
+AssertionError: -1 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commentloadmore.commentloadmoreTest: 获取最新评论(分页)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentloadmore_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: https://inductionplugapi.joyami.com/v1/recipecomment/loadmore
+('sign', 'F14c-_OnPwGP5d0ANcrrGAw3JS4=')
+{"code":1,"message":"操作成功","result":[{"id":684,"userId":null,"contents":"赞","time":1535633309000,"commentTime":"2018-08-30T12:48:29.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":null,"headPic":null},{"id":457,"userId":1083,"contents":"蛏子总让我觉得是要放重调料的食材，借的只是它一个软绵绵的身体。","time":1525179807000,"commentTime":"2018-05-01T13:03:27.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"hulu","headPic":"http://lxcdn.dl.files.xiaomi.net/mfsv2/avatar/fdsc3/p01o81Hpf5eQ/DTISQw2NQKeAQh.jpg"},{"id":439,"userId":1064,"contents":"这东西炒起来特出水","time":1524506171000,"commentTime":"2018-04-23T17:56:11.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"逗勇者的恶龙","headPic":"http://img.coo-k.com/headPic/030c55f2-6df9-4af1-a61a-2ce798103c49.jpg"},{"id":429,"userId":1064,"contents":"下酒菜","time":1524246255000,"commentTime":"2018-04-20T17:44:15.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"逗勇者的恶龙","headPic":"http://img.coo-k.com/headPic/030c55f2-6df9-4af1-a61a-2ce798103c49.jpg"}],"serverTime":1535604510374}
+4
+684
+None
+457
+hulu
+439
+逗勇者的恶龙
+429
+逗勇者的恶龙
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commenttwo.commenttwoTest: 获取最新评论(2条)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commenttwo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: https://inductionplugapi.joyami.com/v1/recipecomment/latesttwo
+('sign', 'hdiGkCp1pbHTyyk0RjZg28JtaIc=')
+{"code":1,"message":"操作成功","result":[{"id":684,"userId":null,"contents":"赞","time":1535633309000,"commentTime":"2018-08-30T12:48:29.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":null,"headPic":null},{"id":457,"userId":1083,"contents":"蛏子总让我觉得是要放重调料的食材，借的只是它一个软绵绵的身体。","time":1525179807000,"commentTime":"2018-05-01T13:03:27.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":"hulu","headPic":"http://lxcdn.dl.files.xiaomi.net/mfsv2/avatar/fdsc3/p01o81Hpf5eQ/DTISQw2NQKeAQh.jpg"}],"serverTime":1535604510656}
+684
+457
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_createglobalByModel.createglobalByModelTest: 根据model创建一个自定义模式</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_createglobalByModel_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        fail</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: https://inductionplugapi.joyami.com/v1/recipe/collect/createglobalByModel
+('sign', 'anZ9xIsX7_BlLqu1cWVu8OqJquw=')
+{"code":1,"message":"操作成功","result":{"id":null,"recipe":{"id":23227,"name":"áéíóúÁÉÍÓÚ","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":60,"firePower":26,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"030100a8a2a8a6a8aaa8aea8b23f3f3f0000005abbe101000400000000000100000000000000008100d2c81a1414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b900141400000000000000000000000000000000000000cade","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"serverTime":1535604511070}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µç´ÅÂ¯\½Ó¿Ú´úÂë\DCL_Interface\cj_interface_new\test_createglobalByModel.py", line 27, in test_createglobalByModel_success
+    self.assertEqual(js['message'], 'success')
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != 'success'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_editglobalByModel.editlobalByModelTest: 根据model编辑自定义模式</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_createglobalByModel_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        fail</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: https://inductionplugapi.joyami.com/v1/recipe/collect/editglobalByModel
+('sign', 'qXuMCOC14wie24XqJ1Ap2d9ul1E=')
+{"code":1,"message":"操作成功","result":{"id":null,"recipe":{"id":13954,"name":"áéíóúÁÉÍ","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":20,"firePower":36,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"030100a8a2a8a6a8aaa8aea8b23f3f3f0000003682e100140400000000000100000000000000008014d2c8241414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000000000000000000000001e20","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"serverTime":1535604511480}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µç´ÅÂ¯\½Ó¿Ú´úÂë\DCL_Interface\cj_interface_new\test_editglobalByModel.py", line 27, in test_createglobalByModel_success
+    self.assertEqual(js['message'], 'success')
+AssertionError: u'\u64cd\u4f5c\u6210\u529f' != 'success'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_recipeapiinfoByModel.recipeapiinfoTest: 获取食谱详情</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        fail</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: https://inductionplugapi.joyami.com/v1/recipe/web/apiinfoByModel/16409
+('sign', 'Zu-RaEPYQWffe327LIPzy_K_wpM=')
+{"code":1,"message":"操作成功","result":{"id":16409,"recipe":null,"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030102cbabbdb7c0dec7d1d7d30000000000004019e2000f0400000000000100000000000000008005c8b4501414008005c8b4461414008000c8b45a1414008000c8b45a1414008000c8b45a1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c141400ffffc8b43c1414000000000000000000000000000000000000007a7f","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"serverTime":1535604511836}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µç´ÅÂ¯\½Ó¿Ú´úÂë\DCL_Interface\cj_interface_new\test_recipeapiinfoByModel.py", line 29, in test_recipeapiinfo_success
+    self.assertIn('success',js['message'])
+AssertionError: 'success' not found in u'\u64cd\u4f5c\u6210\u529f'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipedefaults.recipedefaultsTest: 获取默认模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelist_success: 非必填参数不传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: https://inductionplugapi.joyami.com/v1/recipe/defaults
+('sign', 'kspXsEpHVPPcPUHXa2v8GswPaVs=')
+{"code":1,"message":"操作成功","result":[],"serverTime":1535604512021}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_recipedetailByModel.recipedetailTest: 获取某个模式的详情</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        fail</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: https://inductionplugapi.joyami.com/v1/recipe/detailByModel
+('sign', 'fwPscot3N32Ln8V94TeUuc0501s=')
+{"code":1,"message":"操作成功","result":null,"serverTime":1535604512219}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\µç´ÅÂ¯\½Ó¿Ú´úÂë\DCL_Interface\cj_interface_new\test_recipedetailByModel.py", line 27, in test_recipeapiinfo_success
+    self.assertIn('success',js['message'])
+AssertionError: 'success' not found in u'\u64cd\u4f5c\u6210\u529f'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipelistByModel.recipelistByModelTest: 获取更多食谱</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistByModel_success: 非必填参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: https://inductionplugapi.joyami.com/v1/recipe/listByModel
+('sign', 'KAU5eHUMWj3otrTG21RsImpTfpg=')
+{"code":1,"message":"操作成功","result":[{"id":4576,"recipe":{"id":4576,"name":"黑椒鸭胸 ","icon":"/d2bb4ef1798e4d07af3dfb88f961c064.jpg","advIcon":null,"content":"腌制的时间要充分，最好用叉子在鸭胸肉上戳几个洞，然后再“按摩”这样会比较入味一些。","mainIcon":null,"description":"在家也能做出厉害的法式料理—黑椒鸭胸。而且鸭肉中的脂肪酸熔点低，易于消化。所含B族维生素和维生素E较其他肉类多，能有效抵抗脚气病，神经炎和多种炎症，还能抗衰老。","duration":30,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-02-05T17:25:46.000+0000","usageCount":3,"categoryId":1,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030105badabdb7d1bcd0d83f0000000000000011e01e001404000000000001000000000000000080055ac7631414008003dcc7281414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc732141400ffffdcbe14141400000000000000000000000000000000a0b4031ebe","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":2930,"recipe":{"id":2930,"name":"煎培根","icon":"/1b111f229eec4778bd245dac93d71138.jpg","advIcon":null,"content":"如果是冷冻的培根要提前放到冷藏室中解冻后再煎。","mainIcon":null,"description":"快手营养早餐，培根加煎蛋，几分钟就能搞定。","duration":15,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-16T16:01:25.000+0000","usageCount":2,"categoryId":1,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030200bce5c5e0b8f900000000000000000000000000000000000000000000000000000b72e1000f040000000000010000800fd2c8501414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b90014140000000000000000002e4d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":1259,"recipe":{"id":1259,"name":"冬阴功","icon":"/cf206436752a4991a63c4432125457b2.jpg","advIcon":null,"content":"万一太酸太咸怎么办，你可以加椰糖调整一下味道，没有的话可以用白糖代替。","mainIcon":null,"description":"这道汤的名字中，“冬阴”是酸辣的意思，“功”是虾的意思，翻译过来其实就是酸辣虾汤。一碗汤端上桌来，香辣皆有，口感嫩滑。这道汤酸酸辣辣香香甜甜，可以说是五味俱全。","duration":20,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-18T20:14:48.000+0000","usageCount":3,"categoryId":4,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030200b6acd2f5b9a6000000000000000000000000000000000000000000000000000004ebe100140400000000000100008014d2c8501414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000428c","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":1188,"recipe":{"id":1188,"name":"热牛奶","icon":"/5d89f500525347ae9eb8bdba33b20136.jpg","advIcon":null,"content":"1、建议热牛奶用专门的热奶锅，不要和炒锅汤锅混用。\r\n2、根据牛奶的多少来增加热牛奶的时间。","mainIcon":null,"description":"在家热牛奶的时候会发现用火加热一不小心就沸腾了，溢锅弄得到处都是，用微波炉加热不能保证温度，通常也会让牛奶中的营养物质流失。电磁炉热牛奶会将温度控制在85℃以下，既保证了营养，还不会溢锅。","duration":10,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-12T15:42:35.000+0000","usageCount":2,"categoryId":7,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030200c8c8c5a3c4cc000000000000000000000000000000000000000000000000000004a4e1000a040000000000010000800ad2c8321414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000c198","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":1186,"recipe":{"id":1186,"name":"炸薯片","icon":"/1a8a286a7a5f41b19d2a8fdbc0453157.jpg","advIcon":null,"content":"1、炸薯片的难点在于将土豆切得每片都薄厚均匀。如果对自己的刀工不自信，请用刨片刀来刨片。\r\n2、油炸食物的时候，不要离开电磁炉，不要让儿童靠近。","mainIcon":null,"description":"在家也可以轻松自制炸薯片，低成本无添加剂。香脆可口制作简单。","duration":30,"firePower":90,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-12T15:35:57.000+0000","usageCount":3,"categoryId":1,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030200d5a8caedc6ac000000000000000000000000000000000000000000000000000004a2e1001e040000000000010000801ed2c85a1414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b90014140000000000000000000f9c","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":958,"recipe":{"id":958,"name":"完美煎蛋","icon":"/a6efdfa934ae4e8198e3b7e4b3f651e7.jpg","advIcon":null,"content":"1、用不粘锅煎蛋不用放太多油；\r\n2、如果用不锈钢锅煎蛋，要预热锅2-3分钟后倒油，油热了后放在放入鸡蛋，这样做相对来说不会“粘锅”；\r\n3、如果使用煎蛋模具，模具同样需要预热；\r\n4、一锅中可以同时煎几个，食谱是为了详细介绍过程，所以只煎一个。","mainIcon":null,"description":"做出心中完美的煎蛋，不论单面、双面、溏心还是全熟，我这里都有哦。","duration":10,"firePower":70,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-08T20:47:33.000+0000","usageCount":2,"categoryId":1,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030200cdeac3c0bce5b5b000000000000000000000000000000000000000000000000003bee1000a040000000000010000800ad2c8461414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000c8c6","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":957,"recipe":{"id":957,"name":"低温煮牛排","icon":"/c80388d0db56400e8b52c1f18447c2d1.jpg","advIcon":null,"content":"1、煎牛排的时候锅要很热，预热两分钟左右，这样能快速的锁住牛肉的汁水，还不会将牛肉煎老。\r\n2、配菜可以根据个人爱好搭配。\r\n3、煎好牛排可以搭配黑胡椒汁等酱汁。\r\n4、各地区的室温和水温不同，北方寒冷地区在冬天需要增加20分钟左右的烹饪时间！","mainIcon":null,"description":"低温慢煮是近年来开始流行的烹饪方式，将食物码味后抽真空，进行低温的水浴。这样做能让食物各个部位的成熟程度都是一致的，煮完后在稍微煎制牛排，进一步锁住水分，增加香味。","duration":60,"firePower":60,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-08T20:46:23.000+0000","usageCount":2,"categoryId":7,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030200b5cdcec2d6f3c5a3c5c50000000000000000000000000000000000000000000003bde101000400000000000100008100d2c83c1414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000c78e","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"serverTime":1535604512537}
+7
+黑椒鸭胸 
+4576
+煎培根
+2930
+冬阴功
+1259
+热牛奶
+1188
+炸薯片
+1186
+完美煎蛋
+958
+低温煮牛排
+957
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt10.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistByModel_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.2')" >
+        pass</a>
+
+    <div id='div_pt10.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.2: https://inductionplugapi.joyami.com/v1/recipe/listByModel
+('sign', 'KAU5eHUMWj3otrTG21RsImpTfpg=')
+{"code":1,"message":"操作成功","result":[{"id":1195,"recipe":{"id":1195,"name":"松饼","icon":"/119612cfe19743e0921adbdc6a904943.jpg","advIcon":null,"content":"煎松饼要小火慢慢的煎，不要心急把火力开的特别大。","mainIcon":null,"description":"做法简单且好吃，不管是搭配黄油还是蜂蜜，都是非常棒的选择哦~ ​","duration":30,"firePower":30,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-12T17:01:13.000+0000","usageCount":3,"categoryId":1,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030101cbc9b1fd00000000000000000000000004ab1e001e0400000000000100000000000000018014dcaa1e1414008000dc96501414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414018000dc963c141400ffffdc961e141400000000000000000000000000000000000000674d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"serverTime":1535604513195}
+1
+松饼
+1195
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeofficialByModel.officialByModelTest: 获取官方模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_officialByModel_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: https://inductionplugapi.joyami.com/v1/recipe/officialByModel
+('sign', 'c3uLh1pzX6LuN-Z9baVxaW17GZs=')
+{"code":1,"message":"操作成功","result":[],"serverTime":1535604513530}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>12</td>
+    <td>6</td>
+    <td>6</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

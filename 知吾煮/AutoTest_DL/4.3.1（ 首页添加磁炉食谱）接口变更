@@ -1,0 +1,39 @@
+
+搜索接口
+/v1/community/search/app/data/getnew
+改成
+/v1/community/search/app/data/getpotandinduction
+参数保持不变
+
+{"advrecipe":false,"collectorCount":0,"commentNum":20,"deviceModel":["chunmi.ihcooker.v1"],"iconPath":"/80182074213d455aba5c5fecfae4945b.jpg","id":2486,"name":"火锅1","source":2,"tags":[],"targetType":0,"updateTime":"2017-12-22","url":""}
+
+跳转类型 由 source 确定, 1 为饭煲,跳转到饭煲详情, 2为磁炉食谱,跳转到磁炉详情
+
+
+
+首页接口
+
+/v1/portal/index
+
+修改为
+
+/v1/portal/potandinduction/index
+
+跳转类型 由 source 确定, 1 为饭煲,跳转到饭煲详情, 2为磁炉食谱,跳转到磁炉详情
+
+
+获取设备列表,由
+/v1/devicegroup/list/get
+调整到
+/v1/devicegroup/list/getpotandinduction
+
+筛选|搜索 接口, dmgs 为搜索饭煲的筛选条件, dmgs2(新加的参数) 为磁炉的筛选条件
+
+比如,获取 IH压力饭煲饭煲和电磁炉的食谱 ,传入两个参数 dmgs =1 , dmgs2=1
+
+首页发现更多
+由
+v1/recipe/page
+更改为
+v1/recipe/potandinduction/page
+参数保持不变

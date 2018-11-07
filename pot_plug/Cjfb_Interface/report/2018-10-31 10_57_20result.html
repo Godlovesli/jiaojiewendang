@@ -1,0 +1,1440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>饭煲接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>饭煲接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-10-31 10:57:20</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:09.806000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Error 25</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7articletopadvByModel.articletopadvByModelTest: 获取首页Banner</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_articletopadvByModel_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: http://10.0.10.100:17001/v7/article/topadvByModel
+打印params：model=chunmi.cooker.normal3&amp;language=
+打印jdata数据：{"model": "chunmi.cooker.normal3", "language": ""}
+url2 : http://10.0.10.100:17001/v7/article/topadvByModel?data=XjAbr0GVqQOEvIiUB23zRMJYUp_rQK5pvIjh08_q1eEL8Sybjyhd1Yuh6cXtTjFi
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7articletopadvByModel.py", line 27, in test_articletopadvByModel_success
+    {'model':self.model_name,'language': self.language}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7choosereset.v7resetTest: 重置</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_v7reset_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: http://10.0.10.100:17001/v7/recipe/choose/reset
+{'model': 'chunmi.cooker.normal3', 'deviceId': 46608560}
+打印payload：data=-MG69k9xTnaTsdBWeIMcJSgRjrJxXzksR-EntHrH3k19XK8FyLu1qslWoyeFlsL8
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7choosereset.py", line 26, in test_v7reset_success
+    {'deviceId': self.deviceId,'model':self.model_name}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7commentlatesttwo.v7commentlatesttwoTest: 食谱详情页获取最新两条评论</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_v7commentadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: http://10.0.10.100:17001/v7/recipe/comment/latesttwo
+打印params：recipeId=3474
+打印jdata数据：{"recipeId": 3474}
+url2 : http://10.0.10.100:17001/v7/recipe/comment/latesttwo?data=NkmJ-X6IqY542U88gAN79g%3D%3D
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7commentlatesttwo.py", line 26, in test_v7commentadd_success
+    {'recipeId':3474}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7commentloadmore.v7commentloadmoreTest: 根据食谱ID获取评论列表</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_v7commentadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: http://10.0.10.100:17001/v7/recipe/comment/loadmore
+打印params：recipeId=3474&amp;perpage=10&amp;pageno=1
+打印jdata数据：{"recipeId": 3474, "perpage": 10, "pageno": 1}
+url2 : http://10.0.10.100:17001/v7/recipe/comment/loadmore?data=5cvmZNiD61HRwcX-W0L19V7x5XlerTCfuocwHd6T7e6nfuZP3TCSsKZju0ftNydd
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7commentloadmore.py", line 29, in test_v7commentadd_success
+    'perpage':10}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7deviceglobalregdeviceNew.deviceupdateCityTest: 注册设备</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_deviceupdateCity_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: http://10.0.10.100:17001/v7/device/global/regdeviceNew
+打印params：serverArea=%E5%B9%BF%E5%B7%9E&amp;latitude=113.11&amp;model=chunmi.cooker.normal3&amp;deviceId=123400&amp;longitude=23.05
+打印jdata数据：{"serverArea": "\u5e7f\u5dde", "latitude": 113.11, "model": "chunmi.cooker.normal3", "deviceId": "123400", "longitude": 23.05}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7deviceglobalregdeviceNew.py", line 30, in test_deviceupdateCity_success
+    'latitude':113.11,
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7deviceupdatecity.deviceupdateCityTest: 修改设备所在城市</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_deviceupdateCity_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: http://10.0.10.100:17001/v7/device/global/updateCity
+打印params：model=chunmi.cooker.normal3&amp;cityName=xx&amp;deviceId=46608560
+打印jdata数据：{"model": "chunmi.cooker.normal3", "cityName": "xx", "deviceId": 46608560}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7deviceupdatecity.py", line 26, in test_deviceupdateCity_success
+    {"deviceId": self.deviceId, "model": self.model_name, "cityName": "xx"}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7fileupload.uploadTest: 上传文件</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_upload_success: 上传文件成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: {"message":"操作成功","result":"/f3884ced34eb487ebbe5f076fa0e1e94.jpg","serverTimeMillis":1540954648073,"state":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7globalregdeviceNew.v7devicenewTest: 注册</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='ft8.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_v7regdeviceNew_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
+        error</a>
+
+    <div id='div_ft8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft8.1: http://10.0.10.100:17001/v7/device/global/regdeviceNew
+打印params：ownerName=11&amp;mac=F0%3AB4%3A29%3ABE%3A94%3A5C&amp;modelName=chunmi.cooker.normal3&amp;deviceId=46608560&amp;online=1&amp;cityName=shanghai&amp;model=chunmi.cooker.normal3&amp;userId=54644930&amp;ownerId=54644930
+打印jdata数据：{"ownerName": "11", "mac": "F0:B4:29:BE:94:5C", "modelName": "chunmi.cooker.normal3", "deviceId": 46608560, "online": "1", "cityName": "shanghai", "model": "chunmi.cooker.normal3", "userId": "54644930", "ownerId": "54644930"}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7globalregdeviceNew.py", line 35, in test_v7regdeviceNew_success
+    'modelName': self.model_name}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipecategory.v7recipecategoryTest: 获取菜谱的类别</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipecategory_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        error</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: http://10.0.10.100:17001/v7/recipe/category/get
+{'language': ''}
+打印payload：data=E5hDMlSeksdP-4s43Txthg%3D%3D
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipecategory.py", line 27, in test_recipecategory_success
+    {'language': ''}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipechooseadd.recipechooseaddTest: 添加收藏</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
+</tr>
+
+<tr id='ft10.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechooseadd_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        error</a>
+
+    <div id='div_ft10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.1: http://10.0.10.100:17001/v7/recipe/choose/add
+打印params：recipeId=2732&amp;deviceId=46608560
+打印jdata数据：{"recipeId": "2732", "deviceId": 46608560}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechooseadd.py", line 28, in test_recipechooseadd_success
+    'recipeId':'2732'}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft10.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechooseadd_success1: 已收藏的食谱</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.2')" >
+        error</a>
+
+    <div id='div_ft10.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft10.2: http://10.0.10.100:17001/v7/recipe/choose/add
+打印params：recipeId=2732&amp;deviceId=46608560
+打印jdata数据：{"recipeId": "2732", "deviceId": 46608560}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechooseadd.py", line 39, in test_recipechooseadd_success1
+    {'deviceId':self.deviceId,'recipeId':'2732'}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipechoosecancel.recipechoosecancelTest: 取消收藏</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='ft11.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechoosecancel_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft11.1')" >
+        error</a>
+
+    <div id='div_ft11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft11.1: http://10.0.10.100:17001/v7/recipe/choose/cancel
+打印params：recipeChooses=%5B%7B%27recipeId%27%3A+3473%2C+%27deviceId%27%3A+85465933%7D%5D
+打印jdata数据：{"recipeChooses": [{"recipeId": 3473, "deviceId": 85465933}]}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechoosecancel.py", line 26, in test_recipechoosecancel_success
+    {'recipeChooses': [{'recipeId': 3473, 'deviceId': 85465933}]}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipechooselist.v7recipechooseTest: 自选精选列表</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c12',2)">Detail</a></td>
+</tr>
+
+<tr id='ft12.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechoose_success1: 精选列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.1')" >
+        error</a>
+
+    <div id='div_ft12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft12.1: http://10.0.10.100:17001/v7/recipe/choose/list
+{'model': 'chunmi.cooker.normal3', 'perpage': 50, 'deviceId': 46608560, 'pageno': 1}
+打印payload：data=2FAVLrjJLdKDuXS1WVEXnNyVS4tAwRczwf795Baz8FJz9DsZoMZR2cBXlfIBT0-rXoRmWQvfxmn1IriswtE5gm7vG0CkEOd-o8i1aBRJDJM%3D
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechooselist.py", line 26, in test_recipechoose_success1
+    {'deviceId': self.deviceId, 'model': self.model_name,'pageno':1,'perpage':50,
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft12.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechoose_success2: 自选列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft12.2')" >
+        error</a>
+
+    <div id='div_ft12.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft12.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft12.2: http://10.0.10.100:17001/v7/recipe/choose/list
+{'model': 'chunmi.cooker.normal3', 'perpage': 10, 'zxFlag': 'true', 'deviceId': 46608560, 'pageno': 1}
+打印payload：data=HQCPxtGK8JK1Zp535DVz46Bewo-cI5CQklK90Ito-XUZT3qyJ8G5o1scR1g3AQd2GxFjRKElBAq2HZgmrKyLAVCOwOV_9ak6oShIc7dGMlM%3D
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechooselist.py", line 42, in test_recipechoose_success2
+    {'deviceId': self.deviceId, 'model': self.model_name,'pageno':1,'perpage':10,'zxFlag':'true'}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipechooseminelist.v7recipechoosemineTest: 我的收藏</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
+</tr>
+
+<tr id='ft13.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechoosemine_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft13.1')" >
+        error</a>
+
+    <div id='div_ft13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft13.1: http://10.0.10.100:17001/v7/recipe/choose/mine/list
+{'model': 'chunmi.cooker.normal3', 'deviceId': 46608560}
+打印payload：data=fxTBJVT4ZJMsMlRpbPyCknArEhTC6sYzgkaBx2pokJk_WxF6_KNOPzt2Q5VRrrBD
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechooseminelist.py", line 26, in test_recipechoosemine_success
+    {'deviceId': self.deviceId, 'model': self.model_name}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipechoosereset.recipechooseresetTest: 排序</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='ft14.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechoosereset_success: 重置成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft14.1')" >
+        error</a>
+
+    <div id='div_ft14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft14.1: http://10.0.10.100:17001/v7/recipe/choose/reset
+{'model': 'chunmi.cooker.normal3', 'deviceId': 46608560}
+打印payload：data=1ekaDh_D_dTTm1ONb3m3UPE9X7-7mZAb0-2k2R6TFUshTVovDm7cKbK4FndLJKWI
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechoosereset.py", line 27, in test_recipechoosereset_success
+    {'deviceId': self.deviceId, 'model': self.model_name
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipechoosesort.recipechoosesortTest: 排序</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='ft15.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipechoosesort_success: 排序成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft15.1')" >
+        error</a>
+
+    <div id='div_ft15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft15.1: http://10.0.10.100:17001/v7/recipe/choose/sort
+打印params：recipeChooses=%5B%7B%27recipeId%27%3A+%27%27%7D%2C+%7B%27recipeId%27%3A+2732%7D%5D&amp;model=chunmi.cooker.normal3&amp;deviceId=46608560&amp;recipeOptions=%5B%7B%27recipeId%27%3A+%27%27%7D%2C+%7B%27recipeId%27%3A+2732%7D%2C+%7B%27recipeId%27%3A+2718%7D%2C+%7B%27recipeId%27%3A+2719%7D%2C+%7B%27recipeId%27%3A+2720%7D%2C+%7B%27recipeId%27%3A+2721%7D%5D
+打印jdata数据：{"recipeChooses": [{"recipeId": ""}, {"recipeId": 2732}], "model": "chunmi.cooker.normal3", "deviceId": 46608560, "recipeOptions": [{"recipeId": ""}, {"recipeId": 2732}, {"recipeId": 2718}, {"recipeId": 2719}, {"recipeId": 2720}, {"recipeId": 2721}]}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipechoosesort.py", line 31, in test_recipechoosesort_success
+    'recipeChooses': [{'recipeId': ''},{'recipeId':2732}]} #3473æ¯ç½èçç²æ¡ï¼3353æ¯ç§ç§é¾å©é±¼ è¿æ¯é¢åå¸ç¯å¢æ°æ®
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipedetail.v7recipedetailTest: 食谱详情</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='ft16.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipedetail_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft16.1')" >
+        error</a>
+
+    <div id='div_ft16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft16.1: http://10.0.10.100:17001/v7/recipe/1/detail
+打印params：model=chunmi.cooker.normal3&amp;flag=true&amp;language=
+打印jdata数据：{"model": "chunmi.cooker.normal3", "flag": "true", "language": ""}
+url2 : http://10.0.10.100:17001/v7/recipe/1/detail?data=efF2kVdxBIupMH9KksuH2x7RgSTZXx6Q5A2RtxozKNNqOZAPCKHfqVwTFjkmmPCm
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipedetail.py", line 29, in test_recipedetail_success
+    'flag':'true'
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipequery.v7recipequeryTest: 更多食谱，根据食谱类别和关键字进行查询</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='ft17.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipequery_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft17.1')" >
+        error</a>
+
+    <div id='div_ft17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft17.1: http://10.0.10.100:17001/v7/recipe/people/query
+打印params：perpage=10&amp;language=&amp;pageno=1&amp;deviceId=46608560&amp;model=chunmi.cooker.normal3&amp;categoryId=3
+打印jdata数据：{"perpage": 10, "language": "", "pageno": 1, "deviceId": 46608560, "model": "chunmi.cooker.normal3", "categoryId": "3"}
+url2 : http://10.0.10.100:17001/v7/recipe/people/query?data=7u4cZl1Wu27Ixq-gdoze-GBKCr8JW-NcK0RrCPm0R_ZQH23JzgUwtIETD75xrOtrw7TzEDeLmGDBR_O3VDU832-CSlTKdYKHC_mr8foXdFnvd5TE1vSqbBzstFSzGba4
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipequery.py", line 59, in test_recipequery_success
+    'deviceId':self.deviceId
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7recipequery1.v7recipequeryTest: 更多食谱，根据食谱类别和关键字进行查询</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='ft18.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipequery_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft18.1')" >
+        error</a>
+
+    <div id='div_ft18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft18.1: http://10.0.10.100:17001/v7/recipe/people/query
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7recipequery1.py", line 49, in test_recipequery_success
+    params
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase1.py", line 75, in cjmyhttpjs
+    params = urllib.urlencode(post_data)
+  File "C:\Python27\lib\urllib.py", line 1328, in urlencode
+    raise TypeError
+TypeError: not a valid non-string sequence or mapping object
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_V7riceadd.riceaddTest: 添加米</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='ft19.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_riceadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft19.1')" >
+        error</a>
+
+    <div id='div_ft19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft19.1: http://10.0.10.100:17001/v7/rice/addNew
+打印params：barCode=2018080268&amp;deviceId=46608560&amp;language=&amp;brand=brand788&amp;ppties=testsx0787&amp;pic=%2Fb2197884207041d7b24f1c73db4cde68.jpg&amp;id=&amp;name=wjy4
+打印jdata数据：{"barCode": "2018080268", "deviceId": 46608560, "language": "", "brand": "brand788", "ppties": "testsx0787", "pic": "/b2197884207041d7b24f1c73db4cde68.jpg", "id": "", "name": "wjy4"}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_V7riceadd.py", line 31, in test_riceadd_success
+    'pic':'/b2197884207041d7b24f1c73db4cde68.jpg'
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7ricebarcode.v7ricebarcodeTest: 扫描条形码添加米种</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='ft20.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_ricebarcode_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft20.1')" >
+        error</a>
+
+    <div id='div_ft20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft20.1: Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7ricebarcode.py", line 28, in test_ricebarcode_success
+    'barCode':self.barcode,
+AttributeError: 'v7ricebarcodeTest' object has no attribute 'barcode'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7ricecookscriptfind.ricecookscriptfindTest: 查找米烹饪程序</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='ft21.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_ricecookscriptfind_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft21.1')" >
+        error</a>
+
+    <div id='div_ft21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft21.1: http://10.0.10.100:17001/v7/rice/cookscript/find
+{'tasteId': '4111', 'deviceId': 46608560, 'riceId': 1, 'cookstyleId': '1100'}
+打印payload：data=x4koYRBI4YBy2PcWzmkcctZ1h2gMOPEGk5G5tNdWBZgMhNM2ioaY6ocQQp2gc1feT-bHFa2VF6otVBIEDsO7UA%3D%3D
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7ricecookscriptfind.py", line 27, in test_ricecookscriptfind_success
+    'deviceId':self.deviceId
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7ricedel.ricecollectdelTest: 删除用户添加的米种</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='ft22.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_ricecollectdel_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft22.1')" >
+        error</a>
+
+    <div id='div_ft22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft22.1: http://10.0.10.100:17001/v7/rice/del
+打印params：rices=%5B%7B%27id%27%3A+%2724461%27%7D%5D&amp;deviceId=46608560
+打印jdata数据：{"rices": [{"id": "24461"}], "deviceId": 46608560}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7ricedel.py", line 29, in test_ricecollectdel_success
+    'deviceId': self.deviceId, 'rices': [{'id': '24461'}]
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 76, in decryptAES
+    text = cryptor.decrypt(src);
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\Crypto\Cipher\blockalgo.py", line 295, in decrypt
+    return self._cipher.decrypt(ciphertext)
+ValueError: Input strings must be a multiple of 16 in length
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7ricelist.v7ricelistTest: 米种列表</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='ft23.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_ricelist_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft23.1')" >
+        error</a>
+
+    <div id='div_ft23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft23.1: http://10.0.10.100:17001/v7/rice/list
+打印params：pageno=1&amp;perpage=100&amp;deviceid=46608560&amp;language=
+打印jdata数据：{"pageno": 1, "perpage": 100, "deviceid": 46608560, "language": ""}
+url2 : http://10.0.10.100:17001/v7/rice/list?data=Puwx4qEf8rAbx1qcJtq4BmGEh3a1WovTLczKEHcl-xDF2pGA7DKUbokQDFMp1r8Ndn9HH_RE7On40cZtRC0gdQ%3D%3D
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7ricelist.py", line 27, in test_ricelist_success
+    {'deviceid': self.deviceId,'language': '','pageno':1,'perpage':100}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 106, in cjmyhttpjs
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_v7ricericeIdinfo.v7ricelistTest: 米种详情</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='ft24.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_riceinfo_success: 查看米详情，传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft24.1')" >
+        error</a>
+
+    <div id='div_ft24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft24.1: http://10.0.10.100:17001/v7/rice/1/info
+{'language': '', 'riceId': 1}
+打印payload：data=y94EM5pRoQsw_w2OkPY8DLBWk_rrNGtE5hkbJ81HbnA%3D
+&lt;type 'str'&gt;
+打印result类型:&lt;type 'str'&gt;
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7ricericeIdinfo.py", line 27, in test_riceinfo_success
+    {'riceId': 1,'language': ''}
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\cjbase.py", line 74, in cjmyhttp
+    s = decryptAES(result, self.key)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 72, in decryptAES
+    src = decryptBase64(src)
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\base\CJcryp.py", line 35, in decryptBase64
+    return base64.urlsafe_b64decode(src)
+  File "C:\Python27\lib\base64.py", line 119, in urlsafe_b64decode
+    return b64decode(s.translate(_urlsafe_decode_translation))
+  File "C:\Python27\lib\base64.py", line 78, in b64decode
+    raise TypeError(msg)
+TypeError: Incorrect padding
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>26</td>
+    <td>1</td>
+    <td>0</td>
+    <td>25</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

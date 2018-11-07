@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>饭煲接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>饭煲接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-09-04 13:47:57</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:08.290000</p>
+<p class='attribute'><strong>Status:</strong> Pass 7 Failure 3 Error 1</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_defaultrecipes.defaultRecipesTest: 获取用户收藏菜谱</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_defaultRecipes_success: 获取默认食谱</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: https://sgmipotplug.joyami.com/v6/literecipe/defaultRecipes
+&lt;type 'str'&gt;
+{
+	"content":null,
+	"message":"没有找到该用户收藏的菜谱!",
+	"pageModel":null,
+	"result":[],
+	"serverTimeMillis":1536040077887,
+	"state":0
+}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\cjinterface_new\test_defaultrecipes.py", line 33, in test_defaultRecipes_success
+    self.assertEqual(js['state'], 1)
+AssertionError: 0 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipecookscriptfind.recipecookscriptfindTest: 获取食谱烹饪程序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecookscriptfindByModel_success: 获取食谱烹饪程序</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: https://sgmipotplug.joyami.com/v6/recipecookscript/findByModel
+&lt;type 'str'&gt;
+{
+	"content":null,
+	"message":"获取菜谱烹饪程序成功",
+	"pageModel":null,
+	"result":[
+		{
+			"content":null,
+			"cookscript":{
+				"cookcode":"00040c180018000001000045000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000280a0082001e914e730801001e82ff736e0610ff756e02690a0f75826e0169101e75826e0169100069005a000000000000001ba2",
+				"cookprofile":null,
+				"id":44240
+			},
+			"deviceModel":null,
+			"dmg":{
+				"canCap":true,
+				"createTime":null,
+				"description":"台湾版110V电压",
+				"id":6,
+				"name":"米家IH电饭煲 台湾版",
+				"scriptLength":242,
+				"source":1
+			},
+			"eleLevel":{
+				"bundleId":null,
+				"id":3000,
+				"level":null,
+				"name":null,
+				"pid":null,
+				"pinyin":null,
+				"sort":0,
+				"status":null,
+				"tagScore":null,
+				"topPid":null
+			},
+			"id":44237,
+			"isSystemrRecipe":null,
+			"isUserRecipe":null,
+			"name":null,
+			"publishTime":"2017-11-21 20:31:43"
+		}
+	],
+	"serverTimeMillis":1536040078424,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_V6articletopadvByModel.articletopadvTest: 获取banner（6100首页,6200列表）</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_topadvByModel_sysuccess: 传所有参数,获取6100列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        fail</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: https://sgmipotplug.joyami.com/v6/article/topadvByModel
+&lt;type 'str'&gt;
+{
+	"content":null,
+	"message":"头部banner没有数据",
+	"pageModel":null,
+	"result":[],
+	"serverTimeMillis":1536040078950,
+	"state":0
+}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\cjinterface_new\test_V6articletopadvByModel.py", line 27, in test_topadvByModel_sysuccess
+    self.assertEqual(js['state'], 1)
+AssertionError: 0 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_V6queryget.recipequerygetTest: 大家都在搜接口</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='ft4.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_recipequeryget_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        fail</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: https://sgmipotplug.joyami.com/v6/recipe/people/query/getByModel
+{
+	"content":null,
+	"message":"success",
+	"pageModel":null,
+	"result":[],
+	"serverTimeMillis":1536040079626,
+	"state":0
+}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\cjinterface_new\test_V6queryget.py", line 28, in test_recipequeryget_success
+    self.assertEqual(js['state'], 1)
+AssertionError: 0 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipeCommentadd.recipeCommentaddTest: 食谱评论</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',2)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeCommentadd_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: https://sgmipotplug.joyami.com/v6/recipeComment/addRecipeComment
+&lt;type 'str'&gt;
+{
+	"content":null,
+	"message":"发表成功!",
+	"pageModel":null,
+	"result":[
+		{
+			"contents":"good111",
+			"device":null,
+			"id":19278,
+			"ip":null,
+			"isUserRecipe":null,
+			"parent":null,
+			"recipe":{
+				"auxiliary":null,
+				"avgRate":null,
+				"category":null,
+				"collectorCount":null,
+				"commentorCount":null,
+				"content":null,
+				"cookCode":null,
+				"cookNum":null,
+				"cookscript":[],
+				"deviceId":null,
+				"downloadcount":null,
+				"duration":null,
+				"flag":null,
+				"function":null,
+				"iconPath":null,
+				"id":1967,
+				"ingredient":null,
+				"maxDuration":null,
+				"minDuration":null,
+				"name":null,
+				"nutritions":[],
+				"publishTime":null,
+				"rateCount":null,
+				"recipeSteps":null,
+				"recipeTags":null,
+				"score":null,
+				"state":null,
+				"sysId":0,
+				"updateDate":null,
+				"updateTime":null,
+				"usagecount":null,
+				"utrition":[]
+			},
+			"recipeId":null,
+			"stars":0.0,
+			"state":null,
+			"time":null,
+			"userId":null
+		}
+	],
+	"serverTimeMillis":1536040080456,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeCommentadd_success1: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: https://sgmipotplug.joyami.com/v6/recipeComment/addRecipeComment
+&lt;type 'str'&gt;
+{
+	"content":null,
+	"message":"发表成功!",
+	"pageModel":null,
+	"result":[
+		{
+			"contents":"good",
+			"device":null,
+			"id":19279,
+			"ip":null,
+			"isUserRecipe":null,
+			"parent":null,
+			"recipe":{
+				"auxiliary":null,
+				"avgRate":null,
+				"category":null,
+				"collectorCount":null,
+				"commentorCount":null,
+				"content":null,
+				"cookCode":null,
+				"cookNum":null,
+				"cookscript":[],
+				"deviceId":null,
+				"downloadcount":null,
+				"duration":null,
+				"flag":null,
+				"function":null,
+				"iconPath":null,
+				"id":256,
+				"ingredient":null,
+				"maxDuration":null,
+				"minDuration":null,
+				"name":null,
+				"nutritions":[],
+				"publishTime":null,
+				"rateCount":null,
+				"recipeSteps":null,
+				"recipeTags":null,
+				"score":null,
+				"state":null,
+				"sysId":0,
+				"updateDate":null,
+				"updateTime":null,
+				"usagecount":null,
+				"utrition":[]
+			},
+			"recipeId":null,
+			"stars":0.0,
+			"state":null,
+			"time":null,
+			"userId":null
+		}
+	],
+	"serverTimeMillis":1536040081097,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipeCommentadd.recipeCommentpagegetTest: 食谱评论页</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistdata_success11: 食谱列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: https://rumipotplugapi.joyami.com/v6/recipeComment/listdata?recipeId=1967&amp;language=en_US
+&lt;urllib2.Request instance at 0x0000000003EE8188&gt;
+&lt;addinfourl at 66015880L whose fp = &lt;socket._fileobject object at 0x0000000003E19408&gt;&gt;
+{u'totalPage': 0, u'perpage': 10, u'pageno': 1, u'list': [{u'username': u'User', u'customerid': -1, u'content': u'good111', u'date': u'2018-08-29', u'id': 19249, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u597d\u5403', u'date': u'2018-08-29', u'id': 19248, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u4e0d\u9519', u'date': u'2018-08-29', u'id': 19247, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'good111', u'date': u'2018-08-29', u'id': 19241, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'good', u'date': u'2018-08-29', u'id': 19240, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'good', u'date': u'2018-08-29', u'id': 19239, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u4e0d\u9519  \u4e00\u4f1a\u8bd5\u8bd5', u'date': u'2018-03-25', u'id': 19118, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\xf1\xf1\xf1\xf1', u'date': u'2018-02-01', u'id': 18715, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'\u6211\u4e5f\u4e0d\u77e5\u9053\u554a', u'date': u'2018-01-29', u'id': 18677, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}, {u'username': u'User', u'customerid': -1, u'content': u'we need Chinese..', u'date': u'2018-01-23', u'id': 18601, u'icon': u'https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png'}], u'offset': 0, u'objectBean': None, u'total': 0}
+good111
+好吃
+不错
+good111
+good
+good
+不错  一会试试
+ññññ
+我也不知道啊
+we need Chinese..
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipedetail.recipedetailTest: 食谱详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecookscriptfind_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: https://sgmipotplug.joyami.com/v6/recipe/detailByModel
+&lt;type 'str'&gt;
+{
+	"content":null,
+	"message":"获取菜谱详情成功!",
+	"pageModel":null,
+	"result":[
+		{
+			"afterBgcolor":null,
+			"auxiliaries":null,
+			"beforeBgcolor":null,
+			"categoryId":null,
+			"chooseRiceFlag":null,
+			"collectFlag":false,
+			"content":"For a more flavorsome stock, turn off the heat and let the soup cool down for a few hours to half a day. Bring it back to a boil when you want to serve it. ",
+			"cookCode":null,
+			"currentUser":false,
+			"detailFlag":true,
+			"duration":null,
+			"flag":null,
+			"function":"Bak Kut Teh is a comforting hawker dish consisting of pork rib soup served with white rice and Chinese tea. For Singaporeans, Bak Kut Teh is a food from childhood, which they grew up eating and loving.",
+			"icon":null,
+			"iconPath":null,
+			"id":1967,
+			"ingredients":null,
+			"isSysgeneratedId":true,
+			"name":"Singaporean Bak Kut Teh",
+			"recipeId":null,
+			"recipeIdDmgIds":null,
+			"recipeOptionFlag":false,
+			"riceFlag":false,
+			"state":null,
+			"steps":null,
+			"topRecipe":false,
+			"usagecount":null
+		}
+	],
+	"serverTimeMillis":1536040082781,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipehit.recipehintTest: 食谱关键字匹配</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipehint_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: https://sgmipotplug.joyami.com/v6/recipe/hint/getByModel
+{
+	"content":null,
+	"message":null,
+	"pageModel":null,
+	"result":[],
+	"serverTimeMillis":1536040083348,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>test_V6recipesearchdata.recipesearchdataByModelTest: 食谱列表</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_recipesearchdata_success: 所有字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        error</a>
+
+    <div id='div_ft9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft9.1: https://sgmipotplug.joyami.com/v6/recipe/searchdataByModel
+
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\cjinterface_new\test_V6recipesearchdata.py", line 28, in test_recipesearchdata_success
+    js = json.loads(r)
+  File "C:\Python27\lib\json\__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "C:\Python27\lib\json\decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Python27\lib\json\decoder.py", line 382, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V6recipeweblist.recipeweblistTest: 食谱列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeweblist_success: 食谱列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: https://sgmipotplug.joyami.com/v6/recipe/web/listByModelName
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /&gt;
+    &lt;meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"&gt;
+    &lt;title&gt;Recipe list&lt;/title&gt;
+    &lt;link rel="shortcut icon" href="/core/api/img/favicon.ico" type="image/x-icon" /&gt;
+    &lt;link rel="stylesheet" href="/core/api/css/recipe/searchrecipe.css" type="text/css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input type="hidden" id="isClear" value="0"/&gt;
+&lt;input type="hidden" id="newQuery" value=""/&gt;
+&lt;input type="hidden" id="dmodelid" value="11"/&gt;
+&lt;input type="hidden" id="languageInfo" value="english"/&gt;
+&lt;input type="hidden" id="wanming_load" value="Loading..."/&gt;
+&lt;input type="hidden" id="initSearchContent" value="Search foods or recipes"/&gt;
+&lt;input type="hidden" id="songshou_xianshi" value="Release..."/&gt;
+&lt;input type="hidden" id="last_page" value="Reach the bottom"/&gt;
+&lt;div id="header"&gt;
+	&lt;div style="float: left;"&gt;
+		&lt;i id="search_back"&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div style="float: left;padding-left: 14px;    width: 70%;"&gt;
+		&lt;input type="text" id="search_recipe" style="font-size:14px;" class="headerr-img search_content_input" value="Search foods or recipes"&gt;
+		&lt;i id="search_clear"&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div style="float: right;""&gt;
+		&lt;span id="search_btn" class="search_btn_type_search" style="font-size:16px;color:#5e5e5e;line-height: 51px;"&gt;Search&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="content" style="top:45px;"&gt;
+    &lt;div id="scroller"&gt;
+        &lt;div id="pullDown" class="ub ub-pc c-gra" style="display:none;"&gt;
+            &lt;div class="pullDown-center"&gt;
+                &lt;div class="pullDownIcon"&gt;&lt;/div&gt;
+                &lt;div class="pullDownLabel"&gt;Loading latest recipes &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="ui_list_1 space_box_home get_num"&gt;
+			&lt;ul id="add"&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+        &lt;div id="pullUp" class="ub ub-pc c-gra" style="display:none;"&gt;
+            &lt;div class="pullUp-center"&gt;
+                  &lt;div class="pullUpIcon"&gt;&lt;/div&gt;
+                  &lt;div class="pullUpLabel"&gt;Pull up...&lt;/div&gt;
+              &lt;/div&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+		&lt;/div&gt;
+        &lt;div id="search_speedy"&gt;
+        	&lt;br/&gt;
+        	&lt;div class="search_speedy_hot_title"&gt;Hot search&lt;/div&gt;
+        	&lt;div class="people" style="width:100%;height:150px;"&gt;
+        	
+        	&lt;/div&gt;
+        	&lt;br/&gt;
+        	&lt;div  class="search_speedy_now_title"&gt;Historical search&lt;/div&gt;
+			&lt;div class="lately" style="width:100%;"&gt;
+				
+			&lt;/div&gt;
+			&lt;div id="search_clear_cookie"&gt;&lt;span style="line-height: 40px;color:#5e5e5e"&gt;Clear search records&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;div id="search_hint_list"  style="margin-top:0px;"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;script type="text/javascript" src="/core/api/js/jquery-1.11.3.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/iscroll-probe.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/jquery.cookie.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/v6/recipe.list.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/core/api/js/v6/recipe.list.operate.js"&gt;&lt;/script&gt;
+&lt;/html&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>11</td>
+    <td>7</td>
+    <td>3</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

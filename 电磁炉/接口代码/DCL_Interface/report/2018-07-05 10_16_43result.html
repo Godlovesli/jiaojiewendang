@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>插件版电磁炉接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>插件版电磁炉接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-07-05 10:16:43</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:04.967000</p>
+<p class='attribute'><strong>Status:</strong> Pass 12</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_addcommentByModel.commentaddnewTest: 添加一条评论</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentadd_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: http://10.0.10.100:17011/v1/recipecomment/addnewByModel
+0QaEeHc1Moi9osITCiA-KoOqW0U=
+{"serverTime":1530757004258,"message":"success","result":null,"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_articletopadvtopadvByModel.articletopadv1Test: 获取头部Banner</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_articletopadv_sysuccess111: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: http://10.0.10.100:17011/v1/article/topadvByModel
+XMs2cpF-sRJKshtuM79p4Sej-sc=
+{"serverTime":1530757004358,"message":"success","result":[{"id":91,"title":"606","icon":"/82322c8c95de43539165cf57cd82546d.jpg","content":"","targetUrl":"https://img.coo-k.com///201822/94327618/article/index.html","type":6100,"state":2200,"sort":4.7,"modifyTime":"2018-02-03T03:10:44.000+0000","targetType":6910,"deviceModelGroupid":2,"position":1,"languageType":null},{"id":92,"title":"666666","icon":"/fa3b43452964490b84bd2f1c56eb4a89.jpg","content":"","targetUrl":"585","type":6100,"state":2200,"sort":4.0,"modifyTime":"2018-02-02T14:20:51.000+0000","targetType":6920,"deviceModelGroupid":2,"position":1,"languageType":null},{"id":88,"title":"热牛奶","icon":"/1e7790df6d8e42958449587a7b989ba2.jpg","content":"","targetUrl":"2489","type":6100,"state":2200,"sort":4.0,"modifyTime":"2018-01-26T23:33:43.000+0000","targetType":6920,"deviceModelGroupid":2,"position":1,"languageType":null}],"code":1}
+91
+606
+92
+666666
+88
+热牛奶
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commentloadmore.commentloadmoreTest: 获取最新评论(分页)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commentloadmore_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: http://10.0.10.100:17011/v1/recipecomment/loadmore
+F14c-_OnPwGP5d0ANcrrGAw3JS4=
+{"serverTime":1530757004438,"message":"success","result":[{"id":22016,"userId":null,"contents":"赞","time":1530785804000,"commentTime":"2018-07-05T10:16:44.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":null,"headPic":null}],"code":1}
+1
+22016
+None
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_commenttwo.commenttwoTest: 获取最新评论(2条)</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_commenttwo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: http://10.0.10.100:17011/v1/recipecomment/latesttwo
+hdiGkCp1pbHTyyk0RjZg28JtaIc=
+{"serverTime":1530757004514,"message":"success","result":[{"id":22016,"userId":null,"contents":"赞","time":1530785804000,"commentTime":"2018-07-05T10:16:44.000+0000","ip":null,"recipeId":13375,"parentId":null,"state":2200,"stars":0.0,"deviceId":null,"deleted":0,"userName":null,"headPic":null}],"code":1}
+22016
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_createglobalByModel.createglobalByModelTest: 根据model创建一个自定义模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_createglobalByModel_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: http://10.0.10.100:17011/v1/recipe/collect/createglobalByModel
+anZ9xIsX7_BlLqu1cWVu8OqJquw=
+{"serverTime":1530757004758,"message":"success","result":{"id":null,"recipe":{"id":3664,"name":"áéíóúÁÉÍÓÚ","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":60,"firePower":26,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"030100a8a2a8a6a8aaa8aea8b23f3f3f0000000e50e101000400000000000100000000000000008100d2c81a1414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b900141400000000000000000000000000000000000000ec99","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_editglobalByModel.editlobalByModelTest: 根据model编辑自定义模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_createglobalByModel_success: 所有必填字段都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: http://10.0.10.100:17011/v1/recipe/collect/editglobalByModel
+qXuMCOC14wie24XqJ1Ap2d9ul1E=
+{"serverTime":1530757006732,"message":"success","result":{"id":null,"recipe":{"id":13954,"name":"áéíóúÁÉÍ","icon":null,"advIcon":null,"content":null,"mainIcon":null,"description":null,"duration":20,"firePower":36,"temperature":0,"collectorCount":null,"state":2100,"publishTime":null,"usageCount":null,"categoryId":null,"flag":"1","customized":"1"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":true,"topRecipe":false,"cookBook":true,"cookCode":"030100a8a2a8a6a8aaa8aea8b23f3f3f0000003682e100140400000000000100000000000000008014d2c8241414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b9001414000000000000000000000000000000000000001e20","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeapiinfoByModel.recipeapiinfoTest: 获取食谱详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: http://10.0.10.100:17011/v1/recipe/web/apiinfoByModel/2534
+lNGqozliT3nE7bWroWUNlK27pY0=
+{"serverTime":1530757007380,"message":"success","result":{"id":null,"recipe":{"id":2534,"name":"红烧牛肉","icon":"/22154d377c444804bcd58e9996d0ffa6.jpg","advIcon":null,"content":"1、牛肉优选选择优质的牛腩，有肥有瘦还有筋。\r\n2、各种香料可以自己搭配，但是最常见的八角、香叶、桂皮是不能缺少的。\r\n3、一开始调味时不要放太多调料，给个基础咸味就行，等烹饪结束后尝一下味道，再根据自己的口味调节。\r\n4、烹饪模式前10分钟时高功率加热，可以将香料炒香、牛肉煸炒、汤汁煮沸，后段为低功率慢煮。","mainIcon":null,"description":"红烧牛肉是一道十分家常的菜肴，特别是在冬季出现在餐桌上的几率会更大。用一些常见的香辛料，小火慢炖后的牛肉酥烂，汁水中充满了牛肉的香味。煮好一锅牛肉，无论用来下米饭还是当做面条的浇头都是十分不错的。","duration":90,"firePower":90,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T16:42:56.000+0000","usageCount":3,"categoryId":3,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030101baecc9d5c5a3c8e2000000000000000009e6e10100040000000000010000000000000000800a917863141400800091785a141400800091785a141400800091785a141400800091785a141400800091784614140080009178001414008000917800141400800091780014140080009178001414008000917800141400800091780014140080009178001414008000917800141400ffff9178461414000000000000000000000000000000000000003bc9","auxiliaryList":[{"id":49479,"name":"生姜","recipeId":2534,"quality":"30克"},{"id":49480,"name":"干辣椒","recipeId":2534,"quality":"4颗"},{"id":49481,"name":"丁香","recipeId":2534,"quality":"3粒"},{"id":49482,"name":"八角","recipeId":2534,"quality":"2粒"}],"ingredientList":[{"id":50167,"name":"花椒","recipeId":2534,"quality":"3克"},{"id":50168,"name":"小茴香","recipeId":2534,"quality":"2克"},{"id":50169,"name":"草果","recipeId":2534,"quality":"1枚"}],"stepList":[{"id":50640,"content":"冷水入锅焯水后洗净，滤干；","recipeId":2534,"iconPath":"/698ce9a13bf74864a11707bdb36a9ae1.jpg"},{"id":50641,"content":"准备好香辛料，生姜切片；","recipeId":2534,"iconPath":"/0a4c18253bf0448f81c4f87d3e32d359.jpg"},{"id":50642,"content":"将红烧牛肉推送到电磁炉上，按下按钮开始烹饪，倒入油烧热后放入香料煸炒香；","recipeId":2534,"iconPath":"/86eb16f661a74a0c8d5dda94f1f60892.jpg"},{"id":50643,"content":"倒入处理好的牛肉，放入老抽、生抽、料酒、冰糖，翻炒均匀；","recipeId":2534,"iconPath":"/3ffe80b4db1c49b38926bd3f73abe52b.jpg"},{"id":50644,"content":"加水没过牛肉，水稍微多一些，这样煮好的汤汁能用来当面条的浇头，煮沸后盖上盖子小火慢炖；","recipeId":2534,"iconPath":"/05620ad3e6cb48e5a21e825d2d129e0f.jpg"},{"id":50645,"content":"烹饪完成后尝一下味道，不够再调味。","recipeId":2534,"iconPath":"/9dbff29f1237464288603f9c6f180fdd.jpg"}],"categoryId":null,"enName":null},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipedefaults.recipedefaultsTest: 获取默认模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelist_success: 非必填参数不传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: http://10.0.10.100:17011/v1/recipe/defaults
+kspXsEpHVPPcPUHXa2v8GswPaVs=
+{"serverTime":1530757007842,"message":"success","result":[{"id":1,"recipe":{"id":1,"name":"Хого","icon":"/09e7bd8bd84244ba87b26bb5aa12950b.png","advIcon":"/510a742cc794458097aa8c713e67610a.jpg","content":"Суп необходимо кипятить на высокой мощности перед добавлением ингредиентов, которые затем следует хорошо прокипятить перед употреблением во избежание проблем с желудком.\nСуп необходимо кипятить на высокой мощности перед добавлением ингредиентов, которые затем следует хорошо прокипятить перед употреблением во избежание проблем с желудком.\nСуп необходимо кипятить на высокой мощности перед добавлением ингредиентов, которые затем следует хорошо прокипятить перед употреблением во избежание проблем с желудком.\nСуп необходимо кипятить на высокой мощности перед добавлением ингредиентов, которые затем следует хорошо прокипятить перед употреблением во избежание проблем с желудком.","mainIcon":"/a38b6df641134881b8d71bea066b928c.png","description":"Быстрый нагрев воды или бульона для варки еды; на высокой мощности плита быстро нагреет жидкость.","duration":60,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T10:08:54.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030201bbf0b9f8000000000000000000000000000000000000000000000000000000000001e10200040000000000010000800ac8b9631414008000c8b95a1414008000c8b95a1414008000c8b95a1414008000c8b95a1414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b9461414008000c8b946141400ffffc8b9461414000000000000000000da3d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":2,"recipe":{"id":2,"name":"Готовка на пару/варка","icon":"/86e34ca56bfc47958c23667a27a9a57c.png","advIcon":"/491a29b11da84a389740a1af397be4e0.png","content":"Примечание: В ходе готовки на пару или варки суп или воду необходимо добавлять, чтобы хого не сбежал или не выкипел.","mainIcon":"/cd0d3032271640d1bda7861081fad14d.png","description":"Медленное кипячение бульона или воды для приготовления ингредиентов на пару, варки или обработки другими низкотемпературными методами.","duration":60,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T10:08:51.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030202d5f4d6f3000000000000000000000000000000000000000000000000000000000002e201000400000000000100008005c8b4501414008005c8b4461414008000c8b45a1414008000c8b45a1414008000c8b45a1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c141400ffffc8b43c14140000000000000000001bea","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":3,"recipe":{"id":3,"name":"Медленное кипячение","icon":"/3bfc59349d034542b8f65679b4a47d9d.png","advIcon":"/e245dc48d72b4951ac6d5df70e225da7.png","content":"В этом режиме еда готовится дольше. Примечание: Регулярно проверяйте готовящееся блюдо, чтобы хого не перелился или не выкипел.","mainIcon":"/42422fec4d054ca7bfff3b22c4f47c73.png","description":"Относительно медленное приготовление ингредиентов на средней мощности для полного высвобождения питательных веществ.","duration":120,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T10:08:49.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030203ccc0d6e0000000000000000000000000000000000000000000000000000000000003e30200040000000000010000800f5a9b3c1414008000c89b02141400800ac89b2d060300800ac89b1e0603008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b00141400ffffc89b0f06030000000000000000007666","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":4,"recipe":{"id":4,"name":"Быстрая жарка с постоянным помешиванием","icon":"/e137ca3b9b3e476281e75f22c7b6949d.png","advIcon":"/87c74509597d4a7a8b5b116688ce5577.png","content":"Рекомендуется налить масло на сковороду или кастрюлю перед включением индукционной плиты, чтобы она не нагревалась всухую.","mainIcon":"/4c9d4aeb9dda4e0186bc06ba00dffbef.png","description":"Нагрев на высокой мощности для резкого увеличения температуры и максимально быстрого приготовления ингредиентов.","duration":60,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T10:08:45.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030204b3b4b2cb000000000000000000000000000000000000000000000000000000000004e40100040000000000010000801e64c7631414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a1414008000dcc75a141400ffffdcc7501414000000000000aab4038774","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":5,"recipe":{"id":5,"name":"фритюр","icon":"/d965ed6cbb5544f1aa2cf61b69c9dd4f.png","advIcon":"/89a8fbdf629746878ec3ef6443013dc2.png","content":"Не добавляйте слишком много воды в кастрюлю или к ингредиентам, чтобы уменьшить количество брызг кипящего масла. Не оставляйте индукционную плиту без присмотра при жарке во фритюре. Держите детей на безопасном расстоянии.","mainIcon":"/051bfce06e3844d38223f04f05bdb1f5.png","description":"Быстрое приготовление продуктов в масле на относительно высокой мощности; продукты подрумянятся или покроются корочкой.","duration":60,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T10:08:42.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":true,"cookBook":true,"cookCode":"030205bce5d5a8000000000000000000000000000000000000000000000000000000000005e5020004000000000001000080145ac7461414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc732141400ffffdcc7321414000000000000b4be032ce2","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"code":1}
+5
+Хого
+1
+Готовка на пару/варка
+2
+Медленное кипячение
+3
+Быстрая жарка с постоянным помешиванием
+4
+фритюр
+5
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipedetailByModel.recipedetailTest: 获取某个模式的详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipeapiinfo_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: http://10.0.10.100:17011/v1/recipe/detailByModel
+fwPscot3N32Ln8V94TeUuc0501s=
+{"serverTime":1530757007959,"message":"success","result":{"id":null,"recipe":{"id":5,"name":"煎炸","icon":"/0aa079eb8b6d4c7c93c9e8004a8977d1.png","advIcon":"","content":"避免鍋中和食材帶有較多的水份，防止造成熱油飛濺。油炸過程中人不要遠離電磁爐！不要讓兒童靠近！","mainIcon":"/1aa4c9d254b748be93d4447637c96146.png","description":"使用較高的火力，在短時間內將食物用油烹飪至熟透，表面會稍成金黃色乃至微糊。","duration":60,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-12T10:08:42.000+0000","usageCount":3,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":true,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030100bce5d5a800000000000000000000000007051e02000400000000000100000000000000018a00d2502d1414008000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b900141400000000000000000000000000000000000000fa36","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"deep-fry"},"code":1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipelistByModel.recipelistByModelTest: 获取更多食谱</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',2)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistByModel_success: 非必填参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: http://10.0.10.100:17011/v1/recipe/listByModel
+KAU5eHUMWj3otrTG21RsImpTfpg=
+{"serverTime":1530757008216,"message":"success","result":[{"id":2683,"recipe":{"id":2683,"name":"香煎带鱼","icon":"/57017a0b5f204112a5583d1e50ffc5a1.jpg","advIcon":null,"content":"1、第一次翻面大约在3分钟左右。\r\n2、鱼要腌制一段时间才能入味，如果没有味道的话也可以煎好了再撒盐。\r\n3、煎好的与之后可以拿来红烧。","mainIcon":null,"description":"煎带鱼是十分常见的家常菜，但是很多人总是做不好，把带鱼弄得很碎，甚至成了黑暗料理。总结下煎带鱼要注意以下两点：1、需要不粘锅，2、煎鱼的时候不要频繁的翻面。","duration":30,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-02-01T11:33:33.000+0000","usageCount":4,"categoryId":351,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030201cfe3bce5b4f8d3e30000000000000000000000000000000000000000000000000a7b0000800563c7631414018000dcc7461414008000dcc7001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc8200141400ffffdcc750141400000000000000000000000000000000000000c23d","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"English13"},{"id":2668,"recipe":{"id":2668,"name":"123","icon":"/a71de3e218654d69a4d8a09c83000f81.gif","advIcon":null,"content":"ewew","mainIcon":null,"description":"eqwe","duration":67,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-31T16:33:32.000+0000","usageCount":7,"categoryId":3,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030201313233000000000000000000000000000a6ce1010004000000000001000000000a6c0000800a917863141401800091785a141400800091785a141400800091785a141400800091785a141400800091784614140080009178001414008000917800141400800091780014140080009178001414008000917800141400800091780014140080009178001414008000917800141400ffff9178461414000000000000000000000000000000000000005c8a","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":2534,"recipe":{"id":2534,"name":"红烧牛肉","icon":"/22154d377c444804bcd58e9996d0ffa6.jpg","advIcon":null,"content":"1、牛肉优选选择优质的牛腩，有肥有瘦还有筋。\r\n2、各种香料可以自己搭配，但是最常见的八角、香叶、桂皮是不能缺少的。\r\n3、一开始调味时不要放太多调料，给个基础咸味就行，等烹饪结束后尝一下味道，再根据自己的口味调节。\r\n4、烹饪模式前10分钟时高功率加热，可以将香料炒香、牛肉煸炒、汤汁煮沸，后段为低功率慢煮。","mainIcon":null,"description":"红烧牛肉是一道十分家常的菜肴，特别是在冬季出现在餐桌上的几率会更大。用一些常见的香辛料，小火慢炖后的牛肉酥烂，汁水中充满了牛肉的香味。煮好一锅牛肉，无论用来下米饭还是当做面条的浇头都是十分不错的。","duration":90,"firePower":90,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T16:42:56.000+0000","usageCount":3,"categoryId":3,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030203baecc9d5c5a3c8e200000000000000000000000000000000000000000000000009e6e30200040000000000010000800f5a9b3c1414008000c89b02141400800ac89b2d060300800ac89b1e0603008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b00141400ffffc89b0f060300000000000000000010c1","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":2514,"recipe":{"id":2514,"name":"松饼","icon":"/0b281d8ce09d4859846d1571508ba5dd.jpg","advIcon":null,"content":"煎松饼要小火慢慢的煎，不要心急把火力开的特别大。","mainIcon":null,"description":"做法简单且好吃，不管是搭配黄油还是蜂蜜，都是非常棒的选择哦~ ​","duration":30,"firePower":30,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T14:06:38.000+0000","usageCount":2,"categoryId":3,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030203cbc9b1fd0000000000000000000000000000000000000000000000000000000009d2e30200040000000000010000800f5a9b3c1414008000c89b02141400800ac89b2d060300800ac89b1e0603008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b00141400ffffc89b0f06030000000000000000009f85","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":2513,"recipe":{"id":2513,"name":"低温煮三文鱼","icon":"/64af30cfba06407281524e4724911357.jpg","advIcon":null,"content":"1、要保证三文鱼的新鲜程度。\r\n2、慢煮后的三文鱼非常嫩，要轻轻地取出。\r\n3、根据个人喜好进行装盘。\r\n4、各地区的室温和水温不同，北方寒冷地区在冬天需要增加10分钟左右的烹饪时间！1","mainIcon":null,"description":"55℃的水温，将三文鱼抽真空慢煮，混了了柠檬的清香和莳萝的悠长，搭配色浓浓的奶油柠檬汁，入口顺滑，结合刺身和熟三文鱼之间的口感，两者兼顾。1","duration":30,"firePower":20,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T10:34:31.000+0000","usageCount":3,"categoryId":353,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030201b5cdcec2d6f3c8fdcec4d3e3000000000000000000000000000000000000000009d10000800a463c3c1414018000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc8200141400ffffdc390a14140000000000000000000000000000000000000038e1","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null},{"id":2505,"recipe":{"id":2505,"name":"红烧狮子头","icon":"/45939bedf03d4f1bb7ef68a369120eb7.jpg","advIcon":null,"content":"1、除了纯肉馅儿，狮子头中还可以加入荸荠、香菇、冬笋等食材增加口感；\r\n2、肉末要经过摔打后才会劲道，带上一次性手套后拿起一些肉末往容器砸下去即可；\r\n3、红烧的时候稍微放一些生抽调味即可，油炸后的狮子头已经入味了。111","mainIcon":null,"description":"有肥有瘦的肉红润油亮，配上翠绿青菜掩映，鲜艳的色彩加上扑鼻的香味，光看就引动食欲，是令人无法抵挡的美味。 111","duration":35,"firePower":80,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-15T15:13:18.000+0000","usageCount":6,"categoryId":3,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030203baecc9d5caa8d7d3cdb70000000000000000000000000000000000000000000009c9e30200040000000000010000800f5a9b3c1414008000c89b02141400800ac89b2d060300800ac89b1e0603008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b00141400ffffc89b0f0603000000000000000000c568","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"1"},{"id":2341,"recipe":{"id":2341,"name":"炸薯条","icon":"/08853fb4bea3481da29ca1b4fc158866.jpg","advIcon":null,"content":"油炸啊","mainIcon":null,"description":"啊啊啊","duration":30,"firePower":99,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-13T17:14:04.000+0000","usageCount":3,"categoryId":351,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030203d5a8caedccf500000000000000000000000000000000000000000000000000000925e30200040000000000010000800f5a9b3c1414008000c89b02141400800ac89b2d060300800ac89b1e0603008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b001414008000c89b00141400ffffc89b0f06030000000000000000000009","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"dzs1"}],"code":1}
+7
+香煎带鱼
+2683
+123
+2668
+红烧牛肉
+2534
+松饼
+2514
+低温煮三文鱼
+2513
+红烧狮子头
+2505
+炸薯条
+2341
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt10.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipelistByModel_success1: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.2')" >
+        pass</a>
+
+    <div id='div_pt10.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.2: http://10.0.10.100:17011/v1/recipe/listByModel
+KAU5eHUMWj3otrTG21RsImpTfpg=
+{"serverTime":1530757008419,"message":"success","result":[{"id":2514,"recipe":{"id":2514,"name":"松饼","icon":"/0b281d8ce09d4859846d1571508ba5dd.jpg","advIcon":null,"content":"煎松饼要小火慢慢的煎，不要心急把火力开的特别大。","mainIcon":null,"description":"做法简单且好吃，不管是搭配黄油还是蜂蜜，都是非常棒的选择哦~ ​","duration":30,"firePower":30,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-25T14:06:38.000+0000","usageCount":2,"categoryId":3,"flag":"0","customized":"0"},"defaultRecipe":false,"officialRecipe":false,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":false,"cookCode":"030101cbc9b1fd00000000000000000000000009d2e10100040000000000010000000000000000800a917863141400800091785a141400800091785a141400800091785a141400800091785a141400800091784614140080009178001414008000917800141400800091780014140080009178001414008000917800141400800091780014140080009178001414008000917800141400ffff9178461414000000000000000000000000000000000000005d7c","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":null}],"code":1}
+1
+松饼
+2514
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_recipeofficialByModel.officialByModelTest: 获取官方模式</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_officialByModel_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: http://10.0.10.100:17011/v1/recipe/officialByModel
+c3uLh1pzX6LuN-Z9baVxaW17GZs=
+{"serverTime":1530757008463,"message":"success","result":[{"id":2491,"recipe":{"id":2491,"name":"Hot spring eggs2","icon":"/e180532cd7744492807661fcb41d6fe6.jpg","advIcon":"/aabe4883517a48fc8740d6804008da73.jpg","content":"Normal farmed eggs can be used; add water to the level of the eggs, heat to 65°C, and cook for 1 hour.","mainIcon":"/07eedcfa9791489da9f6023f20279e35.png","description":"The eggs should be at room temperature; if you are using free range eggs, please adjust the cooking time to 45 minutes.","duration":60,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2018-01-11T16:53:54.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030203cec2c8aab5b0000000000000000000000000000000000000000000000000000009bb0000800f4641141414018000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d141414008000413d14141400ffff823d0a141400000000000000000000000000000000000000c8d5","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Hot spring eggs2"},{"id":585,"recipe":{"id":585,"name":"Deep-fried chicken wings","icon":"/5b2010011feb4a52b2ffe9c585c611a0.jpg","advIcon":"/3903919dacef44a2bed45ea6d3076cd5.jpg","content":"Do not leave the induction cooker when deep-frying. Keep children at a safe distance.","mainIcon":"/750e867f67794d80a59b2729aa30a8d8.png","description":"Add some oil to a clean, dry frying pan, heat for approximately 6 minutes, add the chicken wings and deep-fry for 6 minutes.","duration":12,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-22T16:55:22.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030200d5a8bca6b3e10000000000000000000000000000000000000000000000000000024900018810d2be2d1414018000d2b9011414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b95a1414008000d2b9371414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b9001414008000d2b900141400ffffd2b90014140000000000000000000000000000000000000011cb","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Deep-fried chicken wings"},{"id":2335,"recipe":{"id":2335,"name":"Boiling dumplings","icon":"/5b961cbea01a4c179a143df7254295c8.jpg","advIcon":"/b22b27a654f94df682b637a7e33d4173.jpg","content":"Boil the water before adding the dumplings; then, boil for around 1 minute before adding a little cold water, then bring to the boil again before draining the dumplings. ","mainIcon":"/fc3c8cfde31c44d59531c6bb75ba5319.png","description":"After adding the dumplings to the pot, use a spoon to stir them, to prevent them from sticking to the bottom of the pot.","duration":50,"firePower":60,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-12-15T22:25:41.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030202d6f3cbaebdc80000000000000000000000000000000000000000000000000000091f00008005c8b4501414018005c8b4461414008000c8b45a1414008000c8b45a1414008000c8b45a1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c141400ffffc8b43c14140000000000000000000000000000000000000075bc","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Boiling dumplings"},{"id":606,"recipe":{"id":606,"name":"Scallion pancakes","icon":"/506e5a47c821483fa1cfe07be6d5b78e.jpg","advIcon":"/54be3232faf94ee3b7c3bd1a12766f3d.jpg","content":"You can add fried egg, bacon, vegetables and other ingredients.","mainIcon":"/d485690060124134b2b15e4a1f00bac3.png","description":"When using ready packed frozen pancakes, simply place them in the pan and start cooking without defrosting it first.","duration":10,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-11-13T15:50:49.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030205cad6d7a5b1fd0000000000000000000000000000000000000000000000000000025e000080015ac7461414018000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc732141400ffffdcc732141400000000000000000000000000000000b4be03e819","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Scallion pancakes"},{"id":610,"recipe":{"id":610,"name":"Pan-fried dumplings","icon":"/407acfc32cae44fd9c17294629ec1e05.jpg","advIcon":"/60b0b1548ccd41e6986c56e2f56fd88e.jpg","content":"Pan-fried dumplings can be cooked in the same way.","mainIcon":"/f53ee2316aca4a1a96e5ecc712954266.png","description":"Cook for 12 minutes, wiping the base of the pan with oil so that each of the dumplings absorbs some of the oil; after 5 minutes, add two tablespoons of water.","duration":13,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-09-06T15:33:01.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030205b9f8ccf9bdc80000000000000000000000000000000000000000000000000000026200008005c8b4321414018000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc7321414008000dcc732141400ffffdcb432141400000000000000000000000000000000a0aa03f8f7","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Pan-fried dumplings"},{"id":609,"recipe":{"id":609,"name":"Congee","icon":"/7a9adec5ef644bd7bc78fd094ec4542a.jpg","advIcon":"/425372e1fe204284b551e932ff774d42.jpg","content":"You can add all sorts of ingredients to make your favorite congee.","mainIcon":"/05de17acdc704d89ba02b802ec8fb485.png","description":"Add 100 g of the northeast rice of China to 2 liters of water, and heat on low power to simmer without boiling.","duration":90,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-09-04T13:06:59.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030201cfa1d6e000000000000000000000000000000000000000000000000000000000026100018008dcc85a1414018000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc82001414008000dc8200141400ffffdcb950141400000000000000000000000000000000aabe0352e4","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Congee"},{"id":591,"recipe":{"id":591,"name":"Instant noodles","icon":"/deabbc10640a44d1a54592a742542401.jpg","advIcon":"/ddf812f457ed45a3b1ee442e4f71b446.jpg","content":"You could add a poached egg to make your meal more nutritious.","mainIcon":"/9a31e9f9714f47c8badac342707927ff.png","description":"Bring 1000 ml of water to boil in approximately 4 minutes, then add the instant noodles. The time is enough to boil about 2 packs of instant noodles.","duration":8,"firePower":50,"temperature":0,"collectorCount":0,"state":2200,"publishTime":"2017-08-30T10:28:19.000+0000","usageCount":null,"categoryId":null,"flag":"1","customized":"0"},"defaultRecipe":false,"officialRecipe":true,"favoriteRecipe":false,"customRecipe":false,"topRecipe":false,"cookBook":true,"cookCode":"030202d6f3b7bdb1e3c3e6310000000000000000000000000000000000000000000000024f00008005c8b4501414018005c8b4461414008000c8b45a1414008000c8b45a1414008000c8b45a1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c1414008000c8b43c141400ffffc8b43c14140000000000000000000000000000000000000045bd","auxiliaryList":[],"ingredientList":[],"stepList":[],"categoryId":null,"enName":"Instant noodles"}],"code":1}
+7
+Hot spring eggs2
+2491
+Deep-fried chicken wings
+585
+Boiling dumplings
+2335
+Scallion pancakes
+606
+Pan-fried dumplings
+610
+Congee
+609
+Instant noodles
+591
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>12</td>
+    <td>12</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

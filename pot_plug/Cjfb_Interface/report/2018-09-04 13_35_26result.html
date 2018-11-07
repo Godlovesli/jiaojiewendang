@@ -1,0 +1,2780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>饭煲接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    /*width: 500px;*/
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>饭煲接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-09-04 13:35:26</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:09.071000</p>
+<p class='attribute'><strong>Status:</strong> Pass 26 Failure 1</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7articletopadvByModel.articletopadvByModelTest: 获取首页Banner</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_articletopadvByModel_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: https://pot.joyami.com//v7/article/topadvByModel
+model=chunmi.cooker.eh1&amp;language=
+{"model": "chunmi.cooker.eh1", "language": ""}
+url2 : https://pot.joyami.com//v7/article/topadvByModel?data=9OmZqUIEQxDTvU3arcHL81JXwBjJDCPkb-uW-USw5jV6U6VfMDa1_jE9JbMdlVp9
+{
+	"message":"操作成功",
+	"result":[
+		{
+			"content":null,
+			"icon":"/b7f596b3f20a44c989b82661e904ff39.jpg",
+			"id":1237,
+			"targetType":{
+				"bundleId":16,
+				"id":6920,
+				"level":2,
+				"name":"跳转到食谱详情",
+				"pid":18,
+				"pinyin":null,
+				"sort":0,
+				"status":2200,
+				"tagScore":null,
+				"topPid":null
+			},
+			"title":null,
+			"url":"2788"
+		}
+	],
+	"serverTimeMillis":1536039326012,
+	"state":1
+}
+1237
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7choosereset.v7resetTest: 重置</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7reset_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: https://pot.joyami.com//v7/recipe/choose/reset
+&lt;type 'str'&gt;
+{
+	"message":"重置成功",
+	"result":null,
+	"serverTimeMillis":1536039326229,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='failClass'>
+    <td>test_v7commentadd.v7commentaddTest: 添加评论</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_v7commentadd_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        fail</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: https://pot.joyami.com//v7/recipe/comment/addNew
+device=57378995&amp;recipeId=3474&amp;contents=%E8%BF%99%E4%B8%AA%E9%A3%9F%E8%B0%B1%E4%B8%8D%E9%94%99
+{"device": 57378995, "recipeId": 3474, "contents": "\u8fd9\u4e2a\u98df\u8c31\u4e0d\u9519"}
+{
+	"content":null,
+	"message":"Internal Server Error:",
+	"pageModel":null,
+	"result":[],
+	"serverTimeMillis":1536039326426,
+	"state":-1
+}
+Traceback (most recent call last):
+  File "C:\Users\lzhou\jiaojiewendang\pot_plug\Cjfb_Interface\v7interface\test_v7commentadd.py", line 31, in test_v7commentadd_success
+    self.assertEqual(js['state'], 1)
+AssertionError: -1 != 1
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7commentlatesttwo.v7commentlatesttwoTest: 食谱详情页获取最新两条评论</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7commentadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: https://pot.joyami.com//v7/recipe/comment/latesttwo
+recipeId=3474
+{"recipeId": 3474}
+url2 : https://pot.joyami.com//v7/recipe/comment/latesttwo?data=sOTLqveJIL4J7HIPXRQgvg%3D%3D
+{
+	"message":"操作成功",
+	"result":[
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-23",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":null,
+			"username":"饭煲用户"
+		},
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-23",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":null,
+			"username":"饭煲用户"
+		}
+	],
+	"serverTimeMillis":1536039326688,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7commentloadmore.v7commentloadmoreTest: 根据食谱ID获取评论列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7commentadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: https://pot.joyami.com//v7/recipe/comment/loadmore
+recipeId=3474&amp;perpage=10&amp;pageno=1
+{"recipeId": 3474, "perpage": 10, "pageno": 1}
+url2 : https://pot.joyami.com//v7/recipe/comment/loadmore?data=d4kFBpmiVOOww2eOIGV6Bro7kRZfmkj0RlTJ8He1i1ihF-GfCldmW8cfpMCsr6kx
+{
+	"message":"操作成功",
+	"result":[
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-23",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":20478,
+			"username":"饭煲用户"
+		},
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-23",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":20477,
+			"username":"饭煲用户"
+		},
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-21",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":20472,
+			"username":"饭煲用户"
+		},
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-20",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":20470,
+			"username":"饭煲用户"
+		},
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-20",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":20469,
+			"username":"饭煲用户"
+		},
+		{
+			"content":"这个食谱不错",
+			"customerid":-1,
+			"date":"2018-08-20",
+			"icon":"https://img.coo-k.com/12351394208848b893e1a30c05810f2f.png",
+			"id":20468,
+			"username":"饭煲用户"
+		}
+	],
+	"serverTimeMillis":1536039326916,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7deviceglobalregdeviceNew.deviceupdateCityTest: 注册设备</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_deviceupdateCity_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: https://pot.joyami.com//v7/device/global/regdeviceNew
+serverArea=%E5%B9%BF%E5%B7%9E&amp;latitude=113.11&amp;model=chunmi.cooker.eh1&amp;deviceId=123400&amp;longitude=23.05
+{"serverArea": "\u5e7f\u5dde", "latitude": 113.11, "model": "chunmi.cooker.eh1", "deviceId": "123400", "longitude": 23.05}
+{
+	"message":"操作成功",
+	"result":{
+		"defaultricerecipe":null,
+		"eleDmDto":{
+			"city":null,
+			"dmodelid":13,
+			"eledes":null
+		}
+	},
+	"serverTimeMillis":1536039327461,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7deviceupdatecity.deviceupdateCityTest: 修改设备所在城市</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_deviceupdateCity_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: https://pot.joyami.com//v7/device/global/updateCity
+model=chunmi.cooker.eh1&amp;cityName=xx&amp;deviceId=57378995
+{"model": "chunmi.cooker.eh1", "cityName": "xx", "deviceId": 57378995}
+{
+	"message":"操作成功",
+	"result":{
+		"city":null,
+		"dmodelid":13,
+		"eledes":null
+	},
+	"serverTimeMillis":1536039327699,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7fileupload.uploadTest: 上传文件</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_upload_success: 上传文件成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: {"state":1,"message":"操作成功","result":"/f53d627e0ce64509993a24db010dbe4b.jpg","serverTimeMillis":1536039328071}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7globalregdeviceNew.v7devicenewTest: 注册</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_v7regdeviceNew_success: 必传参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: https://pot.joyami.com//v7/device/global/regdeviceNew
+ownerName=11&amp;mac=F0%3AB4%3A29%3ABE%3A94%3A5C&amp;modelName=chunmi.cooker.eh1&amp;deviceId=57378995&amp;online=1&amp;cityName=shanghai&amp;model=chunmi.cooker.eh1&amp;userId=54644930&amp;ownerId=54644930
+{"ownerName": "11", "mac": "F0:B4:29:BE:94:5C", "modelName": "chunmi.cooker.eh1", "deviceId": 57378995, "online": "1", "cityName": "shanghai", "model": "chunmi.cooker.eh1", "userId": "54644930", "ownerId": "54644930"}
+{
+	"message":"操作成功",
+	"result":{
+		"defaultricerecipe":null,
+		"eleDmDto":{
+			"city":"上海市",
+			"dmodelid":13,
+			"eledes":13.0
+		}
+	},
+	"serverTimeMillis":1536039328310,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipecategory.v7recipecategoryTest: 获取菜谱的类别</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
+</tr>
+
+<tr id='pt10.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipecategory_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
+        pass</a>
+
+    <div id='div_pt10.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt10.1: https://pot.joyami.com//v7/recipe/category/get
+&lt;type 'str'&gt;
+{
+	"message":"操作成功",
+	"result":[
+		{
+			"cookCode":null,
+			"curveImage":"/imgs/recipe/category/cv_zhou.bmp",
+			"id":1,
+			"image":"/imgs/recipe/category/zhou.png",
+			"name":"粥",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":"/imgs/recipe/category/cv_fan.bmp",
+			"id":2,
+			"image":"/imgs/recipe/category/fan.png",
+			"name":"饭",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":"/imgs/recipe/category/cv_fan.bmp",
+			"id":3,
+			"image":"/imgs/recipe/category/cv_fan.bmp",
+			"name":"其他",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":null,
+			"id":256,
+			"image":null,
+			"name":"蛋糕",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":null,
+			"id":257,
+			"image":null,
+			"name":"酸奶",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":null,
+			"id":258,
+			"image":null,
+			"name":"糖水",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":null,
+			"id":259,
+			"image":null,
+			"name":"慢炖",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		{
+			"cookCode":null,
+			"curveImage":null,
+			"id":260,
+			"image":null,
+			"name":"蒸类",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		}
+	],
+	"serverTimeMillis":1536039328512,
+	"state":1
+}
+粥
+饭
+其他
+蛋糕
+酸奶
+糖水
+慢炖
+蒸类
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechooseadd.recipechooseaddTest: 添加收藏</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c11',2)">Detail</a></td>
+</tr>
+
+<tr id='pt11.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechooseadd_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
+        pass</a>
+
+    <div id='div_pt11.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.1: https://pot.joyami.com//v7/recipe/choose/add
+recipeId=2732&amp;deviceId=57378995
+{"recipeId": "2732", "deviceId": 57378995}
+{
+	"message":"收藏成功",
+	"result":null,
+	"serverTimeMillis":1536039328701,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt11.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechooseadd_success1: 已收藏的食谱</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.2')" >
+        pass</a>
+
+    <div id='div_pt11.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt11.2: https://pot.joyami.com//v7/recipe/choose/add
+recipeId=2732&amp;deviceId=57378995
+{"recipeId": "2732", "deviceId": 57378995}
+{
+	"message":"已收藏，无需再收藏",
+	"result":null,
+	"serverTimeMillis":1536039328907,
+	"state":-1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechoosecancel.recipechoosecancelTest: 取消收藏</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
+</tr>
+
+<tr id='pt12.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosecancel_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
+        pass</a>
+
+    <div id='div_pt12.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt12.1: https://pot.joyami.com//v7/recipe/choose/cancel
+recipeChooses=%5B%7B%27recipeId%27%3A+3473%2C+%27deviceId%27%3A+85465933%7D%5D
+{"recipeChooses": [{"recipeId": 3473, "deviceId": 85465933}]}
+{
+	"message":"取消成功",
+	"result":null,
+	"serverTimeMillis":1536039329119,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechooselist.v7recipechooseTest: 自选精选列表</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c13',2)">Detail</a></td>
+</tr>
+
+<tr id='pt13.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoose_success1: 精选列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
+        pass</a>
+
+    <div id='div_pt13.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.1: https://pot.joyami.com//v7/recipe/choose/list
+&lt;type 'str'&gt;
+{
+	"message":"操作成功",
+	"result":{
+		"jxRecipes":[
+			{
+				"afterBgcolor":"#f5961c",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"再加热不可热粥。",
+				"cookCode":"02010400000adaa4001e0023001900800100000000000000002091827d7800000091827d7800000091827d78000f00912b7d7810000091827d7800000091826e78ff000091827d780000009182557810ffff9182507814000091827d780000009182557810000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000535",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"加热冷饭。",
+				"icon":"/bd85a16486804589acb8e7230248719e.png",
+				"iconPath":"/39c9629d17384df88bb35580b7a09f35.png",
+				"id":2778,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"再加热",
+				"recipeId":11,
+				"recipeIdDmgIds":"11-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#f1614b",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"建议食用电动打蛋器。",
+				"cookCode":"02010400000ad98801000100003700000100000000000000002091827d7800000091827d7800000091827d78001e0066787d7816000091827d7800000091826e7800000091827d7800000091826e7810ffff918266780a000091827d7800000091827d78000000000078821400108714780300000000007882140010871478030000000000788214001087147a050100000000788214001087147d05012000000000000000000000000000000000bf1d",
+				"currentUser":false,
+				"detailFlag":true,
+				"duration":null,
+				"flag":"0",
+				"function":"电饭煲轻松做蛋糕。",
+				"icon":"/3f5409c54e654886af78b5f7c6471ffd.png",
+				"iconPath":"/d1921824dfc04e2e8f389d21dd56b169.png",
+				"id":2777,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"蛋糕",
+				"recipeId":9,
+				"recipeIdDmgIds":"9-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#37bfba",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"不同品牌的面烹饪时间不同。",
+				"cookCode":"020104000000088d00110023001100000100000000000000002091827d7800000091827d7800000091827d78001e00915a7d7820000091827d7800000091826e7800000091827d7800000091826e7810ffff91827d7818000091827d7800000091827d7800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000007602",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"深夜一碗面",
+				"icon":"/8255e17274d14e82ab7f4f9378c68a70.png",
+				"iconPath":"/6b126a16f0e64bf89980a54a4dc39db9.png",
+				"id":2776,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"泡面",
+				"recipeId":8,
+				"recipeIdDmgIds":"8-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#fbbb1b",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"出锅后稍微冷却一会再食用。",
+				"cookCode":"02010200000007e203000400021e00800100000000000000002091827d7800000091827d7800000091827d78001e0091ff877820ffff91827d78001e0091ff8278ffffff91828278001e0091828278060f0091827d7804000091827d7800000091827d780001914e02552c1802062904820300025a4e02552a1802062c0482030003234e0252271802062d04820501ffff4e01522418020631048205012000000000000000000000000000000000320a",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"长时间小火慢炖熬成一锅软绵的粥。",
+				"icon":"/cf9239fbde6a4816a129eb9befada3a2.png",
+				"iconPath":"/69bc99d57e484cf6ace70f20e09b1b88.png",
+				"id":2775,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"婴儿粥",
+				"recipeId":7,
+				"recipeIdDmgIds":"7-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			}
+		]
+	},
+	"serverTimeMillis":1536039329341,
+	"state":1
+}
+再加热 False
+蛋糕 False
+泡面 False
+婴儿粥 False
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt13.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoose_success2: 自选列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.2')" >
+        pass</a>
+
+    <div id='div_pt13.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt13.2: https://pot.joyami.com//v7/recipe/choose/list
+&lt;type 'str'&gt;
+{
+	"message":"操作成功",
+	"result":{
+		"jxRecipes":[
+			{
+				"afterBgcolor":"#f5961c",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":true,
+				"content":"再加热不可热粥。",
+				"cookCode":"02010400000adaa4001e0023001900800100000000000000002091827d7800000091827d7800000091827d78000f00912b7d7810000091827d7800000091826e78ff000091827d780000009182557810ffff9182507814000091827d780000009182557810000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000535",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"加热冷饭。",
+				"icon":"/bd85a16486804589acb8e7230248719e.png",
+				"iconPath":"/39c9629d17384df88bb35580b7a09f35.png",
+				"id":2778,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"再加热",
+				"recipeId":11,
+				"recipeIdDmgIds":"11-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#f1614b",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":true,
+				"content":"建议食用电动打蛋器。",
+				"cookCode":"02010400000ad98801000100003700000100000000000000002091827d7800000091827d7800000091827d78001e0066787d7816000091827d7800000091826e7800000091827d7800000091826e7810ffff918266780a000091827d7800000091827d78000000000078821400108714780300000000007882140010871478030000000000788214001087147a050100000000788214001087147d05012000000000000000000000000000000000bf1d",
+				"currentUser":false,
+				"detailFlag":true,
+				"duration":null,
+				"flag":"0",
+				"function":"电饭煲轻松做蛋糕。",
+				"icon":"/3f5409c54e654886af78b5f7c6471ffd.png",
+				"iconPath":"/d1921824dfc04e2e8f389d21dd56b169.png",
+				"id":2777,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"蛋糕",
+				"recipeId":9,
+				"recipeIdDmgIds":"9-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#37bfba",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":true,
+				"content":"不同品牌的面烹饪时间不同。",
+				"cookCode":"020104000000088d00110023001100000100000000000000002091827d7800000091827d7800000091827d78001e00915a7d7820000091827d7800000091826e7800000091827d7800000091826e7810ffff91827d7818000091827d7800000091827d7800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000007602",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"深夜一碗面",
+				"icon":"/8255e17274d14e82ab7f4f9378c68a70.png",
+				"iconPath":"/6b126a16f0e64bf89980a54a4dc39db9.png",
+				"id":2776,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"泡面",
+				"recipeId":8,
+				"recipeIdDmgIds":"8-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#fbbb1b",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":true,
+				"content":"出锅后稍微冷却一会再食用。",
+				"cookCode":"02010200000007e203000400021e00800100000000000000002091827d7800000091827d7800000091827d78001e0091ff877820ffff91827d78001e0091ff8278ffffff91828278001e0091828278060f0091827d7804000091827d7800000091827d780001914e02552c1802062904820300025a4e02552a1802062c0482030003234e0252271802062d04820501ffff4e01522418020631048205012000000000000000000000000000000000320a",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"长时间小火慢炖熬成一锅软绵的粥。",
+				"icon":"/cf9239fbde6a4816a129eb9befada3a2.png",
+				"iconPath":"/69bc99d57e484cf6ace70f20e09b1b88.png",
+				"id":2775,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"婴儿粥",
+				"recipeId":7,
+				"recipeIdDmgIds":"7-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":false,
+				"usagecount":null
+			}
+		],
+		"zxRecipes":[
+			{
+				"afterBgcolor":"",
+				"auxiliaries":null,
+				"beforeBgcolor":"",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"根据量杯和锅胆上的刻度线放入适量的米和水。",
+				"cookCode":"02010000000001e101000000000000800100000000000000002091827d7800050091822d781c080091823c781c280091ff857820ffff91828578000700ffff8578ffffff91828578000d00ff828778ff000091827d7800000091827d7800ffff91826078ff01114b02667d08010a6b0078090301f75602667d09010a6d00780a02025a5701667d0e010a71007a0d02ffff5701667d0f010a73007d0d0320050203000000000000000000000000009ca9",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"30分钟精煮米饭",
+				"icon":"/da5f08c8bf1344e688792553cf4c1b08.png",
+				"iconPath":"/3c22df19af2e43d59c5c0483423e53d4.png",
+				"id":2771,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"精煮饭",
+				"recipeId":1,
+				"recipeIdDmgIds":"1-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":true,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"",
+				"auxiliaries":null,
+				"beforeBgcolor":"",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"根据量杯和锅胆内刻度线放入适量的米和水。",
+				"cookCode":"02010100000002e10028000000000080010000000000000000209182827800000091823c7820000091823c781c280091ff857820ffff91828578000700ffff8578ffffff91828578000d00ff828778ff000082827d7800000091827d7800ffff91826078ff015f4b03667d08010a6b0074090202465602667d09010a6d00760a0202915701667d0e010a7100780a02ffff5701667d0f010a73007b0a0320050203000000000000000000000000007e86",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"40分钟快速煮饭",
+				"icon":"/59154d710caa41cd9597a28ece252fbf.png",
+				"iconPath":"/e8fcaeb86f834d8a91d93a4636159674.png",
+				"id":2772,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"快煮饭",
+				"recipeId":2,
+				"recipeIdDmgIds":"2-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":true,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#ffffff",
+				"auxiliaries":null,
+				"beforeBgcolor":"#ffffff",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"放心煮，不会溢锅的",
+				"cookCode":"02010200000003e2011e0400002800800101050614000000002091827d7800000091827d7800000091827d78001e0091ff877820ffff91827d78001e0091ff8278ffffff91828278001e0091828278060f0091827d7804000091827d7800000091827d780001f54e0255261802062a0482030002eb4e0255261802062a04820300032d4e0252261802062c04820501ffff4e0152241802062c0482050120000000000000000000000000000000009ce2",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"放心煮，不会溢锅的",
+				"icon":"/c791445c014c427083528b59697694f3.png",
+				"iconPath":"/594482149b4349ecb616947e981e3aa7.png",
+				"id":2769,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"煮粥",
+				"recipeId":3,
+				"recipeIdDmgIds":"3-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":true,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"",
+				"auxiliaries":null,
+				"beforeBgcolor":"",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"夏季注意锅中的食物长时间保温是否会变质。",
+				"cookCode":"020103000000040c18001800000100800100000000000000002091827d7800000091827d7800000091827d78000000915a7d7820000091827d7800000091826e78ff000091827d7800000091826e7810000091826e7810000091827d7800000091827d780000a082007882140010871478030000eb820078821400108714780300012d8200788214001087147a0501ffff8200788214001087147d05012000000000000000000000000000000000f2d7",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"保温",
+				"icon":"/b4d1bc3f13d64516a015911682a22213.png",
+				"iconPath":"/43e64b2c416f4a5db4b16ef4280bc6f2.png",
+				"id":2773,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"保温",
+				"recipeId":4,
+				"recipeIdDmgIds":"4-11;",
+				"recipeOptionFlag":false,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":true,
+				"usagecount":null
+			},
+			{
+				"afterBgcolor":"#fbbb1b",
+				"auxiliaries":null,
+				"beforeBgcolor":"#FFFFFF",
+				"categoryId":null,
+				"chooseRiceFlag":null,
+				"collectFlag":false,
+				"content":"不要放入过多食材，防止溢出。",
+				"cookCode":"02010400000005e601000200010000800100000000000000002091827d7800000091827d7800000091827d78001e0091577d7820000091827d7800000091826e78ff000091827d7800000091826e7800ffff91827d780f000091827d7800000091827d780000a082007882140010871478030000eb820078821400108714780300012d8200788214001087147a0501ffff8200788214001087147d050120000000000000000000000000000000007b5c",
+				"currentUser":false,
+				"detailFlag":false,
+				"duration":null,
+				"flag":"0",
+				"function":"较高的火力炖煮食材。",
+				"icon":"/9dc73524bb27427597196da94de40cd6.png",
+				"iconPath":"/4be74d7252cd4a7db29ee9801d7e81bc.png",
+				"id":2774,
+				"ingredients":null,
+				"isSysgeneratedId":false,
+				"name":"炖煮",
+				"recipeId":5,
+				"recipeIdDmgIds":"5-11;",
+				"recipeOptionFlag":true,
+				"riceFlag":false,
+				"state":null,
+				"steps":null,
+				"topRecipe":true,
+				"usagecount":null
+			}
+		]
+	},
+	"serverTimeMillis":1536039329613,
+	"state":1
+}
+精煮饭 True False
+快煮饭 True False
+煮粥 True False
+保温 True False
+炖煮 True True
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechooseminelist.v7recipechoosemineTest: 我的收藏</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c14',1)">Detail</a></td>
+</tr>
+
+<tr id='pt14.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosemine_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt14.1')" >
+        pass</a>
+
+    <div id='div_pt14.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt14.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt14.1: https://pot.joyami.com//v7/recipe/choose/mine/list
+&lt;type 'str'&gt;
+{
+	"message":"操作成功",
+	"result":[],
+	"serverTimeMillis":1536039329848,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechoosereset.recipechooseresetTest: 排序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c15',1)">Detail</a></td>
+</tr>
+
+<tr id='pt15.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosereset_success: 重置成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt15.1')" >
+        pass</a>
+
+    <div id='div_pt15.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt15.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt15.1: https://pot.joyami.com//v7/recipe/choose/reset
+&lt;type 'str'&gt;
+{
+	"message":"重置成功",
+	"result":null,
+	"serverTimeMillis":1536039330082,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipechoosesort.recipechoosesortTest: 排序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c16',1)">Detail</a></td>
+</tr>
+
+<tr id='pt16.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipechoosesort_success: 排序成功</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt16.1')" >
+        pass</a>
+
+    <div id='div_pt16.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt16.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt16.1: https://pot.joyami.com//v7/recipe/choose/sort
+recipeChooses=%5B%7B%27recipeId%27%3A+%27%27%7D%2C+%7B%27recipeId%27%3A+2732%7D%5D&amp;model=chunmi.cooker.eh1&amp;deviceId=57378995&amp;recipeOptions=%5B%7B%27recipeId%27%3A+%27%27%7D%2C+%7B%27recipeId%27%3A+2732%7D%2C+%7B%27recipeId%27%3A+2718%7D%2C+%7B%27recipeId%27%3A+2719%7D%2C+%7B%27recipeId%27%3A+2720%7D%2C+%7B%27recipeId%27%3A+2721%7D%5D
+{"recipeChooses": [{"recipeId": ""}, {"recipeId": 2732}], "model": "chunmi.cooker.eh1", "deviceId": 57378995, "recipeOptions": [{"recipeId": ""}, {"recipeId": 2732}, {"recipeId": 2718}, {"recipeId": 2719}, {"recipeId": 2720}, {"recipeId": 2721}]}
+{
+	"message":"排序成功",
+	"result":null,
+	"serverTimeMillis":1536039330306,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipedetail.v7recipedetailTest: 食谱详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c17',1)">Detail</a></td>
+</tr>
+
+<tr id='pt17.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipedetail_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt17.1')" >
+        pass</a>
+
+    <div id='div_pt17.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt17.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt17.1: https://pot.joyami.com//v7/recipe/1/detail
+model=chunmi.cooker.eh1&amp;flag=true&amp;language=
+{"model": "chunmi.cooker.eh1", "flag": "true", "language": ""}
+url2 : https://pot.joyami.com//v7/recipe/1/detail?data=srCOajilC0OVpVXj6fo1K9_sDcTR3an-MhUUYob_YYqt4eGLSFlkW5VAHHQFlwbK
+{
+	"message":"操作成功",
+	"result":{
+		"afterBgcolor":"",
+		"auxiliaries":[
+			{
+				"englishAuxiliaryname":null,
+				"englishAuxiliaryquantity":null,
+				"hongkongAuxiliaryname":null,
+				"hongkongAuxiliaryquantity":null,
+				"id":44779,
+				"japaneseAuxiliaryname":null,
+				"japaneseAuxiliaryquantity":null,
+				"name":"大米",
+				"quality":"2杯",
+				"taiwanAuxiliaryname":null,
+				"taiwanAuxiliaryquantity":null
+			}
+		],
+		"beforeBgcolor":"",
+		"categoryId":null,
+		"chooseRiceFlag":null,
+		"collectFlag":false,
+		"content":"根据量杯和锅胆上的刻度线放入适量的米和水。",
+		"cookCode":"02010000000001e101000000000000800100000000000000002091827d7800050091822d781c080091823c781c280091ff857820ffff91828578000700ffff8578ffffff91828578000d00ff828778ff000091827d7800000091827d7800ffff91826078ff01114b02667d08010a6b0078090301f75602667d09010a6d00780a02025a5701667d0e010a71007a0d02ffff5701667d0f010a73007d0d0320050203000000000000000000000000009ca9",
+		"currentUser":false,
+		"detailFlag":false,
+		"duration":60,
+		"flag":"0",
+		"function":"30分钟精煮米饭",
+		"icon":"/da5f08c8bf1344e688792553cf4c1b08.png",
+		"iconPath":"/3c22df19af2e43d59c5c0483423e53d4.png",
+		"id":2771,
+		"ingredients":[
+			{
+				"englishIngredientname":null,
+				"englishIngredientquantity":null,
+				"hongkongIngredientname":null,
+				"hongkongIngredientquantity":null,
+				"id":45533,
+				"japaneseIngredientname":null,
+				"japaneseIngredientquantity":null,
+				"name":"水",
+				"quality":"适量",
+				"taiwanIngredientname":null,
+				"taiwanIngredientquantity":null
+			}
+		],
+		"isSysgeneratedId":false,
+		"name":"精煮饭",
+		"recipeId":1,
+		"recipeIdDmgIds":"1-11;",
+		"recipeOptionFlag":false,
+		"riceFlag":false,
+		"state":null,
+		"steps":[],
+		"topRecipe":false,
+		"usagecount":3
+	},
+	"serverTimeMillis":1536039330608,
+	"state":1
+}
+&lt;type 'dict'&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipequery.v7recipequeryTest: 更多食谱，根据食谱类别和关键字进行查询</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c18',1)">Detail</a></td>
+</tr>
+
+<tr id='pt18.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipequery_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt18.1')" >
+        pass</a>
+
+    <div id='div_pt18.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt18.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt18.1: https://pot.joyami.com//v7/recipe/people/query
+perpage=10&amp;language=&amp;pageno=1&amp;deviceId=57378995&amp;model=chunmi.cooker.eh1&amp;categoryId=3
+{"perpage": 10, "language": "", "pageno": 1, "deviceId": 57378995, "model": "chunmi.cooker.eh1", "categoryId": "3"}
+url2 : https://pot.joyami.com//v7/recipe/people/query?data=pNrJ_soOQflwGIOBPIfpg6sglP83aRnHZ-Ba7ceyiTYsFHLJN9Z5utWcii9rAPmTwWzpenfNirs8NuOa3ZbdLh6W9f4S-8cvlCRQco0ONp5_WbILvbhp_-yQf5Nr3tN8
+{
+	"message":"操作成功",
+	"result":[],
+	"serverTimeMillis":1536039330799,
+	"state":1
+}
+0
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7recipequery1.v7recipequeryTest: 更多食谱，根据食谱类别和关键字进行查询</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c19',1)">Detail</a></td>
+</tr>
+
+<tr id='pt19.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_recipequery_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt19.1')" >
+        pass</a>
+
+    <div id='div_pt19.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt19.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt19.1: http://10.0.10.100:17001/v7/recipe/people/query
+传入的参数：data=ZW-kC4-8hAMCNh-hJXSOnrUmSlWlVa8G2jh7a-w9ZwoJtUP89VSpl_XpGCURrM9x9_UeLdIX4CuHWYxmKOWF-JzXI9QjRCv_jLZdpR58aGlcsaMgiXwcZKP_LRezV6rqldq4_dmwgpkoiX3t3HhJnA%3D%3D
+&lt;type 'str'&gt;
+V8BaQrDrmdqWyQtKD9KV-Q7EOuUfzl9qEjIB7TgJ4Dwd2c-swgeMAT50d6DBO80s5xqueejG69pLOa2dU7eXUseBtYSMM7MqPdEIerXLbAkMIPe4HyrGZpqq_30eukinLHxMTaFHAsrQct4fJYR3Tum263DrEKLrlY9rS88ka-fq8xWqOAYUexe0i1PvkVqMJGNE45GKZlsM1imfhOWaqjt6KA8-nNqfrOhInJq-PrgGWSQBrRuLsTW9tgRWLc3dHxtZlTRJsn1ntOj3WMxeKSSdM-8kEhyVqeYp1-4r8qV5QEqVE8kqqqJ9oN2ZZCQX6QnBEIIg2xhZB04VIQO5P9qHC8UtJ3FhluERBEEtgrz2CEUmgwFc6yuK4K2lkoSEn5SkR-QgD4ZWXouDReuI1Og7M-EHiLPnU40L97GfSHKnyAiIyXAacwIWnGxCJY4CwWDmKOYQLQFBDZO6-rshGrbpaCasiZheFd-ChsA4jecxPriv0NppLl-SLDsFdnaqU-UPLLRUkJuUE8TwJUj5Qzjy5v02NyaMG8dxf8YMaVLEh1-0f1mmouRs8m64KRvFg9nVaT_LQi4RYwZ8E1IixW6ZYITpQSHh8-2EtdZzEu7sz0CetvmYKw0hIeB7y3Z_Vcr2xoiog8qT8EotSQ2vn1AY2J6dhJS1J8zHrPxXmBlLqAlpulEUSqCb4_BjTprr_mMv9FWMeX5GBo5CmhDTMvnT2D5htiSKF5b7JOGtLSMTsD6-t9MTTaS0UT7S731NGe85_XQuwD8qTx2rtmUWGOv9ITO496NxGd7S5CSwnnas4HvkNkXXvr7obxymulYRxCXk94FaOvYBaFIL7YODPd_Mt0H5a86XGA3Asq-C18rWzn9Txi3He3fDDCQNfmFNCCg8H64YhPoIWzfhkeE2NONs0nX57pM1l6cJ2tkd6Xo54C2RZa78o_6un0wohHBymu6TXym7eyxFFfq1P9RXS0Dl5wus6yBrQmZAOkqU6vuBp4U4fghpiqVafYuGUpCtZMmdcefi1OkQ0qjsiP8eUg==
+{"state":1,"message":"操作成功","result":[{"id":3474,"recipeId":3474,"name":"大酱汤","iconPath":"/e1479ecc204e4c57969de9f93607ac19.jpg","function":"非常简单的一道菜1111","content":"在放蛤蜊的水中滴几滴油，蛤蜊更容易吐净沙子 1111","cookCode":"01050700000d920908000c00060000801000000100aa00000000000000001e23736e6e1405200000000000000000000000000000000000000000000000000000000000000000f06e73246e140020000c00000000000000000000000000000000000000000200000000000000000000000000000049000000002900000000000000002a15","currentUser":false,"isSysgeneratedId":true,"recipeOptionFlag":false,"collectFlag":false,"detailFlag":true,"flag":"1","beforeBgcolor":"","afterBgcolor":"","recipeIdDmgIds":"","topRecipe":false}],"serverTimeMillis":1536039332963}
+1
+大酱汤 False
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_V7riceadd.riceaddTest: 添加米</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c20',1)">Detail</a></td>
+</tr>
+
+<tr id='pt20.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_riceadd_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt20.1')" >
+        pass</a>
+
+    <div id='div_pt20.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt20.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt20.1: https://pot.joyami.com//v7/rice/addNew
+barCode=2018080268&amp;deviceId=57378995&amp;language=&amp;brand=brand788&amp;ppties=testsx0787&amp;pic=%2Fb2197884207041d7b24f1c73db4cde68.jpg&amp;id=&amp;name=wjy4
+{"barCode": "2018080268", "deviceId": 57378995, "language": "", "brand": "brand788", "ppties": "testsx0787", "pic": "/b2197884207041d7b24f1c73db4cde68.jpg", "id": "", "name": "wjy4"}
+{
+	"message":"操作成功",
+	"result":{
+		"area":null,
+		"barCode":"2018080268",
+		"brand":"brand788",
+		"defaultRice":false,
+		"description":null,
+		"deviceId":null,
+		"id":67513,
+		"manufacture":null,
+		"name":"wjy4",
+		"pic":"/b2197884207041d7b24f1c73db4cde68.jpg",
+		"ppties":"testsx0787",
+		"price":0.0,
+		"riceType":{
+			"id":1,
+			"name":"东北米",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		"scantimes":0,
+		"sort":null,
+		"specification":null,
+		"state":{
+			"bundleId":2100,
+			"id":2100,
+			"level":2,
+			"name":"审核等待",
+			"pid":2,
+			"pinyin":null,
+			"sort":2,
+			"status":2200,
+			"tagScore":null,
+			"topPid":2
+		},
+		"tempic":null
+	},
+	"serverTimeMillis":1536039333337,
+	"state":1
+}
+wjy4
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricebarcode.v7ricebarcodeTest: 扫描条形码添加米种</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c21',1)">Detail</a></td>
+</tr>
+
+<tr id='pt21.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricebarcode_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt21.1')" >
+        pass</a>
+
+    <div id='div_pt21.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt21.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt21.1: https://pot.joyami.com//v7/rice/barcode
+barCode=6959058300522&amp;deviceId=57378995&amp;language=
+{"barCode": 6959058300522, "deviceId": 57378995, "language": ""}
+url2 : https://pot.joyami.com//v7/rice/barcode?data=jsjdXV82TkXFLYlu0a0_J76lDuGi_vxBHwcPEbY_Sn1PH_I9GSKxGwCur6QBgYnpRnXKC07BZQINW6dakMjgQQ%3D%3D
+{
+	"message":"操作成功",
+	"result":{
+		"area":null,
+		"barCode":"6959058300522",
+		"brand":"伊通河",
+		"defaultRice":false,
+		"description":null,
+		"deviceId":null,
+		"id":67889,
+		"manufacture":null,
+		"name":"小町米",
+		"pic":"/8d7398cd385d4171a01495405b4983d4.jpg",
+		"ppties":null,
+		"price":0.0,
+		"riceType":{
+			"id":1,
+			"name":"东北米",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		"scantimes":0,
+		"sort":null,
+		"specification":null,
+		"state":{
+			"bundleId":2100,
+			"id":2100,
+			"level":2,
+			"name":"审核等待",
+			"pid":2,
+			"pinyin":null,
+			"sort":2,
+			"status":2200,
+			"tagScore":null,
+			"topPid":2
+		},
+		"tempic":null
+	},
+	"serverTimeMillis":1536039333644,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricecookscriptfind.ricecookscriptfindTest: 查找米烹饪程序</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c22',1)">Detail</a></td>
+</tr>
+
+<tr id='pt22.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecookscriptfind_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt22.1')" >
+        pass</a>
+
+    <div id='div_pt22.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt22.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt22.1: https://pot.joyami.com//v7/rice/cookscript/find
+&lt;type 'str'&gt;
+{
+	"message":"操作成功",
+	"result":{
+		"content":"",
+		"cookscript":{
+			"cookcode":"02010000000001e101000000000000800100000000000000002091827d7800050091822d781c080091823c781c280091ff857820ffff91828578000700ffff8578ffffff91828578000d00ff828778ff000091827d7800000091827d7800ffff91826078ff01114b02667d08010a6b0078090301f75602667d09010a6d00780a02025a5701667d0e010a71007a0d02ffff5701667d0f010a73007d0d0320050203000000000000000000000000009ca9",
+			"cookprofile":null,
+			"id":48792
+		},
+		"id":481,
+		"name":"米家小饭煲-精煮-甜度适中-硬度中-粘度适中-海拔0-200",
+		"publishTime":"2018-08-23 15:24:58"
+	},
+	"serverTimeMillis":1536039333833,
+	"state":1
+}
+{u'message': u'\u64cd\u4f5c\u6210\u529f', u'serverTimeMillis': 1536039333833L, u'result': {u'content': u'', u'publishTime': u'2018-08-23 15:24:58', u'id': 481, u'name': u'\u7c73\u5bb6\u5c0f\u996d\u7172-\u7cbe\u716e-\u751c\u5ea6\u9002\u4e2d-\u786c\u5ea6\u4e2d-\u7c98\u5ea6\u9002\u4e2d-\u6d77\u62d40-200', u'cookscript': {u'cookprofile': None, u'cookcode': u'02010000000001e101000000000000800100000000000000002091827d7800050091822d781c080091823c781c280091ff857820ffff91828578000700ffff8578ffffff91828578000d00ff828778ff000091827d7800000091827d7800ffff91826078ff01114b02667d08010a6b0078090301f75602667d09010a6d00780a02025a5701667d0e010a71007a0d02ffff5701667d0f010a73007d0d0320050203000000000000000000000000009ca9', u'id': 48792}}, u'state': 1}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricedel.ricecollectdelTest: 删除用户添加的米种</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c23',1)">Detail</a></td>
+</tr>
+
+<tr id='pt23.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricecollectdel_success: 所有参数都传</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt23.1')" >
+        pass</a>
+
+    <div id='div_pt23.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt23.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt23.1: https://pot.joyami.com//v7/rice/del
+rices=%5B%7B%27id%27%3A+%2724461%27%7D%5D&amp;deviceId=57378995
+{"rices": [{"id": "24461"}], "deviceId": 57378995}
+{
+	"message":"删除成功",
+	"result":null,
+	"serverTimeMillis":1536039334105,
+	"state":1
+}
+&lt;type 'dict'&gt;
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricelist.v7ricelistTest: 米种列表</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c24',1)">Detail</a></td>
+</tr>
+
+<tr id='pt24.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_ricelist_success: 传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt24.1')" >
+        pass</a>
+
+    <div id='div_pt24.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt24.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt24.1: https://pot.joyami.com//v7/rice/list
+pageno=1&amp;perpage=100&amp;deviceid=57378995&amp;language=
+{"pageno": 1, "perpage": 100, "deviceid": 57378995, "language": ""}
+url2 : https://pot.joyami.com//v7/rice/list?data=x1uD9IaE31aHU9eDkL4HDdBFhcqcQAcEy_R5IEAEnn9J93e5YPUKnWxNNX3JnDLH8zdM-j_LQbPVG7rYysPpNA%3D%3D
+{
+	"message":"操作成功",
+	"result":[
+		{
+			"area":null,
+			"barCode":"2018080268",
+			"brand":"brand788",
+			"defaultRice":false,
+			"description":null,
+			"deviceId":null,
+			"id":67513,
+			"manufacture":null,
+			"name":"wjy4",
+			"pic":"/b2197884207041d7b24f1c73db4cde68.jpg",
+			"ppties":"testsx0787",
+			"price":0.0,
+			"riceType":{
+				"id":1,
+				"name":"东北米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2100,
+				"id":2100,
+				"level":2,
+				"name":"审核等待",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"1",
+			"brand":null,
+			"defaultRice":true,
+			"description":"东北米",
+			"deviceId":null,
+			"id":1,
+			"manufacture":null,
+			"name":"东北米",
+			"pic":"/static/upload/rice/1/default_mi.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":1,
+				"name":"东北米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"2",
+			"brand":null,
+			"defaultRice":true,
+			"description":"丝苗米",
+			"deviceId":null,
+			"id":2,
+			"manufacture":null,
+			"name":"丝苗米",
+			"pic":"/static/upload/rice/2/default_mi2.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":2,
+				"name":"丝苗米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":"台灣",
+			"barCode":"20100904",
+			"brand":"",
+			"defaultRice":true,
+			"description":"",
+			"deviceId":null,
+			"id":40165,
+			"manufacture":"",
+			"name":"糙米",
+			"pic":"/27353b81348e4717b63b1fa3b07a4252.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":1,
+				"name":"东北米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":"2kg",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":"台灣",
+			"barCode":"9008126570",
+			"brand":"",
+			"defaultRice":true,
+			"description":"",
+			"deviceId":null,
+			"id":40167,
+			"manufacture":"",
+			"name":"紫米",
+			"pic":"/0b44c97034e14958b49d2cb59c55d673.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":1,
+				"name":"东北米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":"1kg",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"7",
+			"brand":null,
+			"defaultRice":true,
+			"description":"湖南米",
+			"deviceId":null,
+			"id":7,
+			"manufacture":null,
+			"name":"湖南米",
+			"pic":"/static/upload/rice/7/default_mi7.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":7,
+				"name":"湖南米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"8",
+			"brand":null,
+			"defaultRice":true,
+			"description":"江浙米",
+			"deviceId":null,
+			"id":8,
+			"manufacture":null,
+			"name":"江浙米",
+			"pic":"/static/upload/rice/8/default_mi8.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":8,
+				"name":"江浙米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"3",
+			"brand":null,
+			"defaultRice":true,
+			"description":"糯米",
+			"deviceId":null,
+			"id":3,
+			"manufacture":null,
+			"name":"糯米",
+			"pic":"/static/upload/rice/3/default_mi3.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":3,
+				"name":"糯米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"5",
+			"brand":null,
+			"defaultRice":true,
+			"description":"泰国香米",
+			"deviceId":null,
+			"id":5,
+			"manufacture":null,
+			"name":"泰国香米",
+			"pic":"/static/upload/rice/5/default_mi5.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":5,
+				"name":"泰国香米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"6",
+			"brand":null,
+			"defaultRice":true,
+			"description":"秋田小町",
+			"deviceId":null,
+			"id":6,
+			"manufacture":null,
+			"name":"秋田小町",
+			"pic":"/static/upload/rice/6/default_mi6.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":6,
+				"name":"秋田小町",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":null,
+			"barCode":"4",
+			"brand":null,
+			"defaultRice":true,
+			"description":"珍珠米",
+			"deviceId":null,
+			"id":4,
+			"manufacture":null,
+			"name":"珍珠米",
+			"pic":"/static/upload/rice/4/default_mi4.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":4,
+				"name":"珍珠米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":null,
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		},
+		{
+			"area":"台灣",
+			"barCode":"3403211990",
+			"brand":"",
+			"defaultRice":true,
+			"description":"",
+			"deviceId":null,
+			"id":40166,
+			"manufacture":"",
+			"name":"胚芽米",
+			"pic":"/5be1c608b320492d891290f829eabacf.jpg",
+			"ppties":null,
+			"price":0.0,
+			"riceType":{
+				"id":1,
+				"name":"东北米",
+				"state":{
+					"bundleId":2200,
+					"id":2200,
+					"level":2,
+					"name":"审核通过",
+					"pid":2,
+					"pinyin":null,
+					"sort":2,
+					"status":2200,
+					"tagScore":null,
+					"topPid":2
+				}
+			},
+			"scantimes":0,
+			"sort":null,
+			"specification":"5kg",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			},
+			"tempic":null
+		}
+	],
+	"serverTimeMillis":1536039334396,
+	"state":1
+}
+12
+wjy4
+东北米
+丝苗米
+糙米
+紫米
+湖南米
+江浙米
+糯米
+泰国香米
+秋田小町
+珍珠米
+胚芽米
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_v7ricericeIdinfo.v7ricelistTest: 米种详情</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c25',1)">Detail</a></td>
+</tr>
+
+<tr id='pt25.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_riceinfo_success: 查看米详情，传必填参数</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt25.1')" >
+        pass</a>
+
+    <div id='div_pt25.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt25.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt25.1: https://pot.joyami.com//v7/rice/1/info
+&lt;type 'str'&gt;
+{
+	"message":"操作成功",
+	"result":{
+		"area":null,
+		"barCode":"1",
+		"brand":null,
+		"defaultRice":true,
+		"description":"东北米",
+		"deviceId":null,
+		"id":1,
+		"manufacture":null,
+		"name":"东北米",
+		"pic":"/static/upload/rice/1/default_mi.jpg",
+		"ppties":null,
+		"price":0.0,
+		"riceType":{
+			"id":1,
+			"name":"东北米",
+			"state":{
+				"bundleId":2200,
+				"id":2200,
+				"level":2,
+				"name":"审核通过",
+				"pid":2,
+				"pinyin":null,
+				"sort":2,
+				"status":2200,
+				"tagScore":null,
+				"topPid":2
+			}
+		},
+		"scantimes":0,
+		"sort":null,
+		"specification":null,
+		"state":{
+			"bundleId":2200,
+			"id":2200,
+			"level":2,
+			"name":"审核通过",
+			"pid":2,
+			"pinyin":null,
+			"sort":2,
+			"status":2200,
+			"tagScore":null,
+			"topPid":2
+		},
+		"tempic":null
+	},
+	"serverTimeMillis":1536039334680,
+	"state":1
+}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>27</td>
+    <td>26</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

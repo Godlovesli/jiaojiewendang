@@ -1,0 +1,7 @@
+运行环境：python2.7
+cjinterface：大陆服的接口
+cjinterface_new：香港版饭煲的接口（包含食谱，K-V存储）
+cjinterface_new_ja：日本版饭煲的接口（包含食谱，K-V存储）
+Crypto：加密的包
+report：运行run_test后产生的报告
+饭煲_插件api.xlsx：饭煲相关接口整理及注意点

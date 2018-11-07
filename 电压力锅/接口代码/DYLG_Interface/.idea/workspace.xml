@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/cj_interface/test_regdevice.py" description="        self.assertEqual(js['code'], 1)" line="62" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fad54e04-368b-40b6-b633-5ab41a933e74" name="Default" comment="" />
+    <ignored path="DYLG_Interface.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipecreate_recipecreateTest_test_recipecreate_success.coverage" NAME="Unittests for test_recipecreate.recipecreateTest.test_recipecreate_success Coverage Results" MODIFIED="1535084765880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipelistTest_test_recipeingredient_success4.coverage" NAME="Unittest recipelistTest.test_recipeingredient_success4 Coverage Results" MODIFIED="1519883790045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_generateCookCodeTest_test_generateCookCode_success2.coverage" NAME="Unittest generateCookCodeTest.test_generateCookCode_success2 Coverage Results" MODIFIED="1529582565338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure8Test_test_procedure8_success.coverage" NAME="Unittest procedure8Test.test_procedure8_success Coverage Results" MODIFIED="1523432592550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_regdeviceTest_test_regdevice_success1.coverage" NAME="Unittest regdeviceTest.test_regdevice_success1 Coverage Results" MODIFIED="1529580485341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipepractice_recipepracticeTest_test_recipepractice_success.coverage" NAME="Unittests for test_recipepractice.recipepracticeTest.test_recipepractice_success Coverage Results" MODIFIED="1535080150274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure4Test_test_procedure3_success.coverage" NAME="Unittest procedure4Test.test_procedure3_success Coverage Results" MODIFIED="1523425573754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managersortTest_test_case_03.coverage" NAME="Unittest managersortTest.test_case_03 Coverage Results" MODIFIED="1519721482332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipecreate_recipecreateTest_test_recipecreate_drwc.coverage" NAME="Unittests for test_recipecreate.recipecreateTest.test_recipecreate_drwc Coverage Results" MODIFIED="1535085120384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipelistTest_test_recipeingredient_success__1_.coverage" NAME="Unittest recipelistTest.test_recipeingredient_success (1) Coverage Results" MODIFIED="1519634937472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipedetailTest_test_recipeapiinfo_success.coverage" NAME="Unittest recipedetailTest.test_recipeapiinfo_success Coverage Results" MODIFIED="1529662703783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure2Test_test_procedure2_success.coverage" NAME="Unittest procedure2Test.test_procedure2_success Coverage Results" MODIFIED="1524647662702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_articletopadv_articletopadv1Test_test_articletopadv_sysuccess111.coverage" NAME="Unittests for test_articletopadv.articletopadv1Test.test_articletopadv_sysuccess111 Coverage Results" MODIFIED="1535355280224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_commentmore_commentmoreTest_test_commentmore_success1.coverage" NAME="Unittests for test_commentmore.commentmoreTest.test_commentmore_success1 Coverage Results" MODIFIED="1535084717703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeinfoTest_test_recipeinfo_success.coverage" NAME="Unittest recipeinfoTest.test_recipeinfo_success Coverage Results" MODIFIED="1528881768246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeofficial_recipeofficialTest_test_recipelist_success.coverage" NAME="Unittests for test_recipeofficial.recipeofficialTest.test_recipelist_success Coverage Results" MODIFIED="1535080118992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_nnwc.coverage" NAME="Unittest recipecreateTest.test_recipecreate_nnwc Coverage Results" MODIFIED="1519871599250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_in_test_recipedel_py.coverage" NAME="Unittests in test_recipedel.py Coverage Results" MODIFIED="1535079836199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure5_procedure5Test_test_procedure5_success.coverage" NAME="Unittests for test_procedure5.procedure5Test.test_procedure5_success Coverage Results" MODIFIED="1535080487686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipetexture_recipepracticeTest_test_recipetexture_success.coverage" NAME="Unittests for test_recipetexture.recipepracticeTest.test_recipetexture_success Coverage Results" MODIFIED="1535108886870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipepracticeTest_test_recipetexture_success.coverage" NAME="Unittest recipepracticeTest.test_recipetexture_success Coverage Results" MODIFIED="1529906801366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure1Test_test_procedure1_success.coverage" NAME="Unittest procedure1Test.test_procedure1_success Coverage Results" MODIFIED="1525749463698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_igwc.coverage" NAME="Unittest recipecreateTest.test_recipecreate_igwc Coverage Results" MODIFIED="1529488160455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_articletopadv1Test_test_articletopadv_sysuccess111.coverage" NAME="Unittest articletopadv1Test.test_articletopadv_sysuccess111 Coverage Results" MODIFIED="1531732537565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_regdevice_regdeviceTest_test_regdevice_success1.coverage" NAME="Unittests for test_regdevice.regdeviceTest.test_regdevice_success1 Coverage Results" MODIFIED="1535081713442" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure8_procedure8Test_test_procedure8_success.coverage" NAME="Unittests for test_procedure8.procedure8Test.test_procedure8_success Coverage Results" MODIFIED="1535079667312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_regdevicenew_regdeviceTest_test_regdevice_success2.coverage" NAME="Unittests for test_regdevicenew.regdeviceTest.test_regdevice_success2 Coverage Results" MODIFIED="1535110842930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeapiinfo_recipeapiinfoTest.coverage" NAME="Unittests for test_recipeapiinfo.recipeapiinfoTest Coverage Results" MODIFIED="1535081815363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_manageresetTest_test_managereset_success.coverage" NAME="Unittest manageresetTest.test_managereset_success Coverage Results" MODIFIED="1529991386891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_collectedit_collecteditTest_test_collectedit_success.coverage" NAME="Unittests for test_collectedit.collecteditTest.test_collectedit_success Coverage Results" MODIFIED="1535109520522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipelistTest_test_recipeingredient_success.coverage" NAME="Unittest recipelistTest.test_recipeingredient_success Coverage Results" MODIFIED="1529991423369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipelist_recipelistTest_test_recipeingredient_success3.coverage" NAME="Unittests for test_recipelist.recipelistTest.test_recipeingredient_success3 Coverage Results" MODIFIED="1535085037023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentmoreTest_test_commentmore_success__1_.coverage" NAME="Unittest commentmoreTest.test_commentmore_success (1) Coverage Results" MODIFIED="1523432472728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure6Test_test_procedure6_success.coverage" NAME="Unittest procedure6Test.test_procedure6_success Coverage Results" MODIFIED="1525839912792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeapiinfo_recipeapiinfoTest_test_recipeapiinfo_success1.coverage" NAME="Unittests for test_recipeapiinfo.recipeapiinfoTest.test_recipeapiinfo_success1 Coverage Results" MODIFIED="1535081811762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentaddTest_test_commentadd_success.coverage" NAME="Unittest commentaddTest.test_commentadd_success Coverage Results" MODIFIED="1529680063579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managermyTest_test_recipeslist_success__1_.coverage" NAME="Unittest managermyTest.test_recipeslist_success (1) Coverage Results" MODIFIED="1522656720790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentmoreTest_test_commentmore_success2.coverage" NAME="Unittest commentmoreTest.test_commentmore_success2 Coverage Results" MODIFIED="1522134904234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_commenttwo_commenttwoTest_test_commenttwo_success.coverage" NAME="Unittests for test_commenttwo.commenttwoTest.test_commenttwo_success Coverage Results" MODIFIED="1535030251274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_uploadTest_test_upload_success.coverage" NAME="Unittest uploadTest.test_upload_success Coverage Results" MODIFIED="1524216145030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_managermylist_managermylistTest_test_recipesmylist_success.coverage" NAME="Unittests for test_managermylist.managermylistTest.test_recipesmylist_success Coverage Results" MODIFIED="1535356448542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_fileupload_articletopadv1Test_test_fileupload.coverage" NAME="Unittests for test_fileupload.articletopadv1Test.test_fileupload Coverage Results" MODIFIED="1535355446717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeapiinfoTest_test_recipeapiinfo_success1.coverage" NAME="Unittest recipeapiinfoTest.test_recipeapiinfo_success1 Coverage Results" MODIFIED="1519699084302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_managersort_managersortTest_test_managersort_success.coverage" NAME="Unittests for test_managersort.managersortTest.test_managersort_success Coverage Results" MODIFIED="1535079261725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_regdevice_regdeviceTest_test_regdevice_success2.coverage" NAME="Unittests for test_regdevice.regdeviceTest.test_regdevice_success2 Coverage Results" MODIFIED="1535081709692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managersortTest_test_case_013.coverage" NAME="Unittest managersortTest.test_case_013 Coverage Results" MODIFIED="1519720664791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_commentadd_commentaddTest_test_commentadd_success.coverage" NAME="Unittests for test_commentadd.commentaddTest.test_commentadd_success Coverage Results" MODIFIED="1535081644030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_regdeviceTest_test_regdevice_success2.coverage" NAME="Unittest regdeviceTest.test_regdevice_success2 Coverage Results" MODIFIED="1529633010486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_base_MyTest_myhttp.coverage" NAME="Unittests for base.MyTest.myhttp Coverage Results" MODIFIED="1535357504027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipelistTest_test_recipeingredient_success3.coverage" NAME="Unittest recipelistTest.test_recipeingredient_success3 Coverage Results" MODIFIED="1519883649076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeinfoTest_test_recipeinfo_success1.coverage" NAME="Unittest recipeinfoTest.test_recipeinfo_success1 Coverage Results" MODIFIED="1519700026256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_regdeviceTest_test_regdevice_success.coverage" NAME="Unittest regdeviceTest.test_regdevice_success Coverage Results" MODIFIED="1529680894963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure4_procedure4Test_test_procedure4_success.coverage" NAME="Unittests for test_procedure4.procedure4Test.test_procedure4_success Coverage Results" MODIFIED="1535079358022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure1Test_test_procedure1_success__1_.coverage" NAME="Unittest procedure1Test.test_procedure1_success (1) Coverage Results" MODIFIED="1521084717481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_regdeviceTest_test_regdevice_success__1_.coverage" NAME="Unittest regdeviceTest.test_regdevice_success (1) Coverage Results" MODIFIED="1529580463409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_generateCookCod_generateCookCodeTest_test_generateCookCode_success2.coverage" NAME="Unittests for test_generateCookCod.generateCookCodeTest.test_generateCookCode_success2 Coverage Results" MODIFIED="1535081668440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_drwc.coverage" NAME="Unittest recipecreateTest.test_recipecreate_drwc Coverage Results" MODIFIED="1529485859588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentmoreTest_test_commentmore_success.coverage" NAME="Unittest commentmoreTest.test_commentmore_success Coverage Results" MODIFIED="1529680082857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeofficialTest_test_recipelist_success2.coverage" NAME="Unittest recipeofficialTest.test_recipelist_success2 Coverage Results" MODIFIED="1519697680343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_manageropTest_test_managerop_success.coverage" NAME="Unittest manageropTest.test_managerop_success Coverage Results" MODIFIED="1529991439035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeingredientTest_test_recipeingredient_success.coverage" NAME="Unittest recipeingredientTest.test_recipeingredient_success Coverage Results" MODIFIED="1529582481575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure3Test_test_procedure3_success.coverage" NAME="Unittest procedure3Test.test_procedure3_success Coverage Results" MODIFIED="1523416310516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managersortTest_test_preview_success1.coverage" NAME="Unittest managersortTest.test_preview_success1 Coverage Results" MODIFIED="1519719898158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure6_procedure6Test_test_procedure6_success.coverage" NAME="Unittests for test_procedure6.procedure6Test.test_procedure6_success Coverage Results" MODIFIED="1535086798586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipedetail_recipedetailTest_test_recipeapiinfo_success.coverage" NAME="Unittests for test_recipedetail.recipedetailTest.test_recipeapiinfo_success Coverage Results" MODIFIED="1535108499349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeapiinfo_recipeapiinfoTest_test_recipeapiinfo_success.coverage" NAME="Unittests for test_recipeapiinfo.recipeapiinfoTest.test_recipeapiinfo_success Coverage Results" MODIFIED="1535094225879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_in_MyTest.coverage" NAME="Unittests in MyTest Coverage Results" MODIFIED="1519623454943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipepracticeTest_test_recipepractice_success.coverage" NAME="Unittest recipepracticeTest.test_recipepractice_success Coverage Results" MODIFIED="1529582456601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_pidwc.coverage" NAME="Unittest recipecreateTest.test_recipecreate_pidwc Coverage Results" MODIFIED="1529485770051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipelistTest_test_recipeingredient_success1.coverage" NAME="Unittest recipelistTest.test_recipeingredient_success1 Coverage Results" MODIFIED="1519637884744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_commentmore_commentmoreTest_test_commentmore_success.coverage" NAME="Unittests for test_commentmore.commentmoreTest.test_commentmore_success Coverage Results" MODIFIED="1535084713921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipehotwordTest_test_hotword_success.coverage" NAME="Unittest recipehotwordTest.test_hotword_success Coverage Results" MODIFIED="1529633061638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_didwc.coverage" NAME="Unittest recipecreateTest.test_recipecreate_didwc Coverage Results" MODIFIED="1529485868822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managersortTest_test_managersort_success.coverage" NAME="Unittest managersortTest.test_managersort_success Coverage Results" MODIFIED="1529993383465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commenttwoTest_test_commenttwo_success.coverage" NAME="Unittest commenttwoTest.test_commenttwo_success Coverage Results" MODIFIED="1529680096045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managersortTest_test_preview_success11.coverage" NAME="Unittest managersortTest.test_preview_success11 Coverage Results" MODIFIED="1529991177760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_fileupload_articletopadv1Test_setUpClass.coverage" NAME="Unittests for test_fileupload.articletopadv1Test.setUpClass Coverage Results" MODIFIED="1535355168128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_collecteditTest_test_collectedit_success1.coverage" NAME="Unittest collecteditTest.test_collectedit_success1 Coverage Results" MODIFIED="1519882745999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipelist_recipelistTest_test_recipeingredient_success2.coverage" NAME="Unittests for test_recipelist.recipelistTest.test_recipeingredient_success2 Coverage Results" MODIFIED="1535085034089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_generateCookCod_generateCookCodeTest_test_generateCookCode_success.coverage" NAME="Unittests for test_generateCookCod.generateCookCodeTest.test_generateCookCode_success Coverage Results" MODIFIED="1535108796103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeofficialTest_test_recipelist_success.coverage" NAME="Unittest recipeofficialTest.test_recipelist_success Coverage Results" MODIFIED="1529582465043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_regdevicenew_regdeviceTest_test_regdevice_success.coverage" NAME="Unittests for test_regdevicenew.regdeviceTest.test_regdevice_success Coverage Results" MODIFIED="1535110808127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_managereset_manageresetTest_test_managereset_success.coverage" NAME="Unittests for test_managereset.manageresetTest.test_managereset_success Coverage Results" MODIFIED="1535079197044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_managerop_manageropTest_test_managerop_success1.coverage" NAME="Unittests for test_managerop.manageropTest.test_managerop_success1 Coverage Results" MODIFIED="1535102189317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_tidwc.coverage" NAME="Unittest recipecreateTest.test_recipecreate_tidwc Coverage Results" MODIFIED="1529488182193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentmoreTest_test_commentmore_success__2_.coverage" NAME="Unittest commentmoreTest.test_commentmore_success (2) Coverage Results" MODIFIED="1523432495906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_success1.coverage" NAME="Unittest recipecreateTest.test_recipecreate_success1 Coverage Results" MODIFIED="1519785344161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipehotwordTest_test_recipeapiinfo_success.coverage" NAME="Unittest recipehotwordTest.test_recipeapiinfo_success Coverage Results" MODIFIED="1519634365984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecreateTest_test_recipecreate_success.coverage" NAME="Unittest recipecreateTest.test_recipecreate_success Coverage Results" MODIFIED="1529680268005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeofficial_recipeofficialTest_test_recipelist_success2.coverage" NAME="Unittests for test_recipeofficial.recipeofficialTest.test_recipelist_success2 Coverage Results" MODIFIED="1535080045481" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_regdeviceTest_test_regdevice_success1__1_.coverage" NAME="Unittest regdeviceTest.test_regdevice_success1 (1) Coverage Results" MODIFIED="1529582433204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipedel_recipecollectdelTest_test_recipecollectdel_success.coverage" NAME="Unittests for test_recipedel.recipecollectdelTest.test_recipecollectdel_success Coverage Results" MODIFIED="1535108468316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_commentmore_commentmoreTest_test_commentmore_success2.coverage" NAME="Unittests for test_commentmore.commentmoreTest.test_commentmore_success2 Coverage Results" MODIFIED="1535084740719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeapiinfoTest_test_recipeapiinfo_success.coverage" NAME="Unittest recipeapiinfoTest.test_recipeapiinfo_success Coverage Results" MODIFIED="1529663247857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$run_test.coverage" NAME="run_test Coverage Results" MODIFIED="1535350856601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure5Test_test_procedure5_success.coverage" NAME="Unittest procedure5Test.test_procedure5_success Coverage Results" MODIFIED="1523428318692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentaddTest_test_commentadd_success2.coverage" NAME="Unittest commentaddTest.test_commentadd_success2 Coverage Results" MODIFIED="1519804467527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipelist_recipelistTest_test_recipeingredient_success1.coverage" NAME="Unittests for test_recipelist.recipelistTest.test_recipeingredient_success1 Coverage Results" MODIFIED="1535112376451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managermyTest_test_recipeslist_success.coverage" NAME="Unittest managermyTest.test_recipeslist_success Coverage Results" MODIFIED="1529993235362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managermyTest_test_recipeslist_success1.coverage" NAME="Unittest managermyTest.test_recipeslist_success1 Coverage Results" MODIFIED="1519709261979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecollectdelTest_test_recipecollectdel_success.coverage" NAME="Unittest recipecollectdelTest.test_recipecollectdel_success Coverage Results" MODIFIED="1529582542138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_generateCookCodeTest_test_generateCookCode_success__1_.coverage" NAME="Unittest generateCookCodeTest.test_generateCookCode_success (1) Coverage Results" MODIFIED="1524820770232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeofficial_recipeofficialTest_test_recipelist_success1.coverage" NAME="Unittests for test_recipeofficial.recipeofficialTest.test_recipelist_success1 Coverage Results" MODIFIED="1535080113298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_managermylistTest_test_recipesmylist_success.coverage" NAME="Unittest managermylistTest.test_recipesmylist_success Coverage Results" MODIFIED="1529993248030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_manageropTest_test_managerop_success1.coverage" NAME="Unittest manageropTest.test_managerop_success1 Coverage Results" MODIFIED="1529991510952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipecreate_recipecreateTest_test_recipecreate_pidwc.coverage" NAME="Unittests for test_recipecreate.recipecreateTest.test_recipecreate_pidwc Coverage Results" MODIFIED="1535079753016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipeofficialTest_test_recipelist_success1.coverage" NAME="Unittest recipeofficialTest.test_recipelist_success1 Coverage Results" MODIFIED="1519709793735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipecreate_recipecreateTest_test_recipecreate_didwc.coverage" NAME="Unittests for test_recipecreate.recipecreateTest.test_recipecreate_didwc Coverage Results" MODIFIED="1535097143058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_regdeviceTest_test_regdevice_success2__1_.coverage" NAME="Unittest regdeviceTest.test_regdevice_success2 (1) Coverage Results" MODIFIED="1529582424927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure2_procedure2Test_test_procedure2_success.coverage" NAME="Unittests for test_procedure2.procedure2Test.test_procedure2_success Coverage Results" MODIFIED="1535079322237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$login.coverage" NAME="login Coverage Results" MODIFIED="1521787648018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/base" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_categorylistTest_test_categorylist_success.coverage" NAME="Unittest categorylistTest.test_categorylist_success Coverage Results" MODIFIED="1529633056396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_regdevicenew_regdeviceTest_test_regdevice_success1.coverage" NAME="Unittests for test_regdevicenew.regdeviceTest.test_regdevice_success1 Coverage Results" MODIFIED="1535081743727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipecreate_recipecreateTest_test_recipecreate_tidwc.coverage" NAME="Unittests for test_recipecreate.recipecreateTest.test_recipecreate_tidwc Coverage Results" MODIFIED="1535079805269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_managermy_managermyTest_test_recipeslist_success.coverage" NAME="Unittests for test_managermy.managermyTest.test_recipeslist_success Coverage Results" MODIFIED="1535357626443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_procedure7Test_test_procedure7_success.coverage" NAME="Unittest procedure7Test.test_procedure7_success Coverage Results" MODIFIED="1523431391345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_generateCookCodeTest_test_generateCookCode_success.coverage" NAME="Unittest generateCookCodeTest.test_generateCookCode_success Coverage Results" MODIFIED="1529673320907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_managerop_manageropTest_test_managerop_success.coverage" NAME="Unittests for test_managerop.manageropTest.test_managerop_success Coverage Results" MODIFIED="1535112872951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipelistTest_test_recipeingredient_success2.coverage" NAME="Unittest recipelistTest.test_recipeingredient_success2 Coverage Results" MODIFIED="1519883572566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_categorylist_categorylistTest_test_categorylist_success.coverage" NAME="Unittests for test_categorylist.categorylistTest.test_categorylist_success Coverage Results" MODIFIED="1535109000859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_collecteditTest_test_collectedit_success.coverage" NAME="Unittest collecteditTest.test_collectedit_success Coverage Results" MODIFIED="1529485967626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipedetailTest_test_recipeapiinfo_success1.coverage" NAME="Unittest recipedetailTest.test_recipeapiinfo_success1 Coverage Results" MODIFIED="1520300847401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipelist_recipelistTest_test_recipeingredient_success4.coverage" NAME="Unittests for test_recipelist.recipelistTest.test_recipeingredient_success4 Coverage Results" MODIFIED="1535102297709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentinfoTest_test_commentinfo_success.coverage" NAME="Unittest commentinfoTest.test_commentinfo_success Coverage Results" MODIFIED="1530000493337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_commentinfo_commentinfoTest_test_commentinfo_success.coverage" NAME="Unittests for test_commentinfo.commentinfoTest.test_commentinfo_success Coverage Results" MODIFIED="1535030220301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure7_procedure7Test_test_procedure7_success.coverage" NAME="Unittests for test_procedure7.procedure7Test.test_procedure7_success Coverage Results" MODIFIED="1535081470289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_manageropTest_test_managerop_success3.coverage" NAME="Unittest manageropTest.test_managerop_success3 Coverage Results" MODIFIED="1529991047263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_hotword_recipehotwordTest_test_hotword_success.coverage" NAME="Unittests for test_hotword.recipehotwordTest.test_hotword_success Coverage Results" MODIFIED="1535111970918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_commentmoreTest_test_commentmore_success1.coverage" NAME="Unittest commentmoreTest.test_commentmore_success1 Coverage Results" MODIFIED="1519804562338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_recipecustomTest_test_recipecustom_success1.coverage" NAME="Unittest recipecustomTest.test_recipecustom_success1 Coverage Results" MODIFIED="1529469994388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipecreate_recipecreateTest_test_recipecreate_igwc.coverage" NAME="Unittests for test_recipecreate.recipecreateTest.test_recipecreate_igwc Coverage Results" MODIFIED="1535079800028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittest_generateCookCodeTest_test_generateCookCode_success1.coverage" NAME="Unittest generateCookCodeTest.test_generateCookCode_success1 Coverage Results" MODIFIED="1529488270564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_generateCookCod_generateCookCodeTest_test_generateCookCode_success1.coverage" NAME="Unittests for test_generateCookCod.generateCookCodeTest.test_generateCookCode_success1 Coverage Results" MODIFIED="1535108805591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipedel_recipecollectdelTest_test_recipecollectdel_success1.coverage" NAME="Unittests for test_recipedel.recipecollectdelTest.test_recipecollectdel_success1 Coverage Results" MODIFIED="1535108482712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipeingredient_recipeingredientTest_test_recipeingredient_success.coverage" NAME="Unittests for test_recipeingredient.recipeingredientTest.test_recipeingredient_success Coverage Results" MODIFIED="1535079879492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipelist_recipelistTest_test_recipeingredient_success.coverage" NAME="Unittests for test_recipelist.recipelistTest.test_recipeingredient_success Coverage Results" MODIFIED="1535102571558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_recipedetail_recipedetailTest_test_recipeapiinfo_success1.coverage" NAME="Unittests for test_recipedetail.recipedetailTest.test_recipeapiinfo_success1 Coverage Results" MODIFIED="1535108511994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+    <SUITE FILE_PATH="coverage/DYLG_Interface$Unittests_for_test_procedure1_procedure1Test_test_procedure1_success.coverage" NAME="Unittests for test_procedure1.procedure1Test.test_procedure1_success Coverage Results" MODIFIED="1535116555980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cj_interface" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="DYLG_Interface" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="run_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/base/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+              <folding>
+                <element signature="e#15#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_managermy.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_managermy.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_managermylist.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_managermylist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_articletopadv.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_articletopadv.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <element signature="e#36#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_categorylist.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_categorylist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_fileupload.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_fileupload.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#189#217#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_commenttwo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_commenttwo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_collectedit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_collectedit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_commentadd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cj_interface/test_commentadd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+    <option name="SCHEME" value="Project" />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>statec</find>
+      <find>state</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>code</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/cj_interface/test_recipecustom.py" />
+        <option value="$PROJECT_DIR$/base/mydb.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipeinfo.py" />
+        <option value="$PROJECT_DIR$/report/2018-06-20 17_53_50result.html" />
+        <option value="$PROJECT_DIR$/base/cry.py" />
+        <option value="$PROJECT_DIR$/base/login.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_upload.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_commentinfo.py" />
+        <option value="$PROJECT_DIR$/readme.txt" />
+        <option value="$PROJECT_DIR$/load_cjdylg.py" />
+        <option value="$PROJECT_DIR$/run_test.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_articletopadv.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_categorylist.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_commentadd.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_commenttwo.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_hotword.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_managereset.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_managersort.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure2.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure3.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure5.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipeapiinfo.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipeingredient.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipeofficial.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipepractice.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipetexture.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_regdevice.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_regdevicenew.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_commentmore.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure4.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure6.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure7.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure8.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipecreate.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipedetail.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_managermylist.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_managerop.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipedel.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_generateCookCod.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_collectedit.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_recipelist.py" />
+        <option value="$PROJECT_DIR$/report/2018-08-24 21_14_29result.html" />
+        <option value="$PROJECT_DIR$/cj_interface/test_procedure1.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_fileupload.py" />
+        <option value="$PROJECT_DIR$/base/base.py" />
+        <option value="$PROJECT_DIR$/cj_interface/test_managermy.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DYLG_Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DYLG_Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DYLG_Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DYLG_Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cj_interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DYLG_Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DYLG_Interface" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="js-jscs-nodeInterpreter" value="D:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\feng_2016\PycharmProjects\DYLG_Interface\cj_interface" />
+      <recent name="C:\Users\feng_2016\PycharmProjects\DYLG_Interface\cj" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\feng_2016\Desktop\交接文档\电压力锅\接口代码\DYLG_Interface" />
+      <recent name="C:\Users\feng_2016\Desktop\DYLG_Interface" />
+      <recent name="C:\Users\feng_2016\PycharmProjects\DYLG_Interface\cj_interface" />
+      <recent name="C:\Users\feng_2016\PycharmProjects\DYLG_Interface\base" />
+      <recent name="C:\Users\feng_2016\PycharmProjects\DYLG_Interface" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests for test_managermy.managermyTest.test_recipeslist_success">
+    <configuration default="false" name="Unittests for test_articletopadv.articletopadv1Test.test_articletopadv_sysuccess111" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cj_interface" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_articletopadv.articletopadv1Test.test_articletopadv_sysuccess111&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests for test_managermy.managermyTest.test_recipeslist_success" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cj_interface" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_managermy.managermyTest.test_recipeslist_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests for test_fileupload.articletopadv1Test.test_fileupload" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cj_interface" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_fileupload.articletopadv1Test.test_fileupload&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests for test_managermylist.managermylistTest.test_recipesmylist_success" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cj_interface" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_managermylist.managermylistTest.test_recipesmylist_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests for base.MyTest.myhttp" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/base" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;base.MyTest.myhttp&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="DYLG_Interface" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_articletopadv.articletopadv1Test.test_articletopadv_sysuccess111" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for test_managermy.managermyTest.test_recipeslist_success" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test_fileupload.articletopadv1Test.test_fileupload" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_managermylist.managermylistTest.test_recipesmylist_success" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for base.MyTest.myhttp" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests for test_managermy.managermyTest.test_recipeslist_success" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for base.MyTest.myhttp" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for test_managermylist.managermylistTest.test_recipesmylist_success" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_fileupload.articletopadv1Test.test_fileupload" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_articletopadv.articletopadv1Test.test_articletopadv_sysuccess111" />
+      </list>
+    </recent_temporary>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DYLG_Interface" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fad54e04-368b-40b6-b633-5ab41a933e74" name="Default" comment="" />
+      <created>1519614217757</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519614217757</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_base_MyTest_myhttp - 2018.08.27 at 16h 11m 44s.xml">
+      <configuration name="Unittests for base.MyTest.myhttp" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 15h 53m 42s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 15h 54m 29s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 15h 58m 03s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 16h 03m 10s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 16h 10m 01s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 16h 11m 56s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 16h 12m 03s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermy_managermyTest_test_recipeslist_success - 2018.08.27 at 16h 13m 47s.xml">
+      <configuration name="Unittests for test_managermy.managermyTest.test_recipeslist_success" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_managermylist_managermylistTest_test_recipesmylist_success - 2018.08.27 at 15h 54m 09s.xml">
+      <configuration name="Unittests for test_managermylist.managermylistTest.test_recipesmylist_success" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="0" width="1938" height="1048" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19914803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3431694" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.452459" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5349887" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://D:/Python27/Lib/HTMLTestRunner.py" />
+    <entry file="file://$PROJECT_DIR$/base/cry.py" />
+    <entry file="file://$PROJECT_DIR$/base/login.py" />
+    <entry file="file://$PROJECT_DIR$/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_cjdylg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLTestRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="51" lean-forward="false" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 11_12_21result.html" />
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 11_37_05result.html" />
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 12_31_21result.html" />
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 13_00_06result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_commentinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_managereset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 15_38_42result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_commentmore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73">
+          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 15_41_00result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 15_57_21result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipeofficial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1002">
+          <caret line="59" column="34" lean-forward="false" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipepractice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipeapiinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipecreate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipeingredient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="26" column="34" lean-forward="false" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipedel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipedetail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_generateCookCod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipetexture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_regdevice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="89" column="34" lean-forward="false" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_regdevicenew.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="46" column="42" lean-forward="false" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_hotword.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_managersort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 19_34_02result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_managerop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/2018-08-24 21_14_29result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_procedure1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_recipelist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_commenttwo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_fileupload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#189#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_categorylist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_collectedit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_commentadd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_managermylist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_managermy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="32" column="21" lean-forward="true" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cj_interface/test_articletopadv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#36#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
